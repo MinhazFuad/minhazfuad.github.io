@@ -1,3 +1,3 @@
 # minhazfuad.github.io
-Portfolio Website Implementing HTML, CSS and React
+Portfolio Website Implementing NextJs and ShadCN UI
 # Coming Soon!
