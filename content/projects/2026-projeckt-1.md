@@ -1,8 +1,14 @@
 ---
-title: Projeckt 1
-type: Research
-image: /uploads/impact_dna.png
+title: Echoes
+type: Design
+image: /uploads/echoes.png
 tags:
-  - DNA
+  - NextJs
+  - Prisma
 ---
-adawdsd asdad sdasd wd
+
+
+
+A non‑verbal, emotion‑driven visual platform where meaning is **felt**, not read.
+
+Echoes explores how humans can communicate, discover, and personalize experiences **without using text**, relying only on images, colors, shapes, icons, and interaction.
