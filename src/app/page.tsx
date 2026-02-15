@@ -1,124 +1,113 @@
 import { getCollection } from "@/lib/content";
 import { GlassCard } from "@/components/GlassCard";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { ExternalLink, FileText, Palette, Code, Briefcase, Award } from "lucide-react"; // Added Award icon
+import { ExternalLink, FileText, Palette, Code, Briefcase, Award, GraduationCap, Github, Linkedin, Dribbble } from "lucide-react"; 
 import Image from "next/image";
 
+// Helper for social icons
+const SocialLink = ({ href, icon: Icon, label }: any) => (
+  <a href={href} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/50 dark:bg-black/50 hover:bg-white dark:hover:bg-black/80 rounded-full transition-all hover:scale-110 text-gray-700 dark:text-gray-200" aria-label={label}>
+    <Icon size={20} />
+  </a>
+);
+
 export default function Home() {
+  // Fetch all collections
   const projects = getCollection("projects");
   const designs = getCollection("designs"); 
   const experience = getCollection("experience");
   const papers = getCollection("papers");
-  const certifications = getCollection("certifications"); // <--- Fetch Certifications
+  const certifications = getCollection("certifications");
+  const education = getCollection("education");
 
   return (
-    <main className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12 space-y-16 md:space-y-24">
+    <main className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12 space-y-20 md:space-y-32">
       
-      {/* Navbar - Responsive */}
+      {/* Navbar - Includes ALL Links */}
       <nav className="fixed top-4 md:top-6 left-0 right-0 flex justify-center z-50 px-4">
-        <GlassCard className="flex items-center justify-between md:justify-center gap-4 md:gap-6 px-6 py-3 rounded-full !bg-white/80 dark:!bg-black/80 backdrop-blur-md border border-white/20 shadow-lg w-full md:w-auto max-w-sm md:max-w-none overflow-x-auto scrollbar-hide">
-           {/* Mobile Icons / Desktop Text */}
-           <a href="#projects" className="hover:text-purple-500 transition-colors flex flex-col md:flex-row items-center gap-1" aria-label="Projects">
-             <span className="hidden md:block font-medium">Work</span>
-             <Code className="block md:hidden w-5 h-5" />
-           </a>
-           
-           <a href="#designs" className="hover:text-pink-500 transition-colors flex flex-col md:flex-row items-center gap-1" aria-label="Designs">
-             <span className="hidden md:block font-medium">Designs</span>
-             <Palette className="block md:hidden w-5 h-5" />
-           </a>
-
-           <a href="#experience" className="hover:text-blue-500 transition-colors flex flex-col md:flex-row items-center gap-1" aria-label="Experience">
-             <span className="hidden md:block font-medium">Exp</span>
-             <Briefcase className="block md:hidden w-5 h-5" />
-           </a>
-
-           <a href="#papers" className="hover:text-indigo-500 transition-colors flex flex-col md:flex-row items-center gap-1" aria-label="Research">
-             <span className="hidden md:block font-medium">Research</span>
-             <FileText className="block md:hidden w-5 h-5" />
-           </a>
-
-           {/* New Certifications Link */}
-           <a href="#certifications" className="hover:text-emerald-500 transition-colors flex flex-col md:flex-row items-center gap-1" aria-label="Certifications">
-             <span className="hidden md:block font-medium">Certs</span>
-             <Award className="block md:hidden w-5 h-5" />
-           </a>
-
-           <div className="w-px h-4 bg-gray-300 dark:bg-gray-700 mx-1 md:mx-2 shrink-0"></div>
+        <GlassCard className="flex items-center gap-1 md:gap-2 px-4 py-2 md:px-6 md:py-3 rounded-full !bg-white/80 dark:!bg-black/80 backdrop-blur-md border border-white/20 shadow-lg max-w-[95vw] overflow-x-auto scrollbar-hide">
+           <a href="#projects" className="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-lg transition-colors" aria-label="Work"><Code className="w-5 h-5 text-purple-500" /></a>
+           <a href="#designs" className="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-lg transition-colors" aria-label="Designs"><Palette className="w-5 h-5 text-pink-500" /></a>
+           <a href="#experience" className="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-lg transition-colors" aria-label="Experience"><Briefcase className="w-5 h-5 text-blue-500" /></a>
+           <a href="#education" className="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-lg transition-colors" aria-label="Education"><GraduationCap className="w-5 h-5 text-orange-500" /></a>
+           <a href="#certifications" className="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-lg transition-colors" aria-label="Certifications"><Award className="w-5 h-5 text-emerald-500" /></a>
+           <a href="#papers" className="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-lg transition-colors" aria-label="Research"><FileText className="w-5 h-5 text-indigo-500" /></a>
+           <div className="w-px h-5 bg-gray-300 dark:bg-gray-700 mx-1"></div>
            <ThemeToggle />
         </GlassCard>
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-[85vh] flex flex-col justify-center items-center space-y-8 pt-24 md:pt-20">
-          <GlassCard className="relative p-6 md:p-12 max-w-5xl w-full border-white/40 dark:border-white/10">
-            
-            <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-10">
-              {/* Text Side */}
-              <div className="flex-1 text-center md:text-left space-y-4 md:space-y-6">
-                <span className="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 text-xs md:text-sm font-medium inline-block">
-                  Available for Hire
+      <section className="min-h-[90vh] flex flex-col justify-center items-center space-y-8 pt-20">
+          <GlassCard className="relative p-8 md:p-12 max-w-5xl w-full border-white/40 dark:border-white/10">
+            <div className="flex flex-col-reverse md:flex-row items-center gap-10">
+              <div className="flex-1 text-center md:text-left space-y-6">
+                <span className="px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300 text-xs font-bold tracking-wider uppercase inline-block">
+                  Open to Work
                 </span>
-                <h1 className="text-3xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-purple-800 to-gray-900 dark:from-white dark:via-purple-200 dark:to-white leading-tight">
-                  I Craft Digital <br/> Reality
+                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-purple-800 to-gray-900 dark:from-white dark:via-purple-200 dark:to-white leading-[1.1]">
+                  Md Abdul Ahad Minhaz
                 </h1>
-                <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Full Stack Developer & Visual Designer.<br/>
-                  Blending <span className="text-purple-500 font-semibold">Code</span> with <span className="text-pink-500 font-semibold">Creativity</span>.
+                <p className="text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300">
+                  ML & Vision-Language Researcher <br/>
+                  <span className="text-purple-600 dark:text-purple-400 font-normal">Web Developer</span> & <span className="text-pink-600 dark:text-pink-400 font-normal">Graphic Designer</span>
                 </p>
-                <div className="flex gap-4 justify-center md:justify-start pt-2">
-                  <a href="#projects" className="px-5 py-2.5 md:px-6 md:py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-all shadow-lg shadow-purple-500/30 text-sm md:text-base">
-                    View Work
+                
+                {/* Social Links */}
+                <div className="flex gap-3 justify-center md:justify-start py-2">
+                   <SocialLink href="https://github.com/minhazfuad" icon={Github} label="GitHub" />
+                   <SocialLink href="https://linkedin.com/in/minhaz-fuad-361420365" icon={Linkedin} label="LinkedIn" />
+                   <SocialLink href="https://behance.net/vic087" icon={Dribbble} label="Behance" />
+                   <SocialLink href="https://scholar.google.com/citations" icon={GraduationCap} label="Scholar" />
+                </div>
+
+                <div className="flex gap-4 justify-center md:justify-start pt-4">
+                  <a href="#projects" className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-medium transition-all shadow-xl shadow-purple-500/20 hover:shadow-purple-500/40">
+                    View Portfolio
                   </a>
-                  <a href="#experience" className="px-5 py-2.5 md:px-6 md:py-3 bg-white dark:bg-white/10 hover:bg-gray-50 dark:hover:bg-white/20 border border-gray-200 dark:border-white/10 rounded-lg font-medium transition-all text-sm md:text-base">
+                  <a href="mailto:fuad000219@gmail.com" className="px-8 py-3 bg-white dark:bg-white/5 hover:bg-gray-50 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 rounded-full font-medium transition-all">
                     Contact Me
                   </a>
                 </div>
               </div>
 
-              {/* Image Side */}
               <div className="relative group shrink-0">
-                <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
-                <div className="relative w-32 h-32 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/50 dark:border-white/10 shadow-2xl">
-                   <Image 
-                     src="/uploads/me.jpg" 
-                     alt="Profile Picture" 
-                     fill
-                     className="object-cover"
-                     priority
-                   />
+                <div className="absolute -inset-1 bg-gradient-to-tr from-purple-500 via-pink-500 to-orange-500 rounded-full blur-md opacity-70 group-hover:opacity-100 transition duration-1000 animate-tilt"></div>
+                <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/50 dark:border-white/10 shadow-2xl">
+                   <Image src="/uploads/me.jpg" alt="Md Abdul Ahad Minhaz" fill className="object-cover" priority />
                 </div>
               </div>
             </div>
-
           </GlassCard>
       </section>
 
-      {/* Projects */}
+      {/* Projects Section */}
       <section id="projects" className="scroll-mt-28">
-        <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-10">
-          <div className="p-2 md:p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl text-purple-600 dark:text-purple-400">
-            <Code className="w-5 h-5 md:w-6 md:h-6" />
+        <div className="flex items-center gap-4 mb-10">
+          <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl text-purple-600 dark:text-purple-400">
+            <Code size={24} />
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold">Featured Projects</h2>
+          <h2 className="text-3xl font-bold">Featured Projects</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project: any, i) => (
             <GlassCard key={project.id} delay={i * 0.1} className="group hover:scale-[1.02] transition-transform duration-300 flex flex-col h-full border-white/40 dark:border-white/10">
-              <div className="h-48 md:h-56 bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
+              <div className="h-56 bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
                 {project.image && <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 md:p-6 pt-12">
-                   <h3 className="text-xl md:text-2xl font-bold text-white">{project.title}</h3>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-12">
+                   <h3 className="text-2xl font-bold text-white">{project.title}</h3>
                 </div>
               </div>
-              <div className="p-4 md:p-6 flex-1 flex flex-col">
-                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-6 line-clamp-3 leading-relaxed">
-                   {project.description}
-                </p>
+              <div className="p-6 flex-1 flex flex-col">
+                {/* Description Text */}
+                <div className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3 leading-relaxed prose dark:prose-invert text-sm">
+                   {project.content || project.description}
+                </div>
+                
                 <div className="mt-auto flex flex-wrap gap-2">
                   {project.tags?.map((tag: string) => (
-                    <span key={tag} className="px-2 py-1 md:px-3 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full">
+                    <span key={tag} className="px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">
                       {tag}
                     </span>
                   ))}
@@ -129,13 +118,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Designs */}
+      {/* Recent Designs Section */}
       <section id="designs" className="scroll-mt-28">
-        <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-10">
-          <div className="p-2 md:p-3 bg-pink-100 dark:bg-pink-900/30 rounded-xl text-pink-600 dark:text-pink-400">
-            <Palette className="w-5 h-5 md:w-6 md:h-6" />
+        <div className="flex items-center gap-4 mb-10">
+          <div className="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-xl text-pink-600 dark:text-pink-400">
+            <Palette size={24} />
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold">Recent Designs</h2>
+          <h2 className="text-3xl font-bold">Recent Designs</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -144,6 +133,9 @@ export default function Home() {
               <img src={design.image} alt={design.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <h3 className="text-xl font-bold text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">{design.title}</h3>
+                <p className="text-gray-300 text-sm mt-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+                  {design.date ? new Date(design.date).getFullYear() : 'Recent'}
+                </p>
                 {design.link && (
                   <a href={design.link} target="_blank" className="mt-4 text-pink-400 hover:text-pink-300 text-sm font-medium flex items-center gap-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-150">
                     View Full <ExternalLink size={12} />
@@ -155,7 +147,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Certifications - NEW SECTION */}
+      {/* Experience Section */}
+      <section id="experience" className="scroll-mt-28">
+        <div className="flex items-center gap-4 mb-10">
+          <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl text-blue-600 dark:text-blue-400"><Briefcase size={24} /></div>
+          <h2 className="text-3xl font-bold">Experience</h2>
+        </div>
+        <div className="space-y-8 border-l-2 border-gray-200 dark:border-gray-800 ml-3 pl-8 relative">
+           {experience.map((exp: any, i) => (
+             <GlassCard key={exp.id} delay={i * 0.1} className="p-8 relative">
+               <div className="absolute -left-[41px] top-8 w-5 h-5 bg-blue-500 rounded-full border-4 border-white dark:border-gray-950"></div>
+               <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+                 <h3 className="text-xl font-bold">{exp.role}</h3>
+                 <span className="text-sm font-mono bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-md whitespace-nowrap">{exp.date}</span>
+               </div>
+               <p className="text-blue-600 dark:text-blue-400 font-medium mb-4">{exp.company}</p>
+               <div className="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 text-sm">{exp.content}</div>
+             </GlassCard>
+           ))}
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="scroll-mt-28">
+        <div className="flex items-center gap-4 mb-10">
+          <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl text-orange-600 dark:text-orange-400"><GraduationCap size={24} /></div>
+          <h2 className="text-3xl font-bold">Education</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+           {education.map((edu: any, i) => (
+             <GlassCard key={edu.id} delay={i * 0.1} className="p-8 flex flex-col justify-between h-full border-t-4 border-t-orange-500">
+               <div>
+                 <h3 className="text-xl font-bold mb-2">{edu.school}</h3>
+                 <p className="text-gray-600 dark:text-gray-300 font-medium">{edu.degree}</p>
+                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{edu.location}</p>
+               </div>
+               <div className="mt-6 pt-6 border-t border-gray-100 dark:border-white/5 flex justify-between items-center">
+                 <span className="text-sm font-mono text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20 px-3 py-1 rounded-full">
+                   {edu.date}
+                 </span>
+               </div>
+             </GlassCard>
+           ))}
+        </div>
+      </section>
+
+      {/* Certifications Section */}
       <section id="certifications" className="scroll-mt-28">
         <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-10">
           <div className="p-2 md:p-3 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl text-emerald-600 dark:text-emerald-400">
@@ -193,63 +230,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience */}
-      <section id="experience" className="scroll-mt-28">
-        <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-10">
-          <div className="p-2 md:p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl text-blue-600 dark:text-blue-400">
-            <Briefcase className="w-5 h-5 md:w-6 md:h-6" />
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold">Experience</h2>
-        </div>
-        
-        <div className="space-y-6 md:space-y-8 border-l-2 border-gray-200 dark:border-gray-800 ml-3 pl-6 md:pl-8 relative">
-           {experience.map((exp: any, i) => (
-             <GlassCard key={exp.id} delay={i * 0.1} className="p-6 md:p-8 relative">
-               <div className="absolute -left-[33px] md:-left-[41px] top-8 w-4 h-4 md:w-5 md:h-5 bg-blue-500 rounded-full border-4 border-white dark:border-gray-950"></div>
-               <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
-                 <div>
-                   <h3 className="text-lg md:text-xl font-bold">{exp.role}</h3>
-                   <span className="text-blue-600 dark:text-blue-400 font-medium text-sm md:text-base">{exp.company}</span>
-                 </div>
-                 <span className="text-xs md:text-sm font-mono bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-md whitespace-nowrap w-fit">
-                   {exp.date}
-                 </span>
-               </div>
-               <div className="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 text-sm">
-                 {exp.content}
-               </div>
-             </GlassCard>
-           ))}
-        </div>
-      </section>
-
-      {/* Research Papers */}
+      {/* Research Papers Section */}
       <section id="papers" className="scroll-mt-28 pb-12 md:pb-20">
          <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-10">
           <div className="p-2 md:p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl text-indigo-600 dark:text-indigo-400">
-            <FileText className="w-5 h-5 md:w-6 md:h-6" />
+            <FileText size={24} />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold">Research Papers</h2>
         </div>
 
         <div className="grid grid-cols-1 gap-4">
           {papers.map((paper: any, i) => (
-            <GlassCard key={paper.id} delay={i * 0.1} className="p-4 md:p-6 hover:border-indigo-500/50 transition-colors group">
+            <GlassCard key={paper.id} delay={i * 0.1} className="p-6 hover:border-indigo-500/50 transition-colors group">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div>
-                    <h3 className="text-base md:text-lg font-bold group-hover:text-indigo-500 transition-colors">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg text-indigo-500 hidden sm:block">
+                    <FileText size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold group-hover:text-indigo-500 transition-colors">
                       {paper.title}
                     </h3>
-                    <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-1">
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                       {paper.venue}
                     </p>
+                  </div>
                 </div>
+                
                 {paper.link && (
                   <a 
                     href={paper.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-600 transition-all text-xs md:text-sm font-medium whitespace-nowrap"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-600 transition-all text-sm font-medium whitespace-nowrap"
                   >
                     Read Paper <ExternalLink size={14} />
                   </a>

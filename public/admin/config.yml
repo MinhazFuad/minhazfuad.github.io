@@ -64,3 +64,15 @@ collections:
       - {label: "Date", name: "date", widget: "datetime", format: "MMM YYYY"}
       - {label: "Certificate Image", name: "image", widget: "image"}
       - {label: "Verify Link (Optional)", name: "link", widget: "string", required: false}
+
+      # 6. Education (New)
+  - name: "education"
+    label: "Education"
+    folder: "content/education"
+    create: true
+    fields:
+      - {label: "Institution", name: "school", widget: "string"}
+      - {label: "Degree/Certificate", name: "degree", widget: "string"}
+      - {label: "Years", name: "date", widget: "string"}
+      - {label: "Location", name: "location", widget: "string", required: false}
+      - {label: "Description", name: "body", widget: "markdown", required: false}
