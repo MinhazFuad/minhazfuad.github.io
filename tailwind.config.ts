@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: ["class"], // Crucial for the theme toggle to work
+  darkMode: "class", // <--- Fixed: Must be a string, not an array
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,13 +10,12 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        // This connects to the variable we defined in app/layout.tsx
         sans: ["var(--font-poppins)"],
       },
     },
   },
   plugins: [
-    require('@tailwindcss/typography'), // Optional: helps style markdown content nicely
+    require('@tailwindcss/typography'), 
   ],
 };
 export default config;
