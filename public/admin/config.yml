@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Type", name: "type", widget: "select", options: ["Design", "Code", "Research"]}
+      - {label: "Cover Image", name: "image", widget: "image"}
+      - {label: "Tech Stack", name: "tags", widget: "list"}
+      - {label: "Description", name: "body", widget: "markdown"}
+
+  - name: "experience"
+    label: "Experience"
+    folder: "content/experience"
+    create: true
+    fields:
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "Company", name: "company", widget: "string"}
+      - {label: "Date Range", name: "date", widget: "string"}
+      - {label: "Description", name: "body", widget: "markdown"}
+
+  - name: "papers"
+    label: "Research Papers"
+    folder: "content/papers"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Conference/Journal", name: "venue", widget: "string"}
+      - {label: "Link", name: "link", widget: "string"}
