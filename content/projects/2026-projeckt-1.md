@@ -1,7 +1,7 @@
 ---
 title: Echoes
 type: Design
-image: /uploads/echoes.png
+image: /uploads/echoes-2-.png
 tags:
   - NextJs
   - Prisma
