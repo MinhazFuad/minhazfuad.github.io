@@ -50,3 +50,14 @@ collections:
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "External Link (Behance/Dribbble)", name: "link", widget: "string", required: false}
       - {label: "Description", name: "body", widget: "markdown", required: false}
+
+      - name: "certifications"
+    label: "Certifications"
+    folder: "content/certifications"
+    create: true
+    fields:
+      - {label: "Certificate Name", name: "title", widget: "string"}
+      - {label: "Issuer (Google, Coursera, etc.)", name: "issuer", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", format: "MMM YYYY"}
+      - {label: "Certificate Image", name: "image", widget: "image"}
+      - {label: "Verify Link (Optional)", name: "link", widget: "string", required: false}

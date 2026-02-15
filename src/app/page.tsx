@@ -1,7 +1,7 @@
 import { getCollection } from "@/lib/content";
 import { GlassCard } from "@/components/GlassCard";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { ExternalLink, FileText, Palette, Code, Briefcase, Home as HomeIcon } from "lucide-react";
+import { ExternalLink, FileText, Palette, Code, Briefcase, Award } from "lucide-react"; // Added Award icon
 import Image from "next/image";
 
 export default function Home() {
@@ -9,35 +9,42 @@ export default function Home() {
   const designs = getCollection("designs"); 
   const experience = getCollection("experience");
   const papers = getCollection("papers");
+  const certifications = getCollection("certifications"); // <--- Fetch Certifications
 
   return (
     <main className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12 space-y-16 md:space-y-24">
       
       {/* Navbar - Responsive */}
       <nav className="fixed top-4 md:top-6 left-0 right-0 flex justify-center z-50 px-4">
-        <GlassCard className="flex items-center justify-between md:justify-center gap-4 md:gap-8 px-6 py-3 rounded-full !bg-white/80 dark:!bg-black/80 backdrop-blur-md border border-white/20 shadow-lg w-full md:w-auto max-w-sm md:max-w-none">
+        <GlassCard className="flex items-center justify-between md:justify-center gap-4 md:gap-6 px-6 py-3 rounded-full !bg-white/80 dark:!bg-black/80 backdrop-blur-md border border-white/20 shadow-lg w-full md:w-auto max-w-sm md:max-w-none overflow-x-auto scrollbar-hide">
            {/* Mobile Icons / Desktop Text */}
-           <a href="#projects" className="hover:text-purple-500 transition-colors" aria-label="Projects">
+           <a href="#projects" className="hover:text-purple-500 transition-colors flex flex-col md:flex-row items-center gap-1" aria-label="Projects">
              <span className="hidden md:block font-medium">Work</span>
              <Code className="block md:hidden w-5 h-5" />
            </a>
            
-           <a href="#designs" className="hover:text-pink-500 transition-colors" aria-label="Designs">
+           <a href="#designs" className="hover:text-pink-500 transition-colors flex flex-col md:flex-row items-center gap-1" aria-label="Designs">
              <span className="hidden md:block font-medium">Designs</span>
              <Palette className="block md:hidden w-5 h-5" />
            </a>
 
-           <a href="#experience" className="hover:text-blue-500 transition-colors" aria-label="Experience">
+           <a href="#experience" className="hover:text-blue-500 transition-colors flex flex-col md:flex-row items-center gap-1" aria-label="Experience">
              <span className="hidden md:block font-medium">Exp</span>
              <Briefcase className="block md:hidden w-5 h-5" />
            </a>
 
-           <a href="#papers" className="hover:text-indigo-500 transition-colors" aria-label="Research">
+           <a href="#papers" className="hover:text-indigo-500 transition-colors flex flex-col md:flex-row items-center gap-1" aria-label="Research">
              <span className="hidden md:block font-medium">Research</span>
              <FileText className="block md:hidden w-5 h-5" />
            </a>
 
-           <div className="w-px h-4 bg-gray-300 dark:bg-gray-700 mx-1 md:mx-2"></div>
+           {/* New Certifications Link */}
+           <a href="#certifications" className="hover:text-emerald-500 transition-colors flex flex-col md:flex-row items-center gap-1" aria-label="Certifications">
+             <span className="hidden md:block font-medium">Certs</span>
+             <Award className="block md:hidden w-5 h-5" />
+           </a>
+
+           <div className="w-px h-4 bg-gray-300 dark:bg-gray-700 mx-1 md:mx-2 shrink-0"></div>
            <ThemeToggle />
         </GlassCard>
       </nav>
@@ -143,6 +150,44 @@ export default function Home() {
                   </a>
                 )}
               </div>
+            </GlassCard>
+          ))}
+        </div>
+      </section>
+
+      {/* Certifications - NEW SECTION */}
+      <section id="certifications" className="scroll-mt-28">
+        <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-10">
+          <div className="p-2 md:p-3 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl text-emerald-600 dark:text-emerald-400">
+            <Award className="w-5 h-5 md:w-6 md:h-6" />
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold">Certifications</h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {certifications.map((cert: any, i) => (
+            <GlassCard key={cert.id} delay={i * 0.1} className="p-4 flex flex-col items-center text-center hover:border-emerald-500/50 transition-colors group">
+              <div className="w-full aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden mb-4 relative">
+                {cert.image ? (
+                  <img src={cert.image} alt={cert.title} className="w-full h-full object-contain p-2" />
+                ) : (
+                   <div className="w-full h-full flex items-center justify-center text-gray-400"><Award size={48}/></div>
+                )}
+              </div>
+              <h3 className="text-lg font-bold group-hover:text-emerald-500 transition-colors">{cert.title}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">{cert.issuer}</p>
+              <p className="text-xs text-gray-400 mt-1 mb-3">{cert.date}</p>
+              
+              {cert.link && (
+                <a 
+                  href={cert.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="mt-auto px-4 py-2 text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 rounded-full hover:bg-emerald-100 dark:hover:bg-emerald-900/40 transition-colors flex items-center gap-1"
+                >
+                  Verify Credential <ExternalLink size={10} />
+                </a>
+              )}
             </GlassCard>
           ))}
         </div>
