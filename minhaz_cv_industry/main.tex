@@ -1,0 +1,196 @@
+\documentclass[letterpaper,9pt]{article}
+    
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+% --- Custom Colors for Subtle Highlighting ---
+\definecolor{AccentColor}{RGB}{15, 76, 129} % Classic professional blue
+\definecolor{DarkText}{RGB}{40, 40, 40}
+
+% --- Hyperref Setup for ATS-Friendly Colored Links ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=AccentColor,
+    filecolor=AccentColor,
+    urlcolor=AccentColor,
+    pdfinfo={
+        Title={Md Abdul Ahad Minhaz - Resume},
+        Author={Md Abdul Ahad Minhaz}
+    }
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+    
+% --- Adjusted Margins for Single Page Fit ---
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.5in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\color{DarkText}
+
+% --- Increase Line Spacing Slightly ---
+\linespread{1.05} 
+    
+% --- Decrease Section Gap Spacing ---
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large\color{AccentColor}
+}{}{0em}{}[\color{AccentColor}\titlerule \vspace{-8pt}]
+    
+\pdfgentounicode=1
+    
+% --- Adjusted Item Spacing (More breathing room between items) ---
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textcolor{AccentColor}{\textbf{#2}} \\
+      \small\textit{#3} & \small #4 \\
+    \end{tabular*}\vspace{-4pt}
+}
+    
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textcolor{AccentColor}{\textbf{#2}} \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeLineHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & \small \textcolor{AccentColor}{\textbf{#2}} \\
+    \end{tabular*}\vspace{1pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-2pt}}
+    
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=1pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-10pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label={\textcolor{AccentColor}{$\bullet$}}, itemsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-10pt}}
+    
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape \textcolor{AccentColor}{Md Abdul Ahad Minhaz}} \\ \vspace{4pt}
+    \small Mirpur, Dhaka, Bangladesh $|$ \href{mailto:fuad000219@gmail.com}{fuad000219@gmail.com} $|$ +8801309268951 \\ \vspace{3pt}
+    \small
+    \href{#}{LinkedIn} $|$
+    \href{https://github.com/MinhazFuad}{GitHub} $|$
+    \href{https://scholar.google.com/citations?user=5dM3OOEAAAAJ&hl=en}{Google Scholar} $|$
+    \href{#}{Portfolio}
+\end{center}
+\vspace{-16pt}
+    
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {United International University}{Dhaka, Bangladesh}
+      {B.Sc. in Computer Science \& Engineering, Major: Data Science}{2022 -- 2026}
+      \vspace{-2pt}\small{\item \textbf{CGPA:} 3.05/4.00}
+  \resumeSubHeadingListEnd
+    
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}, itemsep=1pt]
+    \small{\item{
+     \textbf{Languages}{: C, C++, Java, Python, JavaScript, SQL, BASH, HTML/CSS, LaTeX} \\[3pt]
+     \textbf{AI \& Machine Learning}{: NumPy, Pandas, Matplotlib, Scikit-Learn, NLTK, OpenCV, PyTorch} \\[3pt]
+     \textbf{Web \& Database}{: Next.js, Tailwind CSS, Supabase, Vercel, Netlify, TiDB, MySQL, PostgreSQL, Prisma} \\[3pt]
+     \textbf{Tools \& Hardware}{: Git, GitHub, Raspberry Pi, ESP32, Arduino, Proteus, Logisim, CISCO Packet Tracer}
+    }}
+ \end{itemize}
+ \vspace{-10pt}
+    
+%-----------PROJECTS-----------
+\section{Selected Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{AnyTate (FCoT Annotation Platform)} [ \href{https://github.com/MinhazFuad/anytate}{github} ] [ \href{https://anytate.vercel.app/}{live} ]}{2026}
+      \resumeItem{Engineered a full-stack computer vision web platform (\textbf{Next.js, Supabase}) enforcing Few-Shot Chain-of-Thought (FCoT) reasoning guidelines with dynamic taxonomy versioning, zero-latency queue caching, and native \textbf{YOLO/COCO} exports.}
+      \resumeProjectHeading
+          {\textbf{TaskVault (Web Platform)} [ \href{https://drive.google.com/file/d/1l0gBWt-Lne4dovaSc0nrUt3lpwgyYOGc/view?usp=sharing}{video} ] [ \href{https://taskvault-learn.vercel.app/}{live} ]}{2026}
+      \resumeItem{Developed a learn-to-earn platform (\textbf{MySQL, Next.js}) bridging education and employment via an LMS, a Reputation Point engine, and secure escrow-based corporate bounties.}
+      \resumeProjectHeading
+          {\textbf{EcoRover (Waste Sorting Robot)} [ \href{https://github.com/TheAhsanFarabi/EcoRover}{github} ] [ \href{https://youtu.be/bar47waowf8?si=LwgsXSzO4obR1Ytv}{video} ]}{2025}
+      \resumeItem{Built a 4-DOF robotic system (\textbf{Python, OpenCV, YOLOv8n, Raspberry Pi 5}) that autonomously classifies and sorts recyclable waste using computer vision.}
+      \resumeProjectHeading
+          {\textbf{UIU Platformer (Onboarding Game)} [ \href{https://github.com/TheAhsanFarabi/UIU-Platformer-Game}{github} ] [ \href{https://youtu.be/ylTclQSRTeg?si=-GbPpa2ds2V7o0aX}{video} ]}{2024}
+      \resumeItem{Developed a 2D onboarding simulation game (\textbf{Java, JavaFX}) and evaluated usability through testing with \textbf{20+ participants}.}
+    \resumeSubHeadingListEnd
+    
+%-----------EXTRACURRICULAR-----------
+\section{Extracurricular \& Leadership}
+\resumeItemListStart
+  \resumeItem{\textbf{Campus Champion \& National Qualifier}, Hult Prize 2026: Led a team to win the on-campus social entrepreneurship round by pitching a venture concept, advancing to represent UIU at the Nationals.}
+  \resumeItem{\textbf{Competitor}, Build with Gemma: Bangladesh (Kaggle): Participated in Google's generative AI hackathon, leveraging the Gemma open-weights model to engineer localized LLM solutions. [ \href{https://www.kaggle.com/competitions/build-with-gemma-bangladesh/overview}{link} ]}
+  \resumeItem{\textbf{Graphic Design Intern}, Youth School for Social Entrepreneurs (YSSE): Contributed visual assets and design solutions as part of a structured applied graphic design internship program. [ \href{https://script.google.com/macros/s/AKfycbyRvr3laSy_r6coxLSgSmaGDuyG0nVVWMXgxllN90he_2XRDRC9_AemkKChmA0aP-qLtQ/exec?id=fuad000219\%40gmail.com}{certificate} ]}
+  \resumeItem{\textbf{Admin and Moderator}, Castpotro: Oversaw community engagement, moderated discussions, and coordinated logistics for an online podcast event.}
+\resumeItemListEnd
+    
+%-----------PUBLICATIONS-----------
+\section{Publications}
+\small{\textcolor{AccentColor}{C} = Conference \quad \textcolor{AccentColor}{P} = Preprint \quad \textcolor{AccentColor}{U} = Under Review \quad \textcolor{AccentColor}{T} = Thesis}
+\vspace{2pt}
+    
+\resumeSubHeadingListStart
+  \resumeItem{
+    \textbf{[C1]} A. Farabi, M.A.A. Minhaz, I. Khandaker, I.K. Shanto, M.T. Raihan. \textit{``EcoDetect: Lightweight Real-Time Recyclable Waste Detection Using YOLOv11n Trained on LLM-Guided Synthetic Data.''} ICCIT 2025.
+    [ \href{https://ieeexplore.ieee.org/abstract/document/11491266}{paper} ]
+    [ \href{https://github.com/TheAhsanFarabi/EcoDetect}{code} ]
+    [ \href{https://www.kaggle.com/datasets/ahsan71/ecodetect-recyclable-waste-detection-dataset}{dataset} ]
+    [ \href{https://www.youtube.com/watch?v=hPAnPDIOQHE}{presentation} ]
+  }
+  \resumeItem{
+    \textbf{[P1]} A. Farabi, I. Khandaker, I.K. Shanto, M.A.A. Minhaz, T. Zaman. \textit{``InsideOut: An EfficientNetV2-S Based Deep Learning Framework for Robust Multi-Class Facial Emotion Recognition.''} arXiv:2510.03066.
+    [ \href{https://arxiv.org/abs/2510.03066}{paper} ]
+    [ \href{https://github.com/TheAhsanFarabi/InsideOut}{code} ]
+  }
+  \resumeItem{
+    \textbf{[U1]} A. Farabi et al. \textit{``GreenSwap: Verb Choice or Output Length? A Controlled Decomposition of Prompt-Level Energy Savings in LLM Inference.''} Under review, EMNLP.
+  }
+  \resumeItem{
+    \textbf{[T]} \textit{``WADE: A Waste Annotation Reasoning-Chain Dataset and Distillation Framework for Low-Resource Vision-Language Models.''} Undergrad Thesis, UIU, 2026. Advisor: Dr. M. N. Kabir. Introduced WADE, a benchmark of \textbf{2,167 aquatic images} with \textbf{13,608 instances}, each featuring an LLM-validated reasoning chain. Fine-tuned a 2B-parameter open model, increasing recall by \textbf{9.4x} and reducing hallucinations from \textbf{0.683 to 0.088} (surpassing commercial systems), proving the bottleneck is multi-instance recall.
+  }
+\resumeSubHeadingListEnd
+    
+%-----------AWARDS & CERTIFICATIONS-----------
+\section{Awards \& Certifications}
+\resumeSubHeadingListStart
+  \resumeLineHeading{On-Campus Champion and Finalist, Hult Prize (Social Entrepreneurship Competition)}{2026}
+  \resumeLineHeading{4th Runner-Up, UIU CSE Project Show (Software Engineering)}{2025}
+  \resumeLineHeading{2nd Runner-Up, UIU CSE Project Show (Advanced Object-Oriented Programming)}{2024}
+  \resumeLineHeading{Claude Code 101, Anthropic [ \href{https://verify.skilljar.com/c/w8b2ptij45ib}{certificate} ]}{2026}
+  \resumeLineHeading{Intro to Machine Learning, Kaggle [ \href{https://www.kaggle.com/learn/certification/mdabdulahadminhaz/intro-to-machine-learning}{certificate} ]}{2026}
+\resumeSubHeadingListEnd
+
+\end{document}
