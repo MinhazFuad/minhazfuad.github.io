@@ -3,72 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Md Abdul Ahad Minhaz — ML Engineer &amp; CS Researcher</title>
-  <meta name="description" content="Personal portfolio of Md Abdul Ahad Minhaz — BS in CS&E (Data Science), ML researcher, full-stack developer, and robotics builder at United International University." />
-  <meta property="og:title" content="Md Abdul Ahad Minhaz — ML Engineer &amp; CS Researcher" />
-  <meta property="og:description" content="Portfolio featuring published research, robotics projects, and full-stack platforms." />
-  <meta property="og:type" content="website" />
 
-  <!-- Fonts -->
+  <!-- ── Primary SEO ── -->
+  <title>Md Abdul Ahad Minhaz — ML Engineer &amp; CS Researcher | UIU Bangladesh</title>
+  <meta name="description" content="Portfolio of Md Abdul Ahad Minhaz — IEEE-published ML researcher, full-stack developer, and robotics builder. BS CSE (Data Science) at United International University, Dhaka." />
+  <meta name="keywords" content="Minhaz, Md Abdul Ahad Minhaz, ML engineer, computer vision, YOLO, PyTorch, Next.js, UIU, Bangladesh, portfolio, IEEE, ICCIT, WADE, EcoDetect, data science" />
+  <meta name="author" content="Md Abdul Ahad Minhaz" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://minhazfuad.github.io/" />
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://minhazfuad.github.io/" />
+  <meta property="og:title"       content="Md Abdul Ahad Minhaz — ML Engineer &amp; CS Researcher" />
+  <meta property="og:description" content="IEEE-published ML researcher, full-stack developer, and robotics builder. Campus Champion, Hult Prize 2026." />
+  <meta property="og:image"       content="https://minhazfuad.github.io/minhaz.jpeg" />
+  <meta property="og:image:alt"   content="Md Abdul Ahad Minhaz" />
+  <meta property="og:locale"      content="en_US" />
+  <meta property="og:site_name"   content="minhazfuad.github.io" />
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Md Abdul Ahad Minhaz — ML Engineer &amp; CS Researcher" />
+  <meta name="twitter:description" content="IEEE-published ML researcher, full-stack developer, and robotics builder. Campus Champion, Hult Prize 2026." />
+  <meta name="twitter:image"       content="https://minhazfuad.github.io/minhaz.jpeg" />
+
+  <!-- ── Structured Data (JSON-LD) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Md Abdul Ahad Minhaz",
+    "url": "https://minhazfuad.github.io/",
+    "image": "https://minhazfuad.github.io/minhaz.jpeg",
+    "jobTitle": "ML Engineer & CS Researcher",
+    "description": "IEEE-published ML researcher, full-stack developer, and robotics builder at United International University, Dhaka.",
+    "email": "fuad000219@gmail.com",
+    "telephone": "+8801309268951",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dhaka",
+      "addressCountry": "BD"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "United International University",
+      "address": "Dhaka, Bangladesh"
+    },
+    "knowsAbout": ["Machine Learning", "Computer Vision", "Next.js", "PyTorch", "YOLOv8", "OpenCV", "Supabase", "Data Science"],
+    "sameAs": [
+      "https://github.com/MinhazFuad",
+      "https://scholar.google.com/citations?user=5dM3OOEAAAAJ&hl=en"
+    ]
+  }
+  </script>
+
+  <!-- ── Fonts ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind v4 CDN -->
+  <!-- ── Tailwind v4 CDN ── -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <style type="text/tailwindcss">
     @theme {
-      --color-void: #000000;
-      --color-carbon: #111111;
+      --color-void:     #000000;
+      --color-carbon:   #111111;
       --color-graphite: #191919;
-      --color-iron: #202020;
-      --color-slate: #3a3a3a;
-      --color-pewter: #505050;
-      --color-steel: #606060;
-      --color-ash: #7e7e7e;
-      --color-fog: #b4b4b4;
-      --color-chalk: #d9d9d9;
-      --color-paper: #eeeeee;
-      --color-ember: #da5c2c;
-
-      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-
-      --radius-sm: 2px;
-      --radius-full: 9999px;
+      --color-iron:     #202020;
+      --color-slate:    #3a3a3a;
+      --color-pewter:   #505050;
+      --color-steel:    #606060;
+      --color-ash:      #7e7e7e;
+      --color-fog:      #b4b4b4;
+      --color-chalk:    #d9d9d9;
+      --color-paper:    #eeeeee;
+      --color-ember:    #da5c2c;
+      --radius-sm:      2px;
+      --radius-full:    9999px;
     }
 
-    * {
-      font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      background-color: #000000;
+      font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background: #000000;
       color: #eeeeee;
       -webkit-font-smoothing: antialiased;
+      margin: 0;
     }
 
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: #202020; border-radius: 2px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+
+    /* ── Keyframes ── */
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
-    .cursor {
-      display: inline-block;
-      width: 10px;
-      height: 1.1em;
-      background: #da5c2c;
-      vertical-align: text-bottom;
-      animation: blink 1.2s step-end infinite;
-      border-radius: 1px;
-      margin-left: 2px;
-    }
-
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -89,44 +127,87 @@
       100% { clip-path: inset(0 0 0 0); transform: translate(0, 0); }
     }
     @keyframes pulseGreen {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+      50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(34,197,94,0); }
     }
     @keyframes scanline {
       0%   { top: -2px; }
       100% { top: 100vh; }
     }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes imgReveal {
+      from { opacity: 0; transform: scale(0.97) translateY(10px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
 
-    .anim-fade-up { animation: fadeInUp 0.7s ease both; }
-    .anim-fade    { animation: fadeIn 0.5s ease both; }
-
-    .delay-100 { animation-delay: 0.1s; }
-    .delay-200 { animation-delay: 0.2s; }
-    .delay-300 { animation-delay: 0.3s; }
-    .delay-400 { animation-delay: 0.4s; }
-    .delay-500 { animation-delay: 0.5s; }
-    .delay-600 { animation-delay: 0.6s; }
-    .delay-700 { animation-delay: 0.7s; }
-
+    /* ── Reveal animations (scroll-triggered) ── */
     .reveal {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.65s ease, transform 0.65s ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
     .reveal-left {
       opacity: 0;
-      transform: translateX(-20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateX(-24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
     }
-    .reveal-left.visible {
-      opacity: 1;
-      transform: translateX(0);
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* Stagger via nth-child (composed correctly with transition shorthand) */
+    .stagger > .reveal:nth-child(1) { transition-delay: 0s; }
+    .stagger > .reveal:nth-child(2) { transition-delay: 0.1s; }
+    .stagger > .reveal:nth-child(3) { transition-delay: 0.2s; }
+    .stagger > .reveal:nth-child(4) { transition-delay: 0.3s; }
+    .stagger > .reveal:nth-child(5) { transition-delay: 0.4s; }
+
+    /* ── Hero entry animations (fire on load) ── */
+    .anim-fade-up { animation: fadeInUp 0.7s ease both; }
+    .anim-fade    { animation: fadeIn  0.5s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+    .delay-6 { animation-delay: 0.6s; }
+    .delay-7 { animation-delay: 0.7s; }
+    .delay-8 { animation-delay: 0.8s; }
+
+    /* ── Blinking cursor ── */
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.1em;
+      background: #da5c2c;
+      vertical-align: text-bottom;
+      animation: blink 1.2s step-end infinite;
+      border-radius: 1px;
+      margin-left: 2px;
     }
 
+    /* ── Scanline overlay ── */
+    .scanline-overlay {
+      position: fixed;
+      left: 0; right: 0;
+      height: 2px;
+      background: rgba(238, 238, 238, 0.03);
+      pointer-events: none;
+      z-index: 9999;
+      animation: scanline 10s linear infinite;
+    }
+
+    /* ── Nav ── */
     .nav-link {
       color: #b4b4b4;
       font-size: 14px;
@@ -134,22 +215,43 @@
       transition: color 0.15s;
       text-decoration: none;
       position: relative;
+      font-family: inherit;
     }
     .nav-link::after {
       content: '';
       position: absolute;
-      bottom: -2px;
+      bottom: -3px;
       left: 0;
       width: 0;
       height: 1px;
       background: #da5c2c;
       transition: width 0.2s ease;
     }
-    .nav-link:hover { color: #eeeeee; }
+    .nav-link:hover        { color: #eeeeee; }
     .nav-link:hover::after { width: 100%; }
-    .nav-active { color: #eeeeee !important; }
-    .nav-active::after { width: 100% !important; }
+    .nav-active            { color: #eeeeee !important; }
+    .nav-active::after     { width: 100% !important; }
 
+    /* ── Mobile menu animation ── */
+    #mobile-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.28s ease, opacity 0.2s ease, padding 0.28s ease;
+      padding: 0 24px;
+      background: #111111;
+      border-bottom: 1px solid #202020;
+    }
+    #mobile-menu.open {
+      max-height: 320px;
+      opacity: 1;
+      padding: 18px 24px;
+    }
+
+    /* ── Buttons ── */
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -165,6 +267,7 @@
       text-decoration: none;
       transition: background 0.15s;
       font-family: inherit;
+      white-space: nowrap;
     }
     .btn-primary:hover { background: #c4521f; }
 
@@ -181,11 +284,13 @@
       border: 1px solid #3a3a3a;
       cursor: pointer;
       text-decoration: none;
-      transition: border-color 0.15s;
+      transition: border-color 0.15s, color 0.15s;
       font-family: inherit;
+      white-space: nowrap;
     }
     .btn-ghost:hover { border-color: #b4b4b4; }
 
+    /* ── Cards ── */
     .card-project {
       background: #191919;
       border-radius: 2px;
@@ -195,19 +300,18 @@
     }
     .card-project:hover { background: #202020; }
 
-    .section-divider {
-      border: none;
-      border-top: 1px solid #202020;
-      margin: 0;
-    }
+    /* ── Section divider ── */
+    .section-divider { border: none; border-top: 1px solid #202020; margin: 0; }
 
+    /* ── Publications ── */
     .pub-card {
       border-left: 2px solid #202020;
-      padding-left: 16px;
-      transition: border-color 0.2s;
+      padding-left: 20px;
+      transition: border-color 0.2s, padding-left 0.2s;
     }
-    .pub-card:hover { border-left-color: #da5c2c; }
+    .pub-card:hover { border-left-color: #da5c2c; padding-left: 24px; }
 
+    /* ── Awards ── */
     .award-row {
       display: flex;
       align-items: center;
@@ -219,6 +323,7 @@
     .award-row:hover { padding-left: 8px; }
     .award-row:last-child { border-bottom: none; }
 
+    /* ── Histogram bars ── */
     .histo-bar {
       width: 3px;
       border-radius: 1px;
@@ -227,42 +332,120 @@
       flex-shrink: 0;
     }
 
+    /* ── Timeline ── */
     .timeline-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
       background: #da5c2c;
-      flex-shrink: 0;
-      margin-top: 7px;
       position: absolute;
       left: -4px;
       top: 6px;
+      flex-shrink: 0;
     }
 
-    .scanline-overlay {
-      position: fixed;
-      left: 0; right: 0;
-      height: 2px;
-      background: rgba(238, 238, 238, 0.025);
+    /* ── Hero image frame ── */
+    .hero-img-frame {
+      position: relative;
+      display: inline-block;
+      animation: imgReveal 0.8s ease 0.5s both;
+    }
+    .hero-img-frame::before {
+      content: '';
+      position: absolute;
+      inset: -10px;
+      border: 1px solid #202020;
+      border-radius: 2px;
       pointer-events: none;
-      z-index: 9999;
-      animation: scanline 10s linear infinite;
     }
-
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #000000; }
-    ::-webkit-scrollbar-thumb { background: #202020; border-radius: 2px; }
-    ::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
-
+    .corner-tl {
+      position: absolute; top: -5px; left: -5px;
+      width: 18px; height: 18px;
+      border-top: 2px solid #da5c2c;
+      border-left: 2px solid #da5c2c;
+      border-radius: 1px;
+    }
+    .corner-br {
+      position: absolute; bottom: -5px; right: -5px;
+      width: 18px; height: 18px;
+      border-bottom: 2px solid #da5c2c;
+      border-right: 2px solid #da5c2c;
+      border-radius: 1px;
+    }
     .profile-img {
-      filter: grayscale(30%) contrast(1.05);
+      display: block;
+      width: 100%;
+      border-radius: 2px;
+      border: 1px solid #202020;
+      filter: grayscale(25%) contrast(1.05);
       transition: filter 0.4s ease;
     }
     .profile-img:hover { filter: grayscale(0%) contrast(1.05); }
 
-    .stat-block {
+    /* ── Contact card hover ── */
+    .contact-card {
+      padding: 20px;
+      background: #191919;
+      border: 1px solid #202020;
+      border-radius: 2px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .contact-card:hover { background: #202020; border-color: #3a3a3a; }
+
+    /* ── Reduced-motion overrides ── */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-left, .reveal-right {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .cursor { animation: none; opacity: 1; }
+      .scanline-overlay { animation: none; opacity: 0; }
+      .histo-bar { animation: none; transform: scaleY(1); }
+      .anim-fade-up, .anim-fade { animation: none; opacity: 1; }
+      .hero-img-frame { animation: none; opacity: 1; }
+      #mobile-menu { transition: none; }
+    }
+
+    /* ── Responsive hero grid ── */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr auto; gap: 64px; }
+    }
+
+    /* ── Responsive about text ── */
+    @media (max-width: 767px) {
+      .hero-img-col { display: none; }
+    }
+
+    /* ── Stats row ── */
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .stats-row > .stat-item {
+      padding-right: 28px;
+      margin-bottom: 12px;
+    }
+    .stats-row > .stat-item + .stat-item {
       border-left: 1px solid #202020;
-      padding-left: 32px;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+    @media (max-width: 500px) {
+      .stats-row > .stat-item + .stat-item {
+        border-left: none;
+        padding-left: 0;
+      }
+      .stats-row > .stat-item { padding-right: 24px; }
     }
   </style>
 </head>
@@ -270,199 +453,223 @@
 
   <div class="scanline-overlay" aria-hidden="true"></div>
 
-  <!-- NAV -->
-  <nav id="navbar" style="position:fixed; top:0; left:0; right:0; z-index:50; background:#000000; border-bottom:1px solid #202020; height:56px;">
-    <div style="max-width:1200px; margin:0 auto; height:100%; padding:0 24px; display:flex; align-items:center; justify-content:space-between;">
+  <!-- ═══ NAV ═══ -->
+  <nav id="navbar" aria-label="Main navigation"
+       style="position:fixed;top:0;left:0;right:0;z-index:50;background:#000000;border-bottom:1px solid #202020;height:56px;">
+    <div style="max-width:1200px;margin:0 auto;height:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between;">
 
-      <a href="#hero" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:#eeeeee;">
-        <div style="width:28px; height:28px; border-radius:50%; background:#da5c2c; display:flex; align-items:center; justify-content:center;">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><polygon points="2,12 7,2 12,12" fill="#eeeeee"/></svg>
+      <a href="#hero" aria-label="Home" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#eeeeee;">
+        <div style="width:28px;height:28px;border-radius:50%;background:#da5c2c;display:flex;align-items:center;justify-content:center;flex-shrink:0;" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><polygon points="2,12 7,2 12,12" fill="#eeeeee"/></svg>
         </div>
-        <span style="font-weight:700; font-size:14px; letter-spacing:-0.02em;">minhaz<span style="color:#da5c2c;">.</span>dev</span>
+        <span style="font-weight:700;font-size:14px;letter-spacing:-0.02em;">minhazfuad<span style="color:#da5c2c;">.</span>github.io</span>
       </a>
 
-      <div class="hidden md:flex" style="gap:32px; align-items:center;">
-        <a href="#about"        class="nav-link" id="nav-about">about</a>
-        <a href="#skills"       class="nav-link" id="nav-skills">skills</a>
-        <a href="#projects"     class="nav-link" id="nav-projects">projects</a>
-        <a href="#publications" class="nav-link" id="nav-publications">research</a>
-        <a href="#awards"       class="nav-link" id="nav-awards">awards</a>
-        <a href="#contact"      class="nav-link" id="nav-contact">contact</a>
+      <div id="desktop-nav" style="display:none;gap:28px;align-items:center;" role="list">
+        <a href="#about"        class="nav-link" id="nav-about"        role="listitem">about</a>
+        <a href="#skills"       class="nav-link" id="nav-skills"       role="listitem">skills</a>
+        <a href="#projects"     class="nav-link" id="nav-projects"     role="listitem">projects</a>
+        <a href="#publications" class="nav-link" id="nav-publications" role="listitem">research</a>
+        <a href="#awards"       class="nav-link" id="nav-awards"       role="listitem">awards</a>
+        <a href="#contact"      class="nav-link" id="nav-contact"      role="listitem">contact</a>
       </div>
 
-      <div style="display:flex; align-items:center; gap:12px;">
-        <a href="mailto:fuad000219@gmail.com" class="btn-primary" id="cta-nav-email" style="font-size:13px; padding:8px 14px;">contact →</a>
-        <button id="mobile-menu-btn" class="md:hidden" style="background:none; border:none; color:#eeeeee; cursor:pointer; padding:4px;" aria-label="Toggle menu">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-            <rect y="3" width="20" height="2" rx="1"/><rect y="9" width="20" height="2" rx="1"/><rect y="15" width="20" height="2" rx="1"/>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <a href="mailto:fuad000219@gmail.com" class="btn-primary" id="cta-nav-email" style="font-size:13px;padding:7px 13px;">contact →</a>
+        <button id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false"
+                style="background:none;border:none;color:#eeeeee;cursor:pointer;padding:6px;line-height:0;display:block;">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <rect y="3" width="20" height="2" rx="1"/>
+            <rect y="9" width="20" height="2" rx="1"/>
+            <rect y="15" width="20" height="2" rx="1"/>
           </svg>
         </button>
       </div>
     </div>
 
-    <div id="mobile-menu" style="display:none; background:#111111; border-bottom:1px solid #202020; padding:16px 24px; flex-direction:column; gap:16px;">
-      <a href="#about"        class="nav-link">about</a>
-      <a href="#skills"       class="nav-link">skills</a>
-      <a href="#projects"     class="nav-link">projects</a>
-      <a href="#publications" class="nav-link">research</a>
-      <a href="#awards"       class="nav-link">awards</a>
-      <a href="#contact"      class="nav-link">contact</a>
+    <div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+      <a href="#about"        class="nav-link" id="mnav-about">about</a>
+      <a href="#skills"       class="nav-link" id="mnav-skills">skills</a>
+      <a href="#projects"     class="nav-link" id="mnav-projects">projects</a>
+      <a href="#publications" class="nav-link" id="mnav-publications">research</a>
+      <a href="#awards"       class="nav-link" id="mnav-awards">awards</a>
+      <a href="#contact"      class="nav-link" id="mnav-contact">contact</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section id="hero" style="min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding-top:56px; position:relative; overflow:hidden; background:#000000;">
+  <!-- ═══ HERO ═══ -->
+  <section id="hero" aria-label="Introduction"
+           style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:56px;position:relative;overflow:hidden;background:#000000;">
 
-    <!-- Arrow texture -->
-    <div aria-hidden="true" style="position:absolute; top:0; right:0; width:50%; height:100%; overflow:hidden; user-select:none; pointer-events:none;">
-      <div style="color:#242424; font-size:13px; line-height:2.4; letter-spacing:0.9em; padding:80px 32px 0 0; font-family:inherit;">
-        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
-        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+    <!-- Arrow texture (full-bleed background) -->
+    <div aria-hidden="true" style="position:absolute;top:0;right:0;width:55%;height:100%;overflow:hidden;user-select:none;pointer-events:none;opacity:0.9;">
+      <div style="color:#1e1e1e;font-size:13px;line-height:2.5;letter-spacing:1em;padding:80px 0 0 0;font-family:'JetBrains Mono',monospace;">
+        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
+        &nbsp;&nbsp;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>
       </div>
     </div>
 
-    <div style="max-width:1200px; margin:0 auto; width:100%; padding:80px 24px; position:relative; z-index:10;">
-      <div style="max-width:640px;">
+    <div style="max-width:1200px;margin:0 auto;width:100%;padding:72px 24px 100px;position:relative;z-index:10;">
+      <div class="hero-grid">
 
-        <!-- Prompt -->
-        <div class="anim-fade" style="font-size:13px; color:#606060; margin-bottom:16px; letter-spacing:0.02em;">
-          ~/minhaz<span style="color:#da5c2c;">$</span>&nbsp;whoami
+        <!-- Left: text -->
+        <div>
+          <!-- Terminal prompt -->
+          <div class="anim-fade" style="font-size:13px;color:#606060;margin-bottom:14px;letter-spacing:0.03em;">
+            ~/minhaz<span style="color:#da5c2c;">$</span>&nbsp;whoami
+          </div>
+
+          <!-- Name -->
+          <h1 id="hero-h1" class="anim-fade-up delay-1"
+              style="font-size:clamp(32px,5.5vw,56px);font-weight:700;line-height:1.1;color:#eeeeee;margin:0 0 14px;">
+            Md Abdul Ahad<br>Minhaz
+          </h1>
+
+          <!-- Typewriter subtitle -->
+          <div class="anim-fade-up delay-2"
+               style="font-size:18px;line-height:1.56;color:#b4b4b4;margin-bottom:20px;min-height:30px;">
+            <span id="typewriter-text"></span><span class="cursor" aria-hidden="true"></span>
+          </div>
+
+          <!-- One-liner -->
+          <p class="anim-fade-up delay-3"
+             style="font-size:14px;line-height:1.71;color:#7e7e7e;max-width:480px;margin:0 0 36px;">
+            CS&amp;E student at <span style="color:#b4b4b4;">United International University</span> (Major: Data Science).
+            IEEE-published researcher, full-stack developer, robotics builder.
+            Campus Champion at Hult Prize 2026.
+          </p>
+
+          <!-- CTAs -->
+          <div class="anim-fade-up delay-4" style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:52px;">
+            <a href="#projects" class="btn-primary" id="hero-btn-projects">view projects →</a>
+            <a href="https://github.com/MinhazFuad" target="_blank" rel="noopener noreferrer" class="btn-ghost" id="hero-btn-github">github →</a>
+            <a href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn-ghost" id="hero-btn-scholar">research →</a>
+          </div>
+
+          <!-- Stats with count-up -->
+          <div class="anim-fade-up delay-5">
+            <div class="stats-row">
+              <div class="stat-item">
+                <div class="count-up" data-target="4" style="font-size:32px;font-weight:700;color:#eeeeee;line-height:1.25;">0</div>
+                <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.12em;margin-top:2px;">publications</div>
+              </div>
+              <div class="stat-item">
+                <div class="count-up" data-target="2" style="font-size:32px;font-weight:700;color:#eeeeee;line-height:1.25;">0</div>
+                <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.12em;margin-top:2px;">IEEE / arXiv</div>
+              </div>
+              <div class="stat-item">
+                <div class="count-up" data-target="4" data-suffix="+" style="font-size:32px;font-weight:700;color:#eeeeee;line-height:1.25;">0</div>
+                <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.12em;margin-top:2px;">projects shipped</div>
+              </div>
+              <div class="stat-item">
+                <div class="count-up" data-target="3" data-suffix="×" style="font-size:32px;font-weight:700;color:#eeeeee;line-height:1.25;">0</div>
+                <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.12em;margin-top:2px;">award winner</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Name -->
-        <h1 id="hero-h1" class="anim-fade-up delay-100" style="font-size:clamp(30px, 5vw, 52px); font-weight:700; line-height:1.15; color:#eeeeee; margin-bottom:12px;">
-          Md Abdul Ahad<br>Minhaz
-        </h1>
-
-        <!-- Typewriter -->
-        <div class="anim-fade-up delay-200" style="font-size:18px; line-height:1.56; color:#b4b4b4; margin-bottom:24px; min-height:28px;">
-          <span id="typewriter-text"></span><span class="cursor"></span>
-        </div>
-
-        <!-- Description -->
-        <p class="anim-fade-up delay-300" style="font-size:14px; line-height:1.71; color:#7e7e7e; max-width:520px; margin-bottom:40px;">
-          CS&amp;E student at United International University (Major: Data Science). IEEE-published researcher,
-          full-stack developer, and robotics builder. Campus Champion at Hult Prize 2026.
-        </p>
-
-        <!-- CTAs -->
-        <div class="anim-fade-up delay-400" style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:64px;">
-          <a href="#projects" class="btn-primary" id="hero-btn-projects">view projects →</a>
-          <a href="https://github.com/MinhazFuad" target="_blank" rel="noopener" class="btn-ghost" id="hero-btn-github">github →</a>
-          <a href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&hl=en" target="_blank" rel="noopener" class="btn-ghost" id="hero-btn-scholar">research →</a>
-        </div>
-
-        <!-- Stats -->
-        <div class="anim-fade-up delay-500" style="display:flex; flex-wrap:wrap; gap:0;">
-          <div style="padding-right:32px;">
-            <div style="font-size:32px; font-weight:700; color:#eeeeee; line-height:1.25;">4</div>
-            <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.12em;">publications</div>
-          </div>
-          <div class="stat-block">
-            <div style="font-size:32px; font-weight:700; color:#eeeeee; line-height:1.25;">2</div>
-            <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.12em;">IEEE / arXiv</div>
-          </div>
-          <div class="stat-block">
-            <div style="font-size:32px; font-weight:700; color:#eeeeee; line-height:1.25;">4+</div>
-            <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.12em;">projects shipped</div>
-          </div>
-          <div class="stat-block">
-            <div style="font-size:32px; font-weight:700; color:#eeeeee; line-height:1.25;">3×</div>
-            <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.12em;">award winner</div>
+        <!-- Right: photo (hidden on mobile via CSS) -->
+        <div class="hero-img-col anim-fade-up delay-4" style="display:flex;justify-content:center;align-items:flex-start;">
+          <div class="hero-img-frame">
+            <div class="corner-tl" aria-hidden="true"></div>
+            <div class="corner-br" aria-hidden="true"></div>
+            <img src="minhaz.jpeg"
+                 alt="Md Abdul Ahad Minhaz — ML Engineer and CS Researcher at UIU Dhaka"
+                 class="profile-img"
+                 width="320"
+                 loading="eager"
+                 style="max-width:320px;" />
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:9px 14px;background:rgba(0,0,0,0.84);font-size:11px;color:#606060;border-radius:0 0 2px 2px;">
+              <span style="color:#da5c2c;" aria-hidden="true">›</span> minhaz.jpeg — UIU · 2022–2026
+            </div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Histogram -->
-    <div id="hero-histogram" aria-hidden="true" style="position:absolute; bottom:0; left:24px; right:24px; max-width:1200px; margin:0 auto; display:flex; align-items:flex-end; gap:2px; height:64px; opacity:0.25;"></div>
+    <!-- Histogram bar decoration -->
+    <div id="hero-histogram" aria-hidden="true"
+         style="position:absolute;bottom:0;left:0;right:0;max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:flex-end;gap:2px;height:60px;opacity:0.22;pointer-events:none;">
+    </div>
 
     <!-- Scroll hint -->
-    <div class="anim-fade delay-700" style="position:absolute; bottom:32px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px;">
-      <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.12em;">scroll</div>
-      <div style="width:1px; height:32px; background:#3a3a3a;"></div>
+    <div class="anim-fade delay-8" aria-hidden="true"
+         style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <span style="font-size:10px;color:#505050;text-transform:uppercase;letter-spacing:0.14em;">scroll</span>
+      <div style="width:1px;height:28px;background:linear-gradient(to bottom, #3a3a3a, transparent);"></div>
     </div>
   </section>
 
   <hr class="section-divider" />
 
-  <!-- ABOUT -->
-  <section id="about" style="padding:96px 0; background:#111111;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 24px;">
-      <div class="md:grid" style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about" aria-labelledby="about-heading" style="padding:96px 0;background:#111111;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
 
-        <!-- Image -->
-        <div class="reveal-left" style="order:2;">
-          <div style="position:relative; display:inline-block;">
-            <div style="position:absolute; inset:-12px; border:1px solid #202020; border-radius:2px; pointer-events:none;"></div>
-            <div style="position:absolute; top:-4px; left:-4px; width:16px; height:16px; border-top:2px solid #da5c2c; border-left:2px solid #da5c2c; border-radius:1px;"></div>
-            <div style="position:absolute; bottom:-4px; right:-4px; width:16px; height:16px; border-bottom:2px solid #da5c2c; border-right:2px solid #da5c2c; border-radius:1px;"></div>
-            <img src="minhaz.jpeg" alt="Md Abdul Ahad Minhaz" class="profile-img" style="display:block; width:100%; max-width:380px; border-radius:2px; border:1px solid #202020;" />
-            <div style="position:absolute; bottom:0; left:0; right:0; padding:10px 16px; background:rgba(0,0,0,0.82); font-size:11px; color:#606060;">
-              <span style="color:#da5c2c;">›</span> BS CSE · UIU · Data Science · 2022–2026
-            </div>
+      <div class="reveal" style="margin-bottom:40px;">
+        <div style="font-size:12px;color:#606060;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:10px;">whoami</div>
+        <h2 id="about-heading" style="font-size:20px;font-weight:700;color:#eeeeee;margin:0;">About Me</h2>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:32px;max-width:900px;">
+
+        <!-- Bio paragraphs -->
+        <div class="reveal" style="font-size:14px;line-height:1.71;color:#b4b4b4;display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0;">
+            I'm a final-year B.Sc. CS&amp;E student at <span style="color:#eeeeee;">United International University</span>,
+            Dhaka, majoring in <span style="color:#eeeeee;">Data Science</span>. My work sits at the intersection of
+            computer vision, NLP, and full-stack engineering — I build things that work in the real world, not just in notebooks.
+          </p>
+          <p style="margin:0;">
+            I'm an <span style="color:#eeeeee;">IEEE-published researcher</span> (ICCIT 2025), an arXiv preprint author,
+            and currently completing my undergraduate thesis on a waste-detection VLM dataset called
+            <span style="color:#da5c2c;font-weight:700;">WADE</span> — which achieved a 9.4× recall improvement and
+            reduced hallucinations from 0.683 to 0.088, surpassing commercial systems.
+          </p>
+          <p style="margin:0;">
+            I build production platforms with <span style="color:#eeeeee;">Next.js, Supabase, and PostgreSQL</span>
+            and prototype embedded systems with <span style="color:#eeeeee;">Raspberry Pi 5 and OpenCV</span>.
+            Outside code, I was <span style="color:#eeeeee;">Campus Champion</span> at Hult Prize 2026 and have
+            interned as a graphic designer.
+          </p>
+        </div>
+
+        <!-- Education card -->
+        <div class="reveal" style="padding:20px 24px;background:#191919;border-left:2px solid #da5c2c;border-radius:2px;">
+          <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:10px;">education</div>
+          <div style="font-size:17px;font-weight:700;color:#eeeeee;">United International University</div>
+          <div style="font-size:13px;color:#b4b4b4;margin-top:4px;">B.Sc. in Computer Science &amp; Engineering · Major: Data Science</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:12px;">
+            <span style="font-size:12px;color:#7e7e7e;">Mirpur, Dhaka, Bangladesh</span>
+            <span style="font-size:12px;color:#7e7e7e;">2022 – 2026 &nbsp;·&nbsp; CGPA 3.05 / 4.00</span>
           </div>
         </div>
 
-        <!-- Text -->
-        <div class="reveal" style="order:1;">
-          <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">whoami</div>
-          <h2 style="font-size:20px; font-weight:700; color:#eeeeee; margin-bottom:24px;">About Me</h2>
-
-          <div style="font-size:14px; line-height:1.71; color:#b4b4b4; display:flex; flex-direction:column; gap:14px;">
-            <p>
-              I'm a final-year B.Sc. CS&amp;E student at <span style="color:#eeeeee;">United International University</span>,
-              Dhaka, majoring in <span style="color:#eeeeee;">Data Science</span>. My work sits at the intersection of
-              computer vision, NLP, and full-stack engineering.
-            </p>
-            <p>
-              I'm an <span style="color:#eeeeee;">IEEE-published researcher</span> (ICCIT 2025), an arXiv preprint author,
-              and currently completing my undergraduate thesis on a waste-detection VLM dataset called
-              <span style="color:#da5c2c;">WADE</span>.
-            </p>
-            <p>
-              I build production platforms with <span style="color:#eeeeee;">Next.js, Supabase, and PostgreSQL</span>
-              and prototype embedded systems with <span style="color:#eeeeee;">Raspberry Pi 5 and OpenCV</span>.
-              <span style="color:#eeeeee;">Campus Champion</span> at Hult Prize 2026.
-            </p>
-          </div>
-
-          <!-- Education -->
-          <div style="margin-top:32px; padding:20px; background:#191919; border-left:2px solid #da5c2c; border-radius:2px;">
-            <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:8px;">education</div>
-            <div style="font-size:16px; font-weight:700; color:#eeeeee;">United International University</div>
-            <div style="font-size:13px; color:#b4b4b4; margin-top:4px;">B.Sc. in CS&amp;E · Major: Data Science</div>
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-top:10px;">
-              <div style="font-size:12px; color:#7e7e7e;">Dhaka, Bangladesh</div>
-              <div style="font-size:12px; color:#7e7e7e;">2022 – 2026 · CGPA 3.05 / 4.00</div>
-            </div>
-          </div>
-
-          <!-- Links -->
-          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:24px;">
-            <a href="https://github.com/MinhazFuad" target="_blank" rel="noopener" class="btn-ghost" id="about-btn-github" style="font-size:13px; padding:7px 13px;">github →</a>
-            <a href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&hl=en" target="_blank" rel="noopener" class="btn-ghost" id="about-btn-scholar" style="font-size:13px; padding:7px 13px;">scholar →</a>
-            <a href="mailto:fuad000219@gmail.com" class="btn-ghost" id="about-btn-email" style="font-size:13px; padding:7px 13px;">email →</a>
-          </div>
+        <!-- Social links -->
+        <div class="reveal" style="display:flex;flex-wrap:wrap;gap:10px;">
+          <a href="https://github.com/MinhazFuad" target="_blank" rel="noopener noreferrer" class="btn-ghost" id="about-btn-github" style="font-size:13px;padding:8px 14px;">github →</a>
+          <a href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn-ghost" id="about-btn-scholar" style="font-size:13px;padding:8px 14px;">google scholar →</a>
+          <a href="mailto:fuad000219@gmail.com" class="btn-ghost" id="about-btn-email" style="font-size:13px;padding:8px 14px;">email →</a>
         </div>
 
       </div>
@@ -471,79 +678,81 @@
 
   <hr class="section-divider" />
 
-  <!-- SKILLS -->
-  <section id="skills" style="padding:96px 0; background:#000000;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 24px;">
+  <!-- ═══ SKILLS ═══ -->
+  <section id="skills" aria-labelledby="skills-heading" style="padding:96px 0;background:#000000;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
 
       <div class="reveal" style="margin-bottom:48px;">
-        <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">ls -la skills/</div>
-        <h2 style="font-size:20px; font-weight:700; color:#eeeeee;">Technical Skills</h2>
+        <div style="font-size:12px;color:#606060;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:10px;">ls -la skills/</div>
+        <h2 id="skills-heading" style="font-size:20px;font-weight:700;color:#eeeeee;margin:0;">Technical Skills</h2>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin-bottom:32px;">
+      <!-- Skill category cards (stagger) -->
+      <div class="stagger" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin-bottom:32px;">
 
         <div class="reveal card-project">
-          <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px;">languages</div>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;">
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">C</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">C++</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Java</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Python</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">JavaScript</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">SQL</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">BASH</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">HTML/CSS</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">LaTeX</span>
+          <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;">languages</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">C</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">C++</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Java</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Python</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">JavaScript</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">SQL</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">BASH</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">HTML/CSS</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">LaTeX</span>
           </div>
         </div>
 
-        <div class="reveal card-project" style="animation-delay:0.1s;">
-          <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px;">ai &amp; machine learning</div>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;">
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">NumPy</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Pandas</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Matplotlib</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Scikit-Learn</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">NLTK</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">OpenCV</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">PyTorch</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">YOLOv8/v11</span>
+        <div class="reveal card-project">
+          <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;">ai &amp; machine learning</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">NumPy</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Pandas</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Matplotlib</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Scikit-Learn</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">NLTK</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">OpenCV</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">PyTorch</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">YOLOv8 / v11</span>
           </div>
         </div>
 
-        <div class="reveal card-project" style="animation-delay:0.2s;">
-          <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px;">web &amp; database</div>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;">
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Next.js</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Tailwind CSS</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Supabase</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Vercel</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Netlify</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">MySQL</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">PostgreSQL</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Prisma</span>
+        <div class="reveal card-project">
+          <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;">web &amp; database</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Next.js</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Tailwind CSS</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Supabase</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Vercel</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Netlify</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">TiDB</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">MySQL</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">PostgreSQL</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Prisma</span>
           </div>
         </div>
 
-        <div class="reveal card-project" style="animation-delay:0.3s;">
-          <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px;">tools &amp; hardware</div>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;">
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Git / GitHub</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Raspberry Pi</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">ESP32</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Arduino</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Proteus</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">Logisim</span>
-            <span style="font-size:12px; color:#b4b4b4; padding:4px 10px; background:#202020; border-radius:2px;">CISCO PT</span>
+        <div class="reveal card-project">
+          <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;">tools &amp; hardware</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Git / GitHub</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Raspberry Pi 5</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">ESP32</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Arduino</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Proteus</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">Logisim</span>
+            <span style="font-size:12px;color:#b4b4b4;padding:4px 10px;background:#202020;border-radius:2px;">CISCO PT</span>
           </div>
         </div>
 
       </div>
 
-      <!-- Skill bars -->
-      <div class="reveal" style="padding:24px; background:#111111; border:1px solid #202020; border-radius:2px;">
-        <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:20px;">proficiency // signal density</div>
-        <div id="skill-bars" style="display:flex; flex-direction:column; gap:14px;"></div>
+      <!-- Proficiency bars -->
+      <div class="reveal" style="padding:24px;background:#111111;border:1px solid #202020;border-radius:2px;">
+        <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:20px;">proficiency // signal density</div>
+        <div id="skill-bars" style="display:flex;flex-direction:column;gap:14px;"></div>
       </div>
 
     </div>
@@ -551,113 +760,131 @@
 
   <hr class="section-divider" />
 
-  <!-- PROJECTS -->
-  <section id="projects" style="padding:96px 0; background:#111111;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 24px;">
+  <!-- ═══ PROJECTS ═══ -->
+  <section id="projects" aria-labelledby="projects-heading" style="padding:96px 0;background:#111111;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
 
-      <div class="reveal" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:48px;">
+      <div class="reveal" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:48px;">
         <div>
-          <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">ls projects/</div>
-          <h2 style="font-size:20px; font-weight:700; color:#eeeeee;">Selected Projects</h2>
+          <div style="font-size:12px;color:#606060;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:10px;">ls projects/</div>
+          <h2 id="projects-heading" style="font-size:20px;font-weight:700;color:#eeeeee;margin:0;">Selected Projects</h2>
         </div>
-        <a href="https://github.com/MinhazFuad" target="_blank" rel="noopener" style="font-size:13px; color:#b4b4b4; text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">all repos →</a>
+        <a href="https://github.com/MinhazFuad" target="_blank" rel="noopener noreferrer"
+           style="font-size:13px;color:#b4b4b4;text-decoration:none;transition:color 0.15s;"
+           onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">all repos →</a>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:16px;">
+      <div class="stagger" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;">
 
         <!-- AnyTate -->
-        <div class="reveal card-project" id="proj-anytate">
-          <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:16px;">
-            <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.06em;">2026 · full-stack · cv</div>
-            <div style="display:flex; gap:12px;">
-              <a href="https://github.com/MinhazFuad/anytate" target="_blank" rel="noopener" style="font-size:12px; color:#606060; text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">github →</a>
-              <a href="https://anytate.vercel.app/" target="_blank" rel="noopener" style="font-size:12px; color:#606060; text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">live →</a>
+        <article class="reveal card-project" id="proj-anytate">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
+            <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.06em;">2026 · full-stack · cv</div>
+            <div style="display:flex;gap:14px;">
+              <a href="https://github.com/MinhazFuad/anytate" target="_blank" rel="noopener noreferrer"
+                 style="font-size:12px;color:#606060;text-decoration:none;transition:color 0.15s;"
+                 onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">github →</a>
+              <a href="https://anytate.vercel.app/" target="_blank" rel="noopener noreferrer"
+                 style="font-size:12px;color:#606060;text-decoration:none;transition:color 0.15s;"
+                 onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">live →</a>
             </div>
           </div>
-          <h3 style="font-size:18px; font-weight:400; color:#eeeeee; margin-bottom:12px;">AnyTate</h3>
-          <p style="font-size:13px; line-height:1.71; color:#7e7e7e; margin-bottom:16px;">
+          <h3 style="font-size:18px;font-weight:400;color:#eeeeee;margin:0 0 10px;">AnyTate</h3>
+          <p style="font-size:13px;line-height:1.71;color:#7e7e7e;margin:0 0 16px;">
             Full-stack computer vision annotation platform enforcing Few-Shot Chain-of-Thought (FCoT) reasoning with dynamic taxonomy versioning, zero-latency queue caching, and native YOLO/COCO exports.
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap:8px; padding-top:16px; border-top:1px solid #202020;">
-            <span style="font-size:12px; color:#606060;">Next.js</span>
-            <span style="font-size:12px; color:#3a3a3a;">·</span>
-            <span style="font-size:12px; color:#606060;">Supabase</span>
-            <span style="font-size:12px; color:#3a3a3a;">·</span>
-            <span style="font-size:12px; color:#606060;">YOLO/COCO</span>
-            <span style="font-size:12px; color:#3a3a3a;">·</span>
-            <span style="font-size:12px; color:#606060;">PostgreSQL</span>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:14px;border-top:1px solid #202020;">
+            <span style="font-size:12px;color:#606060;">Next.js</span>
+            <span style="color:#3a3a3a;">·</span>
+            <span style="font-size:12px;color:#606060;">Supabase</span>
+            <span style="color:#3a3a3a;">·</span>
+            <span style="font-size:12px;color:#606060;">YOLO/COCO</span>
+            <span style="color:#3a3a3a;">·</span>
+            <span style="font-size:12px;color:#606060;">PostgreSQL</span>
           </div>
-        </div>
+        </article>
 
         <!-- TaskVault -->
-        <div class="reveal card-project" id="proj-taskvault" style="transition-delay:0.1s;">
-          <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:16px;">
-            <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.06em;">2026 · full-stack · edtech</div>
-            <div style="display:flex; gap:12px;">
-              <a href="https://drive.google.com/file/d/1l0gBWt-Lne4dovaSc0nrUt3lpwgyYOGc/view?usp=sharing" target="_blank" rel="noopener" style="font-size:12px; color:#606060; text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">video →</a>
-              <a href="https://taskvault-learn.vercel.app/" target="_blank" rel="noopener" style="font-size:12px; color:#606060; text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">live →</a>
+        <article class="reveal card-project" id="proj-taskvault">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
+            <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.06em;">2026 · full-stack · edtech</div>
+            <div style="display:flex;gap:14px;">
+              <a href="https://drive.google.com/file/d/1l0gBWt-Lne4dovaSc0nrUt3lpwgyYOGc/view?usp=sharing" target="_blank" rel="noopener noreferrer"
+                 style="font-size:12px;color:#606060;text-decoration:none;transition:color 0.15s;"
+                 onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">video →</a>
+              <a href="https://taskvault-learn.vercel.app/" target="_blank" rel="noopener noreferrer"
+                 style="font-size:12px;color:#606060;text-decoration:none;transition:color 0.15s;"
+                 onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">live →</a>
             </div>
           </div>
-          <h3 style="font-size:18px; font-weight:400; color:#eeeeee; margin-bottom:12px;">TaskVault</h3>
-          <p style="font-size:13px; line-height:1.71; color:#7e7e7e; margin-bottom:16px;">
-            Learn-to-earn web platform bridging education and employment via an LMS, Reputation Point engine, and secure escrow-based corporate bounties.
+          <h3 style="font-size:18px;font-weight:400;color:#eeeeee;margin:0 0 10px;">TaskVault</h3>
+          <p style="font-size:13px;line-height:1.71;color:#7e7e7e;margin:0 0 16px;">
+            Learn-to-earn platform bridging education and employment via an LMS, Reputation Point engine, and secure escrow-based corporate bounties.
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap:8px; padding-top:16px; border-top:1px solid #202020;">
-            <span style="font-size:12px; color:#606060;">Next.js</span>
-            <span style="font-size:12px; color:#3a3a3a;">·</span>
-            <span style="font-size:12px; color:#606060;">MySQL</span>
-            <span style="font-size:12px; color:#3a3a3a;">·</span>
-            <span style="font-size:12px; color:#606060;">Vercel</span>
-            <span style="font-size:12px; color:#3a3a3a;">·</span>
-            <span style="font-size:12px; color:#606060;">Prisma</span>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:14px;border-top:1px solid #202020;">
+            <span style="font-size:12px;color:#606060;">Next.js</span>
+            <span style="color:#3a3a3a;">·</span>
+            <span style="font-size:12px;color:#606060;">MySQL</span>
+            <span style="color:#3a3a3a;">·</span>
+            <span style="font-size:12px;color:#606060;">Vercel</span>
+            <span style="color:#3a3a3a;">·</span>
+            <span style="font-size:12px;color:#606060;">Prisma</span>
           </div>
-        </div>
+        </article>
 
         <!-- EcoRover -->
-        <div class="reveal card-project" id="proj-ecorover" style="transition-delay:0.2s;">
-          <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:16px;">
-            <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.06em;">2025 · robotics · cv</div>
-            <div style="display:flex; gap:12px;">
-              <a href="https://github.com/TheAhsanFarabi/EcoRover" target="_blank" rel="noopener" style="font-size:12px; color:#606060; text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">github →</a>
-              <a href="https://youtu.be/bar47waowf8?si=LwgsXSzO4obR1Ytv" target="_blank" rel="noopener" style="font-size:12px; color:#606060; text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">video →</a>
+        <article class="reveal card-project" id="proj-ecorover">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
+            <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.06em;">2025 · robotics · cv</div>
+            <div style="display:flex;gap:14px;">
+              <a href="https://github.com/TheAhsanFarabi/EcoRover" target="_blank" rel="noopener noreferrer"
+                 style="font-size:12px;color:#606060;text-decoration:none;transition:color 0.15s;"
+                 onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">github →</a>
+              <a href="https://youtu.be/bar47waowf8?si=LwgsXSzO4obR1Ytv" target="_blank" rel="noopener noreferrer"
+                 style="font-size:12px;color:#606060;text-decoration:none;transition:color 0.15s;"
+                 onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">video →</a>
             </div>
           </div>
-          <h3 style="font-size:18px; font-weight:400; color:#eeeeee; margin-bottom:12px;">EcoRover</h3>
-          <p style="font-size:13px; line-height:1.71; color:#7e7e7e; margin-bottom:16px;">
+          <h3 style="font-size:18px;font-weight:400;color:#eeeeee;margin:0 0 10px;">EcoRover</h3>
+          <p style="font-size:13px;line-height:1.71;color:#7e7e7e;margin:0 0 16px;">
             4-DOF robotic system autonomously classifying and sorting recyclable waste using computer vision. Companion hardware to the IEEE-published EcoDetect paper.
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap:8px; padding-top:16px; border-top:1px solid #202020;">
-            <span style="font-size:12px; color:#606060;">Python</span>
-            <span style="font-size:12px; color:#3a3a3a;">·</span>
-            <span style="font-size:12px; color:#606060;">OpenCV</span>
-            <span style="font-size:12px; color:#3a3a3a;">·</span>
-            <span style="font-size:12px; color:#606060;">YOLOv8n</span>
-            <span style="font-size:12px; color:#3a3a3a;">·</span>
-            <span style="font-size:12px; color:#606060;">Raspberry Pi 5</span>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:14px;border-top:1px solid #202020;">
+            <span style="font-size:12px;color:#606060;">Python</span>
+            <span style="color:#3a3a3a;">·</span>
+            <span style="font-size:12px;color:#606060;">OpenCV</span>
+            <span style="color:#3a3a3a;">·</span>
+            <span style="font-size:12px;color:#606060;">YOLOv8n</span>
+            <span style="color:#3a3a3a;">·</span>
+            <span style="font-size:12px;color:#606060;">Raspberry Pi 5</span>
           </div>
-        </div>
+        </article>
 
         <!-- UIU Platformer -->
-        <div class="reveal card-project" id="proj-platformer" style="transition-delay:0.3s;">
-          <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:16px;">
-            <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.06em;">2024 · game dev · hci</div>
-            <div style="display:flex; gap:12px;">
-              <a href="https://github.com/TheAhsanFarabi/UIU-Platformer-Game" target="_blank" rel="noopener" style="font-size:12px; color:#606060; text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">github →</a>
-              <a href="https://youtu.be/ylTclQSRTeg?si=-GbPpa2ds2V7o0aX" target="_blank" rel="noopener" style="font-size:12px; color:#606060; text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">video →</a>
+        <article class="reveal card-project" id="proj-platformer">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
+            <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.06em;">2024 · game dev · hci</div>
+            <div style="display:flex;gap:14px;">
+              <a href="https://github.com/TheAhsanFarabi/UIU-Platformer-Game" target="_blank" rel="noopener noreferrer"
+                 style="font-size:12px;color:#606060;text-decoration:none;transition:color 0.15s;"
+                 onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">github →</a>
+              <a href="https://youtu.be/ylTclQSRTeg?si=-GbPpa2ds2V7o0aX" target="_blank" rel="noopener noreferrer"
+                 style="font-size:12px;color:#606060;text-decoration:none;transition:color 0.15s;"
+                 onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">video →</a>
             </div>
           </div>
-          <h3 style="font-size:18px; font-weight:400; color:#eeeeee; margin-bottom:12px;">UIU Platformer</h3>
-          <p style="font-size:13px; line-height:1.71; color:#7e7e7e; margin-bottom:16px;">
-            2D university onboarding simulation game (Java, JavaFX) evaluated through usability testing with 20+ participants. 2nd Runner-Up at UIU CSE Project Show 2024.
+          <h3 style="font-size:18px;font-weight:400;color:#eeeeee;margin:0 0 10px;">UIU Platformer</h3>
+          <p style="font-size:13px;line-height:1.71;color:#7e7e7e;margin:0 0 16px;">
+            2D university onboarding simulation game evaluated through usability testing with 20+ participants. 2nd Runner-Up at UIU CSE Project Show 2024.
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap:8px; padding-top:16px; border-top:1px solid #202020;">
-            <span style="font-size:12px; color:#606060;">Java</span>
-            <span style="font-size:12px; color:#3a3a3a;">·</span>
-            <span style="font-size:12px; color:#606060;">JavaFX</span>
-            <span style="font-size:12px; color:#3a3a3a;">·</span>
-            <span style="font-size:12px; color:#606060;">HCI</span>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:14px;border-top:1px solid #202020;">
+            <span style="font-size:12px;color:#606060;">Java</span>
+            <span style="color:#3a3a3a;">·</span>
+            <span style="font-size:12px;color:#606060;">JavaFX</span>
+            <span style="color:#3a3a3a;">·</span>
+            <span style="font-size:12px;color:#606060;">HCI</span>
           </div>
-        </div>
+        </article>
 
       </div>
     </div>
@@ -665,103 +892,103 @@
 
   <hr class="section-divider" />
 
-  <!-- PUBLICATIONS -->
-  <section id="publications" style="padding:96px 0; background:#000000;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 24px;">
+  <!-- ═══ PUBLICATIONS ═══ -->
+  <section id="publications" aria-labelledby="pub-heading" style="padding:96px 0;background:#000000;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
 
       <div class="reveal" style="margin-bottom:48px;">
-        <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">cat publications.bib</div>
-        <h2 style="font-size:20px; font-weight:700; color:#eeeeee; margin-bottom:12px;">Research &amp; Publications</h2>
-        <div style="font-size:12px; color:#7e7e7e;">
-          <span style="color:#da5c2c;">[C]</span> Conference &nbsp;&nbsp;
-          <span style="color:#da5c2c;">[P]</span> Preprint &nbsp;&nbsp;
-          <span style="color:#da5c2c;">[U]</span> Under Review &nbsp;&nbsp;
-          <span style="color:#da5c2c;">[T]</span> Thesis
+        <div style="font-size:12px;color:#606060;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:10px;">cat publications.bib</div>
+        <h2 id="pub-heading" style="font-size:20px;font-weight:700;color:#eeeeee;margin:0 0 12px;">Research &amp; Publications</h2>
+        <div style="font-size:12px;color:#7e7e7e;display:flex;flex-wrap:wrap;gap:12px;">
+          <span><span style="color:#da5c2c;">[C]</span> Conference</span>
+          <span><span style="color:#da5c2c;">[P]</span> Preprint</span>
+          <span><span style="color:#da5c2c;">[U]</span> Under Review</span>
+          <span><span style="color:#da5c2c;">[T]</span> Thesis</span>
         </div>
       </div>
 
-      <div style="display:flex; flex-direction:column; gap:24px;">
+      <div style="display:flex;flex-direction:column;gap:28px;">
 
         <!-- [C1] -->
-        <div class="reveal pub-card" id="pub-c1">
-          <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
-            <span style="font-size:12px; font-weight:700; padding:3px 8px; background:#191919; color:#da5c2c; border-radius:2px;">[C1]</span>
-            <span style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.1em;">ICCIT 2025 · IEEE</span>
+        <article class="reveal pub-card" id="pub-c1">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap;">
+            <span style="font-size:12px;font-weight:700;padding:3px 8px;background:#191919;color:#da5c2c;border-radius:2px;white-space:nowrap;">[C1]</span>
+            <span style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.1em;">ICCIT 2025 · IEEE Xplore</span>
           </div>
-          <h3 style="font-size:16px; line-height:1.5; color:#eeeeee; margin-bottom:10px;">
+          <h3 style="font-size:16px;line-height:1.5;color:#eeeeee;margin:0 0 8px;">
             EcoDetect: Lightweight Real-Time Recyclable Waste Detection Using YOLOv11n Trained on LLM-Guided Synthetic Data
           </h3>
-          <p style="font-size:13px; color:#7e7e7e; margin-bottom:12px;">
+          <p style="font-size:13px;color:#7e7e7e;margin:0 0 14px;">
             A. Farabi, <span style="color:#b4b4b4;">M.A.A. Minhaz</span>, I. Khandaker, I.K. Shanto, M.T. Raihan
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap:16px;">
-            <a href="https://ieeexplore.ieee.org/abstract/document/11491266" target="_blank" rel="noopener" style="font-size:13px; color:#b4b4b4; text-decoration:underline; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">paper →</a>
-            <a href="https://github.com/TheAhsanFarabi/EcoDetect" target="_blank" rel="noopener" style="font-size:13px; color:#b4b4b4; text-decoration:underline; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">code →</a>
-            <a href="https://www.kaggle.com/datasets/ahsan71/ecodetect-recyclable-waste-detection-dataset" target="_blank" rel="noopener" style="font-size:13px; color:#b4b4b4; text-decoration:underline; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">dataset →</a>
-            <a href="https://www.youtube.com/watch?v=hPAnPDIOQHE" target="_blank" rel="noopener" style="font-size:13px; color:#b4b4b4; text-decoration:underline; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">presentation →</a>
+          <div style="display:flex;flex-wrap:wrap;gap:16px;">
+            <a href="https://ieeexplore.ieee.org/abstract/document/11491266" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:#b4b4b4;text-decoration:underline;transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">paper →</a>
+            <a href="https://github.com/TheAhsanFarabi/EcoDetect" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:#b4b4b4;text-decoration:underline;transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">code →</a>
+            <a href="https://www.kaggle.com/datasets/ahsan71/ecodetect-recyclable-waste-detection-dataset" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:#b4b4b4;text-decoration:underline;transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">dataset →</a>
+            <a href="https://www.youtube.com/watch?v=hPAnPDIOQHE" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:#b4b4b4;text-decoration:underline;transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">presentation →</a>
           </div>
-        </div>
+        </article>
 
         <!-- [P1] -->
-        <div class="reveal pub-card" id="pub-p1" style="transition-delay:0.1s;">
-          <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
-            <span style="font-size:12px; font-weight:700; padding:3px 8px; background:#191919; color:#da5c2c; border-radius:2px;">[P1]</span>
-            <span style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.1em;">arXiv:2510.03066</span>
+        <article class="reveal pub-card" id="pub-p1">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap;">
+            <span style="font-size:12px;font-weight:700;padding:3px 8px;background:#191919;color:#da5c2c;border-radius:2px;white-space:nowrap;">[P1]</span>
+            <span style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.1em;">arXiv:2510.03066</span>
           </div>
-          <h3 style="font-size:16px; line-height:1.5; color:#eeeeee; margin-bottom:10px;">
+          <h3 style="font-size:16px;line-height:1.5;color:#eeeeee;margin:0 0 8px;">
             InsideOut: An EfficientNetV2-S Based Deep Learning Framework for Robust Multi-Class Facial Emotion Recognition
           </h3>
-          <p style="font-size:13px; color:#7e7e7e; margin-bottom:12px;">
+          <p style="font-size:13px;color:#7e7e7e;margin:0 0 14px;">
             A. Farabi, I. Khandaker, I.K. Shanto, <span style="color:#b4b4b4;">M.A.A. Minhaz</span>, T. Zaman
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap:16px;">
-            <a href="https://arxiv.org/abs/2510.03066" target="_blank" rel="noopener" style="font-size:13px; color:#b4b4b4; text-decoration:underline; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">paper →</a>
-            <a href="https://github.com/TheAhsanFarabi/InsideOut" target="_blank" rel="noopener" style="font-size:13px; color:#b4b4b4; text-decoration:underline; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">code →</a>
+          <div style="display:flex;flex-wrap:wrap;gap:16px;">
+            <a href="https://arxiv.org/abs/2510.03066" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:#b4b4b4;text-decoration:underline;transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">paper →</a>
+            <a href="https://github.com/TheAhsanFarabi/InsideOut" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:#b4b4b4;text-decoration:underline;transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#b4b4b4'">code →</a>
           </div>
-        </div>
+        </article>
 
         <!-- [U1] -->
-        <div class="reveal pub-card" id="pub-u1" style="transition-delay:0.2s;">
-          <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
-            <span style="font-size:12px; font-weight:700; padding:3px 8px; background:#191919; color:#da5c2c; border-radius:2px;">[U1]</span>
-            <span style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.1em;">Under Review · EMNLP</span>
+        <article class="reveal pub-card" id="pub-u1">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap;">
+            <span style="font-size:12px;font-weight:700;padding:3px 8px;background:#191919;color:#da5c2c;border-radius:2px;white-space:nowrap;">[U1]</span>
+            <span style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.1em;">Under Review · EMNLP</span>
           </div>
-          <h3 style="font-size:16px; line-height:1.5; color:#eeeeee; margin-bottom:10px;">
+          <h3 style="font-size:16px;line-height:1.5;color:#eeeeee;margin:0 0 8px;">
             GreenSwap: Verb Choice or Output Length? A Controlled Decomposition of Prompt-Level Energy Savings in LLM Inference
           </h3>
-          <p style="font-size:13px; color:#7e7e7e;">A. Farabi et al.</p>
-        </div>
+          <p style="font-size:13px;color:#7e7e7e;margin:0;">A. Farabi et al.</p>
+        </article>
 
         <!-- [T] -->
-        <div class="reveal pub-card" id="pub-t" style="transition-delay:0.3s;">
-          <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
-            <span style="font-size:12px; font-weight:700; padding:3px 8px; background:#191919; color:#da5c2c; border-radius:2px;">[T]</span>
-            <span style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.1em;">Undergrad Thesis · UIU 2026</span>
+        <article class="reveal pub-card" id="pub-t">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap;">
+            <span style="font-size:12px;font-weight:700;padding:3px 8px;background:#191919;color:#da5c2c;border-radius:2px;white-space:nowrap;">[T]</span>
+            <span style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.1em;">Undergrad Thesis · UIU 2026</span>
           </div>
-          <h3 style="font-size:16px; line-height:1.5; color:#eeeeee; margin-bottom:10px;">
+          <h3 style="font-size:16px;line-height:1.5;color:#eeeeee;margin:0 0 8px;">
             WADE: A Waste Annotation Reasoning-Chain Dataset and Distillation Framework for Low-Resource Vision-Language Models
           </h3>
-          <p style="font-size:13px; color:#7e7e7e; margin-bottom:16px;">Advisor: Dr. M. N. Kabir · UIU, 2026</p>
-          <!-- Thesis metrics -->
-          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0; background:#191919; border-radius:2px; margin-bottom:14px; overflow:hidden;">
+          <p style="font-size:13px;color:#7e7e7e;margin:0 0 16px;">Advisor: Dr. M. N. Kabir · UIU, 2026</p>
+          <!-- Thesis metrics grid -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);background:#191919;border-radius:2px;overflow:hidden;margin-bottom:14px;">
             <div style="padding:14px 16px;">
-              <div style="font-size:20px; font-weight:700; color:#eeeeee;">2,167</div>
-              <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.08em;">aquatic images</div>
+              <div style="font-size:20px;font-weight:700;color:#eeeeee;">2,167</div>
+              <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">aquatic images</div>
             </div>
-            <div style="padding:14px 16px; border-left:1px solid #202020;">
-              <div style="font-size:20px; font-weight:700; color:#eeeeee;">13,608</div>
-              <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.08em;">instances</div>
+            <div style="padding:14px 16px;border-left:1px solid #202020;">
+              <div style="font-size:20px;font-weight:700;color:#eeeeee;">13,608</div>
+              <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">instances</div>
             </div>
-            <div style="padding:14px 16px; border-left:1px solid #202020;">
-              <div style="font-size:20px; font-weight:700; color:#eeeeee;">9.4×</div>
-              <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.08em;">recall gain</div>
+            <div style="padding:14px 16px;border-left:1px solid #202020;">
+              <div style="font-size:20px;font-weight:700;color:#eeeeee;">9.4×</div>
+              <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">recall gain</div>
             </div>
           </div>
-          <p style="font-size:12px; line-height:1.7; color:#7e7e7e;">
-            Fine-tuned 2B-parameter open model · hallucinations reduced from
+          <p style="font-size:12px;line-height:1.7;color:#7e7e7e;margin:0;">
+            Fine-tuned a 2B-parameter open model · hallucinations reduced
             <span style="color:#b4b4b4;">0.683 → 0.088</span> · surpassing commercial systems.
           </p>
-        </div>
+        </article>
 
       </div>
     </div>
@@ -769,51 +996,51 @@
 
   <hr class="section-divider" />
 
-  <!-- EXTRACURRICULAR -->
-  <section id="extracurricular" style="padding:96px 0; background:#111111;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 24px;">
+  <!-- ═══ EXTRACURRICULAR ═══ -->
+  <section id="extracurricular" aria-labelledby="extra-heading" style="padding:96px 0;background:#111111;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
 
       <div class="reveal" style="margin-bottom:48px;">
-        <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">git log --oneline activities</div>
-        <h2 style="font-size:20px; font-weight:700; color:#eeeeee;">Extracurricular &amp; Leadership</h2>
+        <div style="font-size:12px;color:#606060;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:10px;">git log --oneline activities</div>
+        <h2 id="extra-heading" style="font-size:20px;font-weight:700;color:#eeeeee;margin:0;">Extracurricular &amp; Leadership</h2>
       </div>
 
-      <div style="position:relative; padding-left:28px; border-left:1px solid #202020;">
+      <div style="position:relative;padding-left:28px;border-left:1px solid #202020;">
 
-        <div class="reveal" style="margin-bottom:32px; position:relative;">
-          <div class="timeline-dot"></div>
-          <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">Hult Prize 2026</div>
-          <div style="font-size:16px; font-weight:700; color:#eeeeee; margin-bottom:8px;">Campus Champion &amp; National Qualifier</div>
-          <p style="font-size:13px; line-height:1.71; color:#7e7e7e;">
+        <div class="reveal" style="margin-bottom:32px;position:relative;">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Hult Prize 2026</div>
+          <div style="font-size:16px;font-weight:700;color:#eeeeee;margin-bottom:6px;">Campus Champion &amp; National Qualifier</div>
+          <p style="font-size:13px;line-height:1.71;color:#7e7e7e;margin:0;">
             Led a team to win the on-campus social entrepreneurship round, pitching a venture concept and advancing to represent UIU at the Nationals.
           </p>
         </div>
 
-        <div class="reveal" style="margin-bottom:32px; position:relative; transition-delay:0.1s;">
-          <div class="timeline-dot"></div>
-          <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">Kaggle · Google</div>
-          <div style="font-size:16px; font-weight:700; color:#eeeeee; margin-bottom:8px;">Competitor — Build with Gemma: Bangladesh</div>
-          <p style="font-size:13px; line-height:1.71; color:#7e7e7e;">
+        <div class="reveal" style="margin-bottom:32px;position:relative;">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Kaggle · Google</div>
+          <div style="font-size:16px;font-weight:700;color:#eeeeee;margin-bottom:6px;">Competitor — Build with Gemma: Bangladesh</div>
+          <p style="font-size:13px;line-height:1.71;color:#7e7e7e;margin:0;">
             Participated in Google's generative AI hackathon leveraging the Gemma open-weights model to engineer localized LLM solutions.
-            <a href="https://www.kaggle.com/competitions/build-with-gemma-bangladesh/overview" target="_blank" rel="noopener" style="color:#b4b4b4; text-decoration:underline;">link →</a>
+            <a href="https://www.kaggle.com/competitions/build-with-gemma-bangladesh/overview" target="_blank" rel="noopener noreferrer" style="color:#b4b4b4;text-decoration:underline;">link →</a>
           </p>
         </div>
 
-        <div class="reveal" style="margin-bottom:32px; position:relative; transition-delay:0.2s;">
-          <div class="timeline-dot"></div>
-          <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">Internship · YSSE</div>
-          <div style="font-size:16px; font-weight:700; color:#eeeeee; margin-bottom:8px;">Graphic Design Intern — Youth School for Social Entrepreneurs</div>
-          <p style="font-size:13px; line-height:1.71; color:#7e7e7e;">
+        <div class="reveal" style="margin-bottom:32px;position:relative;">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Internship · YSSE</div>
+          <div style="font-size:16px;font-weight:700;color:#eeeeee;margin-bottom:6px;">Graphic Design Intern — Youth School for Social Entrepreneurs</div>
+          <p style="font-size:13px;line-height:1.71;color:#7e7e7e;margin:0;">
             Contributed visual assets and design solutions as part of a structured applied graphic design internship.
-            <a href="https://script.google.com/macros/s/AKfycbyRvr3laSy_r6coxLSgSmaGDuyG0nVVWMXgxllN90he_2XRDRC9_AemkKChmA0aP-qLtQ/exec?id=fuad000219%40gmail.com" target="_blank" rel="noopener" style="color:#b4b4b4; text-decoration:underline;">certificate →</a>
+            <a href="https://script.google.com/macros/s/AKfycbyRvr3laSy_r6coxLSgSmaGDuyG0nVVWMXgxllN90he_2XRDRC9_AemkKChmA0aP-qLtQ/exec?id=fuad000219%40gmail.com" target="_blank" rel="noopener noreferrer" style="color:#b4b4b4;text-decoration:underline;">certificate →</a>
           </p>
         </div>
 
-        <div class="reveal" style="position:relative; transition-delay:0.3s;">
-          <div class="timeline-dot"></div>
-          <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">Community</div>
-          <div style="font-size:16px; font-weight:700; color:#eeeeee; margin-bottom:8px;">Admin &amp; Moderator — Castpotro</div>
-          <p style="font-size:13px; line-height:1.71; color:#7e7e7e;">
+        <div class="reveal" style="position:relative;">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Community</div>
+          <div style="font-size:16px;font-weight:700;color:#eeeeee;margin-bottom:6px;">Admin &amp; Moderator — Castpotro</div>
+          <p style="font-size:13px;line-height:1.71;color:#7e7e7e;margin:0;">
             Oversaw community engagement, moderated discussions, and coordinated logistics for an online podcast event.
           </p>
         </div>
@@ -824,136 +1051,177 @@
 
   <hr class="section-divider" />
 
-  <!-- AWARDS -->
-  <section id="awards" style="padding:96px 0; background:#000000;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 24px;">
+  <!-- ═══ AWARDS ═══ -->
+  <section id="awards" aria-labelledby="awards-heading" style="padding:96px 0;background:#000000;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
 
       <div class="reveal" style="margin-bottom:48px;">
-        <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">cat awards.log</div>
-        <h2 style="font-size:20px; font-weight:700; color:#eeeeee;">Awards &amp; Certifications</h2>
+        <div style="font-size:12px;color:#606060;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:10px;">cat awards.log</div>
+        <h2 id="awards-heading" style="font-size:20px;font-weight:700;color:#eeeeee;margin:0;">Awards &amp; Certifications</h2>
       </div>
 
-      <div class="reveal" style="max-width:800px;">
+      <div class="reveal" style="max-width:820px;">
+
         <div class="award-row">
           <div>
-            <div style="font-size:14px; font-weight:700; color:#eeeeee;">On-Campus Champion &amp; Finalist</div>
-            <div style="font-size:12px; color:#7e7e7e; margin-top:2px;">Hult Prize — Social Entrepreneurship Competition</div>
+            <div style="font-size:14px;font-weight:700;color:#eeeeee;">On-Campus Champion &amp; Finalist</div>
+            <div style="font-size:12px;color:#7e7e7e;margin-top:3px;">Hult Prize — Social Entrepreneurship Competition</div>
           </div>
-          <div style="font-size:14px; font-weight:700; color:#da5c2c; flex-shrink:0; margin-left:16px;">2026</div>
+          <div style="font-size:14px;font-weight:700;color:#da5c2c;flex-shrink:0;margin-left:16px;">2026</div>
         </div>
 
-        <div class="award-row" style="transition-delay:0.08s;">
+        <div class="award-row">
           <div>
-            <div style="font-size:14px; font-weight:700; color:#eeeeee;">4th Runner-Up</div>
-            <div style="font-size:12px; color:#7e7e7e; margin-top:2px;">UIU CSE Project Show — Software Engineering Track</div>
+            <div style="font-size:14px;font-weight:700;color:#eeeeee;">4th Runner-Up</div>
+            <div style="font-size:12px;color:#7e7e7e;margin-top:3px;">UIU CSE Project Show — Software Engineering Track</div>
           </div>
-          <div style="font-size:14px; font-weight:700; color:#da5c2c; flex-shrink:0; margin-left:16px;">2025</div>
+          <div style="font-size:14px;font-weight:700;color:#da5c2c;flex-shrink:0;margin-left:16px;">2025</div>
         </div>
 
-        <div class="award-row" style="transition-delay:0.16s;">
+        <div class="award-row">
           <div>
-            <div style="font-size:14px; font-weight:700; color:#eeeeee;">2nd Runner-Up</div>
-            <div style="font-size:12px; color:#7e7e7e; margin-top:2px;">UIU CSE Project Show — Advanced OOP Track</div>
+            <div style="font-size:14px;font-weight:700;color:#eeeeee;">2nd Runner-Up</div>
+            <div style="font-size:12px;color:#7e7e7e;margin-top:3px;">UIU CSE Project Show — Advanced OOP Track</div>
           </div>
-          <div style="font-size:14px; font-weight:700; color:#da5c2c; flex-shrink:0; margin-left:16px;">2024</div>
+          <div style="font-size:14px;font-weight:700;color:#da5c2c;flex-shrink:0;margin-left:16px;">2024</div>
         </div>
 
-        <div class="award-row" style="transition-delay:0.24s;">
+        <div class="award-row">
           <div>
-            <div style="font-size:14px; font-weight:700; color:#eeeeee;">Claude Code 101 · Anthropic</div>
-            <div style="font-size:12px; color:#7e7e7e; margin-top:2px;">
-              <a href="https://verify.skilljar.com/c/w8b2ptij45ib" target="_blank" rel="noopener" style="color:#b4b4b4; text-decoration:underline;">verify certificate →</a>
+            <div style="font-size:14px;font-weight:700;color:#eeeeee;">Claude Code 101 · Anthropic</div>
+            <div style="font-size:12px;color:#7e7e7e;margin-top:3px;">
+              <a href="https://verify.skilljar.com/c/w8b2ptij45ib" target="_blank" rel="noopener noreferrer" style="color:#b4b4b4;text-decoration:underline;">verify certificate →</a>
             </div>
           </div>
-          <div style="font-size:14px; font-weight:700; color:#da5c2c; flex-shrink:0; margin-left:16px;">2026</div>
+          <div style="font-size:14px;font-weight:700;color:#da5c2c;flex-shrink:0;margin-left:16px;">2026</div>
         </div>
 
-        <div class="award-row" style="transition-delay:0.32s;">
+        <div class="award-row">
           <div>
-            <div style="font-size:14px; font-weight:700; color:#eeeeee;">Intro to Machine Learning · Kaggle</div>
-            <div style="font-size:12px; color:#7e7e7e; margin-top:2px;">
-              <a href="https://www.kaggle.com/learn/certification/mdabdulahadminhaz/intro-to-machine-learning" target="_blank" rel="noopener" style="color:#b4b4b4; text-decoration:underline;">verify certificate →</a>
+            <div style="font-size:14px;font-weight:700;color:#eeeeee;">Intro to Machine Learning · Kaggle</div>
+            <div style="font-size:12px;color:#7e7e7e;margin-top:3px;">
+              <a href="https://www.kaggle.com/learn/certification/mdabdulahadminhaz/intro-to-machine-learning" target="_blank" rel="noopener noreferrer" style="color:#b4b4b4;text-decoration:underline;">verify certificate →</a>
             </div>
           </div>
-          <div style="font-size:14px; font-weight:700; color:#da5c2c; flex-shrink:0; margin-left:16px;">2026</div>
+          <div style="font-size:14px;font-weight:700;color:#da5c2c;flex-shrink:0;margin-left:16px;">2026</div>
         </div>
+
       </div>
-
     </div>
   </section>
 
   <hr class="section-divider" />
 
-  <!-- CONTACT -->
-  <section id="contact" style="padding:96px 0; background:#111111;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 24px;">
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact" aria-labelledby="contact-heading" style="padding:96px 0;background:#111111;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
 
-      <div class="reveal" style="max-width:680px;">
-        <div style="font-size:12px; color:#606060; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">./contact.sh</div>
-        <h2 style="font-size:20px; font-weight:700; color:#eeeeee; margin-bottom:16px;">Get in Touch</h2>
-        <p style="font-size:14px; line-height:1.71; color:#7e7e7e; margin-bottom:40px;">
+      <div class="reveal" style="max-width:720px;">
+        <div style="font-size:12px;color:#606060;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:10px;">./contact.sh</div>
+        <h2 id="contact-heading" style="font-size:20px;font-weight:700;color:#eeeeee;margin:0 0 14px;">Get in Touch</h2>
+        <p style="font-size:14px;line-height:1.71;color:#7e7e7e;margin:0 0 36px;">
           Open to research collaborations, full-stack projects, and internship opportunities. Drop a line — I reply fast.
         </p>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; margin-bottom:32px;">
-          <a href="mailto:fuad000219@gmail.com" id="contact-email" style="padding:20px; background:#191919; border:1px solid #202020; border-radius:2px; text-decoration:none; display:block; transition:background 0.15s;" onmouseover="this.style.background='#202020'" onmouseout="this.style.background='#191919'">
-            <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:8px;">email</div>
-            <div style="font-size:14px; color:#eeeeee;">fuad000219@gmail.com →</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:28px;">
+
+          <a href="mailto:fuad000219@gmail.com" class="contact-card" id="contact-email">
+            <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:8px;">email</div>
+            <div style="font-size:13px;color:#eeeeee;word-break:break-all;">fuad000219@gmail.com →</div>
           </a>
-          <a href="tel:+8801309268951" id="contact-phone" style="padding:20px; background:#191919; border:1px solid #202020; border-radius:2px; text-decoration:none; display:block; transition:background 0.15s;" onmouseover="this.style.background='#202020'" onmouseout="this.style.background='#191919'">
-            <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:8px;">phone</div>
-            <div style="font-size:14px; color:#eeeeee;">+880 1309 268 951 →</div>
+
+          <a href="tel:+8801309268951" class="contact-card" id="contact-phone">
+            <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:8px;">phone</div>
+            <div style="font-size:13px;color:#eeeeee;">+880 1309 268 951 →</div>
           </a>
-          <a href="https://github.com/MinhazFuad" target="_blank" rel="noopener" id="contact-github" style="padding:20px; background:#191919; border:1px solid #202020; border-radius:2px; text-decoration:none; display:block; transition:background 0.15s;" onmouseover="this.style.background='#202020'" onmouseout="this.style.background='#191919'">
-            <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:8px;">github</div>
-            <div style="font-size:14px; color:#eeeeee;">github.com/MinhazFuad →</div>
+
+          <a href="https://github.com/MinhazFuad" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-github">
+            <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:8px;">github</div>
+            <div style="font-size:13px;color:#eeeeee;">github.com/MinhazFuad →</div>
           </a>
-          <a href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&hl=en" target="_blank" rel="noopener" id="contact-scholar" style="padding:20px; background:#191919; border:1px solid #202020; border-radius:2px; text-decoration:none; display:block; transition:background 0.15s;" onmouseover="this.style.background='#202020'" onmouseout="this.style.background='#191919'">
-            <div style="font-size:11px; color:#606060; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:8px;">google scholar</div>
-            <div style="font-size:14px; color:#eeeeee;">view publications →</div>
+
+          <a href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-scholar">
+            <div style="font-size:11px;color:#606060;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:8px;">google scholar</div>
+            <div style="font-size:13px;color:#eeeeee;">view publications →</div>
           </a>
+
         </div>
 
-        <div style="display:flex; align-items:center; gap:10px; font-size:12px; color:#606060;">
-          <div style="width:8px; height:8px; border-radius:50%; background:#22c55e; animation:pulseGreen 2s ease infinite;"></div>
-          Dhaka, Bangladesh · available for opportunities
+        <!-- Status indicator -->
+        <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:#606060;">
+          <div style="width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:pulseGreen 2s ease infinite;" aria-hidden="true"></div>
+          <span>Dhaka, Bangladesh &nbsp;·&nbsp; available for opportunities</span>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer style="background:#000000; border-top:1px solid #202020; padding:32px 0;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 24px;">
-      <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; margin-bottom:24px;">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:22px; height:22px; border-radius:50%; background:#da5c2c; display:flex; align-items:center; justify-content:center;">
+  <!-- ═══ FOOTER ═══ -->
+  <footer style="background:#000000;border-top:1px solid #202020;padding:28px 0;" role="contentinfo">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-bottom:20px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:22px;height:22px;border-radius:50%;background:#da5c2c;display:flex;align-items:center;justify-content:center;flex-shrink:0;" aria-hidden="true">
             <svg width="10" height="10" viewBox="0 0 14 14" fill="none"><polygon points="2,12 7,2 12,12" fill="#eeeeee"/></svg>
           </div>
-          <span style="font-size:12px; color:#b4b4b4;">minhaz<span style="color:#da5c2c;">.</span>dev</span>
+          <span style="font-size:12px;color:#b4b4b4;">minhazfuad<span style="color:#da5c2c;">.</span>github.io</span>
         </div>
-        <div style="font-size:11px; color:#606060;">Md Abdul Ahad Minhaz · Dhaka, Bangladesh · 2026</div>
-        <div style="display:flex; gap:20px;">
-          <a href="https://github.com/MinhazFuad" target="_blank" rel="noopener" style="font-size:12px; color:#606060; text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">github →</a>
-          <a href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&hl=en" target="_blank" rel="noopener" style="font-size:12px; color:#606060; text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">scholar →</a>
-          <a href="mailto:fuad000219@gmail.com" style="font-size:12px; color:#606060; text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">email →</a>
-        </div>
+        <div style="font-size:11px;color:#606060;text-align:center;">Md Abdul Ahad Minhaz · Dhaka, Bangladesh · 2026</div>
+        <nav aria-label="Footer links" style="display:flex;gap:20px;">
+          <a href="https://github.com/MinhazFuad" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:#606060;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">github →</a>
+          <a href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:#606060;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">scholar →</a>
+          <a href="mailto:fuad000219@gmail.com" style="font-size:12px;color:#606060;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#eeeeee'" onmouseout="this.style.color='#606060'">email →</a>
+        </nav>
       </div>
       <!-- Terminal status bar -->
-      <div style="padding:10px 14px; background:#191919; border-radius:2px; display:flex; align-items:center; gap:8px; font-size:11px; color:#606060;">
-        <span style="color:#da5c2c;">›</span>
+      <div style="padding:10px 14px;background:#191919;border-radius:2px;display:flex;align-items:center;gap:6px;font-size:11px;color:#606060;flex-wrap:wrap;">
+        <span style="color:#da5c2c;" aria-hidden="true">›</span>
         <span>last updated: 2026</span>
-        <span style="margin:0 8px; color:#3a3a3a;">|</span>
+        <span style="color:#3a3a3a;margin:0 6px;" aria-hidden="true">|</span>
         <span>html + tailwind v4 + vanilla js</span>
-        <span style="margin:0 8px; color:#3a3a3a;">|</span>
-        <span>github.com/MinhazFuad</span>
-        <span class="cursor" style="width:6px; height:0.85em;"></span>
+        <span style="color:#3a3a3a;margin:0 6px;" aria-hidden="true">|</span>
+        <a href="https://minhazfuad.github.io/" style="color:#606060;text-decoration:none;" onmouseover="this.style.color='#b4b4b4'" onmouseout="this.style.color='#606060'">minhazfuad.github.io</a>
+        <span class="cursor" aria-hidden="true" style="width:6px;height:0.85em;"></span>
       </div>
     </div>
   </footer>
 
+  <!-- ═══ JAVASCRIPT ═══ -->
   <script>
+    'use strict';
+
+    // ── Reduced-motion preference ──
+    const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ── Responsive nav: show desktop links at >=768px ──
+    const desktopNav = document.getElementById('desktop-nav');
+    const mobileBtn  = document.getElementById('mobile-menu-btn');
+    function applyNavLayout() {
+      if (window.innerWidth >= 768) {
+        desktopNav.style.display = 'flex';
+        mobileBtn.style.display  = 'none';
+      } else {
+        desktopNav.style.display = 'none';
+        mobileBtn.style.display  = 'block';
+      }
+    }
+    applyNavLayout();
+    window.addEventListener('resize', applyNavLayout, { passive: true });
+
+    // ── Mobile menu toggle ──
+    const mm = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      const open = mm.classList.toggle('open');
+      mobileBtn.setAttribute('aria-expanded', open);
+    });
+    mm.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mm.classList.remove('open');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
     // ── Typewriter ──
     const roles = [
       'ML Engineer & CV Researcher',
@@ -962,119 +1230,143 @@
       'IEEE Published Author',
       'Data Science Student',
     ];
-    let roleIdx = 0, charIdx = 0, deleting = false;
-    const tw = document.getElementById('typewriter-text');
+    let rIdx = 0, cIdx = 0, del = false;
+    const twEl = document.getElementById('typewriter-text');
+
     function typewrite() {
-      const cur = roles[roleIdx];
-      tw.textContent = deleting ? cur.slice(0, charIdx - 1) : cur.slice(0, charIdx + 1);
-      if (!deleting) charIdx++;
-      else charIdx--;
-      if (!deleting && charIdx === cur.length) {
-        deleting = true;
-        setTimeout(typewrite, 2200); return;
+      if (noMotion) { twEl.textContent = roles[0]; return; }
+      const cur = roles[rIdx];
+      twEl.textContent = del ? cur.slice(0, cIdx - 1) : cur.slice(0, cIdx + 1);
+      if (!del) cIdx++; else cIdx--;
+      if (!del && cIdx === cur.length) {
+        del = true; setTimeout(typewrite, 2000); return;
       }
-      if (deleting && charIdx === 0) {
-        deleting = false;
-        roleIdx = (roleIdx + 1) % roles.length;
-      }
-      setTimeout(typewrite, deleting ? 42 : 75);
+      if (del && cIdx === 0) { del = false; rIdx = (rIdx + 1) % roles.length; }
+      setTimeout(typewrite, del ? 40 : 70);
     }
     typewrite();
 
     // ── Hero histogram ──
-    const hist = document.getElementById('hero-histogram');
-    for (let i = 0; i < 140; i++) {
-      const h = Math.floor(Math.random() * 55) + 6;
-      const bar = document.createElement('div');
-      bar.className = 'histo-bar';
-      const accent = Math.random() < 0.12;
-      bar.style.cssText = `height:${h}px; background:${accent ? '#da5c2c' : '#202020'}; animation-delay:${i * 7}ms; animation-duration:${0.3 + Math.random() * 0.25}s;`;
-      hist.appendChild(bar);
+    if (!noMotion) {
+      const hist = document.getElementById('hero-histogram');
+      const frag = document.createDocumentFragment();
+      for (let i = 0; i < 150; i++) {
+        const h   = Math.floor(Math.random() * 52) + 6;
+        const bar = document.createElement('div');
+        bar.className = 'histo-bar';
+        const accent = Math.random() < 0.1;
+        bar.style.cssText = `height:${h}px;background:${accent ? '#da5c2c' : '#202020'};animation-delay:${i * 6}ms;animation-duration:${0.28 + Math.random() * 0.2}s;`;
+        frag.appendChild(bar);
+      }
+      hist.appendChild(frag);
     }
 
     // ── Skill bars ──
-    const skills = [
-      { label: 'Python / PyTorch / ML', pct: 88 },
-      { label: 'JavaScript / Next.js / Supabase', pct: 82 },
-      { label: 'Computer Vision (OpenCV, YOLOv8/v11)', pct: 80 },
-      { label: 'SQL / PostgreSQL / MySQL', pct: 74 },
-      { label: 'C / C++ / Java', pct: 68 },
-      { label: 'Embedded Systems (RPi, Arduino, ESP32)', pct: 62 },
+    const skillData = [
+      { label: 'Python / PyTorch / ML pipelines',        pct: 88 },
+      { label: 'JavaScript / Next.js / Supabase',        pct: 82 },
+      { label: 'Computer Vision (OpenCV, YOLOv8/v11)',   pct: 80 },
+      { label: 'SQL / PostgreSQL / MySQL',               pct: 74 },
+      { label: 'C / C++ / Java',                         pct: 68 },
+      { label: 'Embedded Systems (RPi 5, Arduino, ESP)', pct: 62 },
     ];
-    const sbContainer = document.getElementById('skill-bars');
-    skills.forEach(({ label, pct }) => {
+    const sbEl = document.getElementById('skill-bars');
+    const frag2 = document.createDocumentFragment();
+    skillData.forEach(({ label, pct }) => {
       const row = document.createElement('div');
       row.innerHTML = `
-        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
-          <span style="font-size:12px; color:#b4b4b4;">${label}</span>
-          <span style="font-size:11px; color:#606060;">${pct}%</span>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+          <span style="font-size:12px;color:#b4b4b4;">${label}</span>
+          <span style="font-size:11px;color:#606060;">${pct}%</span>
         </div>
-        <div style="height:2px; background:#202020; border-radius:1px; overflow:hidden;">
-          <div class="skill-bar-fill" style="height:100%; width:0%; background:#da5c2c; border-radius:1px; transition:width 1.3s cubic-bezier(0.4,0,0.2,1);" data-width="${pct}%"></div>
-        </div>
-      `;
-      sbContainer.appendChild(row);
+        <div style="height:2px;background:#202020;border-radius:1px;overflow:hidden;">
+          <div class="skill-bar-fill"
+               style="height:100%;width:0%;background:#da5c2c;border-radius:1px;transition:width 1.4s cubic-bezier(0.4,0,0.2,1);"
+               data-width="${pct}%"></div>
+        </div>`;
+      frag2.appendChild(row);
     });
+    sbEl.appendChild(frag2);
 
     // ── Intersection Observer ──
-    const allReveal = document.querySelectorAll('.reveal, .reveal-left');
+    const allReveal = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           e.target.classList.add('visible');
+          // Trigger skill bar fills when the bars container appears
+          e.target.querySelectorAll('.skill-bar-fill').forEach((f, i) => {
+            setTimeout(() => { f.style.width = f.dataset.width; }, i * 110);
+          });
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
     allReveal.forEach(el => io.observe(el));
 
-    // Skill bar trigger
-    const skillSectionObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const fills = document.querySelectorAll('.skill-bar-fill');
-          fills.forEach((f, i) => setTimeout(() => { f.style.width = f.dataset.width; }, i * 100));
-          skillSectionObs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    if (sbContainer) skillSectionObs.observe(sbContainer);
+    // Fire immediately for elements already visible on load
+    allReveal.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.95) {
+        el.classList.add('visible');
+        io.unobserve(el);
+      }
+    });
 
-    // ── Active nav ──
-    const sections = ['about','skills','projects','publications','awards','contact'];
+    // ── Stats count-up animation ──
+    function countUp(el, target, suffix, duration) {
+      if (noMotion) { el.textContent = target + suffix; return; }
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
+        el.textContent = Math.round(eased * target) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // Trigger count-up after a short delay (matches hero animation delay)
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.count-up').forEach(el => {
+          const target = parseInt(el.dataset.target, 10);
+          const suffix = el.dataset.suffix || '';
+          countUp(el, target, suffix, 1400);
+        });
+      }, 600);
+    });
+
+    // ── Active nav on scroll ──
+    const navSections  = ['about','skills','projects','publications','awards','contact'];
+    const navLinkEls   = {};
+    navSections.forEach(id => { navLinkEls[id] = document.getElementById('nav-' + id); });
+
     function updateNav() {
       let current = '';
-      sections.forEach(id => {
+      navSections.forEach(id => {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= 80) current = id;
       });
-      sections.forEach(id => {
-        const link = document.getElementById('nav-' + id);
-        if (link) link.classList.toggle('nav-active', id === current);
+      navSections.forEach(id => {
+        if (navLinkEls[id]) navLinkEls[id].classList.toggle('nav-active', id === current);
       });
     }
-
-    // ── Nav scroll ──
     window.addEventListener('scroll', updateNav, { passive: true });
     updateNav();
 
-    // ── Mobile menu ──
-    const mmbtn = document.getElementById('mobile-menu-btn');
-    const mm = document.getElementById('mobile-menu');
-    mmbtn?.addEventListener('click', () => {
-      mm.style.display = mm.style.display === 'flex' ? 'none' : 'flex';
-    });
-    mm?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mm.style.display = 'none'; }));
-
-    // ── Glitch on hero h1 ──
-    const h1 = document.getElementById('hero-h1');
-    if (h1) {
-      setInterval(() => {
-        if (Math.random() < 0.04) {
-          h1.style.animation = 'glitch 0.25s ease';
-          setTimeout(() => h1.style.animation = '', 250);
-        }
-      }, 4000);
+    // ── Hero h1 subtle glitch ──
+    if (!noMotion) {
+      const h1 = document.getElementById('hero-h1');
+      if (h1) {
+        setInterval(() => {
+          if (Math.random() < 0.04) {
+            h1.style.animation = 'glitch 0.22s ease';
+            setTimeout(() => { h1.style.animation = ''; }, 220);
+          }
+        }, 5000);
+      }
     }
   </script>
 </body>
