@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="ogTitle">
+  <title id="ogTitle">Md Abdul Ahad Minhaz — CSE Graduate @ UIU | NLP, LLM, Multimodal AI Researcher | Full-Stack Web</title>
+  <defs>
+    <pattern id="ogGrid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#f97316" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#050505"/>
+  <rect width="1200" height="630" fill="url(#ogGrid)"/>
+  <rect width="1200" height="6" fill="#f97316"/>
+
+  <circle cx="1040" cy="120" r="180" fill="none" stroke="#f97316" stroke-opacity="0.18" stroke-width="1.5"/>
+  <circle cx="1040" cy="120" r="130" fill="none" stroke="#737373" stroke-opacity="0.22" stroke-width="1"/>
+  <circle cx="1040" cy="120" r="80" fill="none" stroke="#f97316" stroke-opacity="0.35" stroke-width="1.5"/>
+
+  <rect x="80" y="72" width="54" height="54" rx="15" fill="#f97316"/>
+  <text x="107" y="109" text-anchor="middle" font-family="Space Grotesk, Inter, DejaVu Sans, sans-serif" font-size="20" font-weight="700" fill="#0a0a0a">MA</text>
+  <text x="154" y="107" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="16" fill="#a3a3a3" letter-spacing="3">PORTFOLIO</text>
+
+  <text x="80" y="238" font-family="Space Grotesk, Inter, DejaVu Sans, sans-serif" font-size="72" font-weight="700" fill="#fafafa" letter-spacing="-2">Md Abdul Ahad Minhaz</text>
+
+  <rect x="80" y="282" width="104" height="4" rx="2" fill="#f97316"/>
+
+  <text x="80" y="356" font-family="Inter, DejaVu Sans, sans-serif" font-size="30" font-weight="600" fill="#e5e5e5">CSE Graduate @ UIU | NLP, LLM,</text>
+  <text x="80" y="402" font-family="Inter, DejaVu Sans, sans-serif" font-size="30" font-weight="600" fill="#e5e5e5">Multimodal AI Researcher | Full-Stack Web</text>
+
+  <text x="80" y="510" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="18" fill="#a3a3a3">AI research · computer vision · full-stack products</text>
+
+  <g font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="14" font-weight="600" fill="#0a0a0a">
+    <rect x="80" y="548" width="146" height="38" rx="19" fill="#f97316"/>
+    <text x="153" y="573" text-anchor="middle">4 publications</text>
+    <rect x="240" y="548" width="130" height="38" rx="19" fill="#f97316"/>
+    <text x="305" y="573" text-anchor="middle">4 projects</text>
+    <rect x="384" y="548" width="168" height="38" rx="19" fill="#f97316"/>
+    <text x="468" y="573" text-anchor="middle">Hult Prize 2026</text>
+  </g>
+
+  <text x="1120" y="574" text-anchor="end" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="16" fill="#a3a3a3">minhazfuad.github.io</text>
+</svg>

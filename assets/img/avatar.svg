@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" aria-labelledby="avatarTitle avatarDesc">
+  <title id="avatarTitle">Portrait placeholder for Md Abdul Ahad Minhaz</title>
+  <desc id="avatarDesc">A monogram placeholder with a black technical grid and an orange accent.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#f97316" stroke-opacity="0.1" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="480" height="480" rx="48" fill="#0a0a0a"/>
+  <rect width="480" height="480" rx="48" fill="url(#grid)"/>
+  <circle cx="240" cy="240" r="158" fill="none" stroke="#f97316" stroke-opacity="0.55" stroke-width="1.5"/>
+  <circle cx="240" cy="240" r="128" fill="none" stroke="#737373" stroke-opacity="0.35" stroke-width="1"/>
+
+  <g fill="none" stroke="#f97316" stroke-opacity="0.55" stroke-width="1.5">
+    <circle cx="104" cy="138" r="4"/>
+    <circle cx="382" cy="160" r="3"/>
+    <circle cx="350" cy="356" r="4"/>
+    <circle cx="118" cy="330" r="3"/>
+    <path d="M104 138 382 160M382 160 350 356M350 356 118 330M118 330 104 138" stroke-opacity="0.18"/>
+  </g>
+
+  <text x="240" y="272" text-anchor="middle" font-family="Space Grotesk, Inter, DejaVu Sans, sans-serif" font-size="128" font-weight="700" fill="#f97316" letter-spacing="-6">MA</text>
+  <text x="240" y="326" text-anchor="middle" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12" fill="#a3a3a3" letter-spacing="4">MD ABDUL AHAD MINHAZ</text>
+  <rect x="196" y="352" width="88" height="3" rx="1.5" fill="#f97316"/>
+</svg>

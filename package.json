@@ -1,0 +1,13 @@
+{
+  "name": "minhazfuad-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio for Md Abdul Ahad Minhaz",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
