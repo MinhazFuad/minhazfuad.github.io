@@ -33,7 +33,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <script>
     (function () {
@@ -259,16 +259,51 @@
 
   <main id="main">
     <!-- ===== HERO ===== -->
-    <section id="top" class="relative isolate flex min-h-[calc(100svh-4rem)] items-center overflow-hidden">
-      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <section id="top" class="hero-new relative isolate min-h-[100svh] overflow-hidden flex flex-col justify-end">
+      <!-- Hardware/GPU accelerated WebGL2 Interactive DotGrid -->
+      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+      <!-- Ambient glow lights behind grid -->
       <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-        <div class="absolute -left-24 top-20 h-72 w-72 rounded-full bg-orange-500/15 blur-3xl animate-drift dark:bg-orange-500/20"></div>
-        <div class="absolute -right-20 top-1/3 h-80 w-80 rounded-full bg-orange-500/10 blur-3xl animate-glow-pulse dark:bg-orange-500/15"></div>
-        <div class="absolute bottom-0 left-1/3 h-56 w-56 rounded-full bg-orange-500/10 blur-3xl dark:bg-orange-500/15"></div>
+        <div class="absolute -right-20 top-20 h-80 w-80 rounded-full bg-orange-500/15 blur-3xl animate-glow-pulse dark:bg-orange-500/20"></div>
+        <div class="absolute right-20 top-20 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl animate-drift dark:bg-orange-500/15"></div>
       </div>
 
-      <div class="shell relative z-10 grid gap-12 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-16 lg:py-20">
-        <div class="min-w-0">
+      <!-- Floating Tech Labels (Top-Right on Desktop) -->
+      <div class="hero-floating-container" aria-hidden="true">
+        <div class="hero-tag-pill tag-pos-1" style="--float-dur: 6.8s; --float-delay: 0s;">
+          <span class="tag-dot"></span>
+          <span>NLP &amp; LLMs</span>
+        </div>
+        <div class="hero-tag-pill tag-pos-2" style="--float-dur: 8.4s; --float-delay: -1.8s;">
+          <span class="tag-dot"></span>
+          <span>Computer Vision</span>
+        </div>
+        <div class="hero-tag-pill tag-pos-3" style="--float-dur: 7.2s; --float-delay: -3.2s;">
+          <span class="tag-dot"></span>
+          <span>Multimodal AI</span>
+        </div>
+        <div class="hero-tag-pill tag-pos-4" style="--float-dur: 9.1s; --float-delay: -2.1s;">
+          <span class="tag-dot"></span>
+          <span>YOLOv11 &amp; v8</span>
+        </div>
+        <div class="hero-tag-pill tag-pos-5" style="--float-dur: 7.9s; --float-delay: -4.3s;">
+          <span class="tag-dot"></span>
+          <span>PyTorch</span>
+        </div>
+        <div class="hero-tag-pill tag-pos-6" style="--float-dur: 8.7s; --float-delay: -0.9s;">
+          <span class="tag-dot"></span>
+          <span>Next.js &amp; Supabase</span>
+        </div>
+        <div class="hero-tag-pill tag-pos-7" style="--float-dur: 7.5s; --float-delay: -2.6s;">
+          <span class="tag-dot"></span>
+          <span>Robotics &amp; ROS</span>
+        </div>
+      </div>
+
+      <!-- Hero Content (Anchored to Bottom-Left) -->
+      <div class="shell hero-content w-full relative z-10 min-w-0">
+        <div class="hero-text-block max-w-2xl">
           <div class="flex flex-wrap items-center gap-2" data-reveal>
             <span class="inline-flex items-center gap-1.5 rounded-full border border-neutral-200/80 bg-white/70 px-3 py-1.5 font-mono text-xs font-medium text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-neutral-300">
               <svg class="h-3.5 w-3.5 text-orange-700 dark:text-orange-300" aria-hidden="true"><use href="#icon-map-pin"/></svg>
@@ -280,13 +315,15 @@
             </span>
           </div>
 
-          <h1 class="hero-name mt-6 font-display font-semibold text-neutral-950 dark:text-white" data-reveal style="--reveal-delay: 70ms">
-            Md Abdul Ahad <span class="text-orange-600 dark:text-orange-400">Minhaz</span>
-          </h1>
+          <div class="hero-name-wrap mt-5">
+            <h1 class="hero-name font-display font-semibold text-neutral-950 dark:text-white" data-reveal style="--reveal-delay: 70ms">
+              Md Abdul Ahad <span class="text-orange-600 dark:text-orange-400">Minhaz</span>
+            </h1>
+          </div>
 
-          <p class="hero-title mt-5 max-w-2xl font-medium text-neutral-700 dark:text-neutral-200" data-reveal style="--reveal-delay: 120ms"><span class="block sm:inline">CSE Graduate @ UIU</span><span class="hidden text-orange-500 dark:text-orange-400/70 sm:inline" aria-hidden="true"> | </span><span class="block sm:inline">NLP, LLM, Multimodal AI Researcher</span><span class="hidden text-orange-500 dark:text-orange-400/70 sm:inline" aria-hidden="true"> | </span><span class="block sm:inline">Full-Stack Web</span></p>
+          <p class="hero-title mt-4 font-medium text-neutral-700 dark:text-neutral-200" data-reveal style="--reveal-delay: 120ms"><span class="block sm:inline">CSE Graduate @ UIU</span><span class="hidden text-orange-500 dark:text-orange-400/70 sm:inline" aria-hidden="true"> | </span><span class="block sm:inline">NLP, LLM, Multimodal AI Researcher</span><span class="hidden text-orange-500 dark:text-orange-400/70 sm:inline" aria-hidden="true"> | </span><span class="block sm:inline">Full-Stack Web</span></p>
 
-          <p class="mt-6 max-w-xl text-base leading-7 text-neutral-600 dark:text-neutral-400 sm:text-lg" data-reveal style="--reveal-delay: 170ms">
+          <p class="mt-4 max-w-xl text-base leading-7 text-neutral-600 dark:text-neutral-400 sm:text-lg" data-reveal style="--reveal-delay: 170ms">
             I build AI systems that see, reason, and ship — from computer-vision research to production web platforms.
           </p>
 
@@ -321,22 +358,9 @@
             </a>
           </div>
         </div>
-
-        <div class="relative mx-auto w-full max-w-[20rem] sm:max-w-[22rem] lg:max-w-[24rem]" data-reveal style="--reveal-delay: 320ms">
-          <div class="absolute -inset-4 rounded-[2.5rem] bg-orange-500/20 blur-2xl" aria-hidden="true"></div>
-          <div class="relative overflow-hidden rounded-[2rem] border border-neutral-200/80 bg-white/75 p-3 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-neutral-900/70" data-parallax="0.05">
-            <!-- TODO: Replace assets/img/avatar.svg with a real portrait (assets/img/avatar.jpg) and update this img tag. -->
-            <img src="assets/img/avatar.svg" width="480" height="480" alt="Portrait placeholder for Md Abdul Ahad Minhaz" class="aspect-square w-full rounded-[1.5rem] object-cover">
-            <div class="pointer-events-none absolute inset-x-6 bottom-6 flex flex-wrap justify-center gap-1.5" aria-hidden="true">
-              <span class="rounded-full border border-white/20 bg-neutral-950 px-2.5 py-1 font-mono text-[0.65rem] font-medium text-white backdrop-blur">NLP</span>
-              <span class="rounded-full border border-white/20 bg-neutral-950 px-2.5 py-1 font-mono text-[0.65rem] font-medium text-white backdrop-blur">Computer Vision</span>
-              <span class="rounded-full border border-white/20 bg-neutral-950 px-2.5 py-1 font-mono text-[0.65rem] font-medium text-white backdrop-blur">Full-Stack</span>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <a href="#about" class="absolute bottom-3 left-1/2 z-10 inline-flex min-h-11 -translate-x-1/2 items-center gap-2 rounded-full border border-neutral-200/80 bg-white/70 px-4 py-2 font-mono text-xs font-medium text-neutral-500 backdrop-blur transition hover:text-neutral-900 dark:border-white/10 dark:bg-white/5 dark:text-neutral-400 dark:hover:text-white" aria-label="Scroll to about section">
+      <a href="#about" class="absolute bottom-6 right-8 z-10 hidden sm:flex min-h-11 items-center gap-2 rounded-full border border-neutral-200/80 bg-white/70 px-4 py-2 font-mono text-xs font-medium text-neutral-500 backdrop-blur transition hover:text-neutral-900 dark:border-white/10 dark:bg-white/5 dark:text-neutral-400 dark:hover:text-white" aria-label="Scroll to about section">
         Scroll
         <svg class="h-3.5 w-3.5 animate-float-slow" aria-hidden="true"><use href="#icon-arrow-down"/></svg>
       </a>
@@ -650,10 +674,15 @@
           </a>
         </div>
 
-        <div class="mt-10 space-y-4" data-cascade>
+        <!-- Scroll-driven horizontal progress line -->
+        <div class="pub-timeline-wrap" aria-hidden="true">
+          <div class="pub-timeline-line"></div>
+        </div>
+
+        <div class="mt-6 space-y-4" data-cascade>
 
           <!-- Publication: GreenSwap -->
-          <article class="pub-card" data-reveal>
+          <article class="pub-card" data-pub-reveal data-reveal>
             <div class="flex flex-wrap items-center gap-2">
               <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">[C1]</span>
               <span class="status-badge border-orange-500/30 bg-orange-500/10 text-orange-700 dark:text-orange-300">Conference</span>
@@ -664,7 +693,7 @@
           </article>
 
           <!-- Publication: WADE -->
-          <article class="pub-card" data-reveal style="--reveal-delay: 60ms">
+          <article class="pub-card" data-pub-reveal data-reveal style="--reveal-delay: 60ms">
             <div class="flex flex-wrap items-center gap-2">
               <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">[U1]</span>
               <span class="status-badge border-orange-500/30 bg-orange-500/10 text-orange-700 dark:text-orange-300">Under Review</span>
@@ -675,7 +704,7 @@
           </article>
 
           <!-- Publication: EcoDetect -->
-          <article class="pub-card" data-reveal style="--reveal-delay: 120ms">
+          <article class="pub-card" data-pub-reveal data-reveal style="--reveal-delay: 120ms">
             <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div class="flex flex-wrap items-center gap-2">
                 <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">[C2]</span>
@@ -702,7 +731,7 @@
           </article>
 
           <!-- Publication: InsideOut -->
-          <article class="pub-card" data-reveal style="--reveal-delay: 180ms">
+          <article class="pub-card" data-pub-reveal data-reveal style="--reveal-delay: 180ms">
             <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div class="flex flex-wrap items-center gap-2">
                 <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">[P1]</span>
@@ -735,7 +764,7 @@
         </div>
 
         <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4" data-cascade>
-          <div class="card p-5" data-reveal>
+          <div class="card p-5" data-chip-group data-reveal>
             <div class="flex items-center gap-3">
               <span class="grid h-10 w-10 place-items-center rounded-xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
                 <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-code"/></svg>
@@ -743,15 +772,15 @@
               <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">Languages</h3>
             </div>
             <div class="mt-4 flex flex-wrap gap-2">
-              <span class="chip">Python</span>
-              <span class="chip">C/C++</span>
-              <span class="chip">Java</span>
-              <span class="chip">JavaScript</span>
-              <span class="chip">SQL</span>
+              <span class="chip" data-chip>Python</span>
+              <span class="chip" data-chip>C/C++</span>
+              <span class="chip" data-chip>Java</span>
+              <span class="chip" data-chip>JavaScript</span>
+              <span class="chip" data-chip>SQL</span>
             </div>
           </div>
 
-          <div class="card p-5" data-reveal style="--reveal-delay: 60ms">
+          <div class="card p-5" data-chip-group data-reveal style="--reveal-delay: 60ms">
             <div class="flex items-center gap-3">
               <span class="grid h-10 w-10 place-items-center rounded-xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
                 <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-cpu"/></svg>
@@ -759,15 +788,15 @@
               <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">AI &amp; ML</h3>
             </div>
             <div class="mt-4 flex flex-wrap gap-2">
-              <span class="chip">PyTorch</span>
-              <span class="chip">OpenCV</span>
-              <span class="chip">Scikit-learn</span>
-              <span class="chip">NumPy &amp; Pandas</span>
-              <span class="chip">YOLO</span>
+              <span class="chip" data-chip>PyTorch</span>
+              <span class="chip" data-chip>OpenCV</span>
+              <span class="chip" data-chip>Scikit-learn</span>
+              <span class="chip" data-chip>NumPy &amp; Pandas</span>
+              <span class="chip" data-chip>YOLO</span>
             </div>
           </div>
 
-          <div class="card p-5" data-reveal style="--reveal-delay: 120ms">
+          <div class="card p-5" data-chip-group data-reveal style="--reveal-delay: 120ms">
             <div class="flex items-center gap-3">
               <span class="grid h-10 w-10 place-items-center rounded-xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
                 <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-database"/></svg>
@@ -775,15 +804,15 @@
               <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">Web &amp; Data</h3>
             </div>
             <div class="mt-4 flex flex-wrap gap-2">
-              <span class="chip">Next.js</span>
-              <span class="chip">Tailwind CSS</span>
-              <span class="chip">Supabase</span>
-              <span class="chip">PostgreSQL / MySQL</span>
-              <span class="chip">Prisma</span>
+              <span class="chip" data-chip>Next.js</span>
+              <span class="chip" data-chip>Tailwind CSS</span>
+              <span class="chip" data-chip>Supabase</span>
+              <span class="chip" data-chip>PostgreSQL / MySQL</span>
+              <span class="chip" data-chip>Prisma</span>
             </div>
           </div>
 
-          <div class="card p-5" data-reveal style="--reveal-delay: 180ms">
+          <div class="card p-5" data-chip-group data-reveal style="--reveal-delay: 180ms">
             <div class="flex items-center gap-3">
               <span class="grid h-10 w-10 place-items-center rounded-xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
                 <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-cpu"/></svg>
@@ -791,10 +820,10 @@
               <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">Hardware &amp; Tools</h3>
             </div>
             <div class="mt-4 flex flex-wrap gap-2">
-              <span class="chip">Raspberry Pi</span>
-              <span class="chip">ESP32</span>
-              <span class="chip">Arduino</span>
-              <span class="chip">Git &amp; GitHub</span>
+              <span class="chip" data-chip>Raspberry Pi</span>
+              <span class="chip" data-chip>ESP32</span>
+              <span class="chip" data-chip>Arduino</span>
+              <span class="chip" data-chip>Git &amp; GitHub</span>
             </div>
           </div>
         </div>
@@ -916,64 +945,128 @@
         </div>
       </div>
     </section>
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section scroll-mt-24">
-      <div class="shell">
-        <div class="relative overflow-hidden rounded-3xl border border-orange-600/30 bg-orange-500 p-6 text-neutral-950 shadow-2xl shadow-orange-500/20 sm:p-10 lg:p-14" data-reveal>
-          <div class="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-neutral-950/15" aria-hidden="true" data-parallax="0.06"></div>
-          <div class="pointer-events-none absolute -bottom-24 -left-10 h-72 w-72 rounded-full border border-neutral-950/10" aria-hidden="true" data-parallax="-0.04"></div>
-          <div class="relative grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-            <div>
-              <p class="font-mono text-xs font-medium uppercase tracking-[0.22em] text-neutral-950/70">Contact</p>
-              <h2 class="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Let's build something useful.</h2>
-              <p class="mt-4 max-w-xl text-base leading-7 text-neutral-950/80">Open to conversations about AI research, computer vision, and full-stack product engineering.</p>
-              <p class="mt-4 inline-flex items-center gap-2 font-mono text-sm text-neutral-950/80">
-                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-map-pin"/></svg>
-                Dhaka, Bangladesh
-              </p>
-            </div>
-            <div class="space-y-3">
-              <a href="mailto:fuad000219@gmail.com" class="btn w-full bg-neutral-950 text-orange-50 shadow-lg hover:bg-neutral-800">
-                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-mail"/></svg>
-                fuad000219@gmail.com
-              </a>
-              <button type="button" class="btn w-full border border-neutral-950/25 bg-neutral-950/10 text-neutral-950 backdrop-blur hover:bg-neutral-950/20" data-copy-email="fuad000219@gmail.com">
-                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-copy"/></svg>
-                Copy email
-              </button>
-            </div>
+
+  </main>
+
+  <!-- ===== CINEMATIC CURTAIN REVEAL FOOTER (CONTACT) ===== -->
+  <div id="contact" class="footer-curtain-wrap scroll-mt-24" style="clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%); -webkit-clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);">
+    <footer id="footer-curtain" class="footer-cinematic">
+      
+      <!-- Ambient Light & Grid Background -->
+      <div class="footer-aurora" aria-hidden="true"></div>
+      <div class="footer-bg-grid" aria-hidden="true"></div>
+
+      <!-- Giant background text -->
+      <div id="footer-giant-text" class="footer-giant-bg-text font-display font-black" aria-hidden="true">
+        MINHAZ
+      </div>
+
+      <!-- 1. Sleek Horizontal Marquee Ticker -->
+      <div class="footer-marquee-ribbon" aria-hidden="true">
+        <div class="animate-footer-scroll-marquee footer-marquee-text">
+          <div class="footer-marquee-group">
+            <span>AI Research</span> <span class="text-orange-500">✦</span>
+            <span>Computer Vision</span> <span class="text-orange-400">✦</span>
+            <span>NLP &amp; LLMs</span> <span class="text-orange-500">✦</span>
+            <span>Multimodal AI</span> <span class="text-orange-400">✦</span>
+            <span>Full-Stack Web</span> <span class="text-orange-500">✦</span>
+            <span>YOLO &amp; Robotics</span> <span class="text-orange-400">✦</span>
+            <span>Open Source</span> <span class="text-orange-500">✦</span>
           </div>
-          <div class="relative mt-8 flex flex-wrap items-center gap-2 border-t border-neutral-950/15 pt-6">
-            <span class="mr-1 font-mono text-xs uppercase tracking-widest text-neutral-950/70">Elsewhere</span>
-            <a class="contact-social inline-flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-950/20 bg-neutral-950/10 text-neutral-950 transition hover:bg-neutral-950/20" href="https://github.com/MinhazFuad" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)">
-              <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-github"/></svg>
+          <div class="footer-marquee-group">
+            <span>AI Research</span> <span class="text-orange-500">✦</span>
+            <span>Computer Vision</span> <span class="text-orange-400">✦</span>
+            <span>NLP &amp; LLMs</span> <span class="text-orange-500">✦</span>
+            <span>Multimodal AI</span> <span class="text-orange-400">✦</span>
+            <span>Full-Stack Web</span> <span class="text-orange-500">✦</span>
+            <span>YOLO &amp; Robotics</span> <span class="text-orange-400">✦</span>
+            <span>Open Source</span> <span class="text-orange-500">✦</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Main Center Content -->
+      <div class="footer-center-content">
+        <h2 id="footer-heading" class="footer-heading footer-text-glow">
+          Ready to build together?
+        </h2>
+
+        <!-- Interactive Magnetic Pills Layout -->
+        <div id="footer-pills" class="footer-pills-wrap">
+          <!-- Primary Action Pills -->
+          <div class="footer-actions-row">
+            <a href="mailto:fuad000219@gmail.com" class="footer-glass-pill footer-pill-primary magnetic-btn group">
+              <svg class="h-5 w-5 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform" aria-hidden="true"><use href="#icon-mail"/></svg>
+              <span>Get in touch</span>
             </a>
-            <a class="contact-social inline-flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-950/20 bg-neutral-950/10 text-neutral-950 transition hover:bg-neutral-950/20" href="https://www.linkedin.com/in/aaminhaz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)">
-              <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+
+            <button type="button" class="footer-glass-pill footer-pill-primary magnetic-btn group" data-copy-email="fuad000219@gmail.com" aria-label="Copy email address">
+              <svg class="h-5 w-5 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform" aria-hidden="true"><use href="#icon-copy"/></svg>
+              <span>Copy email</span>
+            </button>
+            
+            <a href="assets/Minhaz_CV.pdf" download class="footer-glass-pill footer-pill-primary magnetic-btn group">
+              <svg class="h-5 w-5 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform" aria-hidden="true"><use href="#icon-download"/></svg>
+              <span>Download CV</span>
             </a>
-            <a class="contact-social inline-flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-950/20 bg-neutral-950/10 text-neutral-950 transition hover:bg-neutral-950/20" href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile (opens in a new tab)">
-              <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-scholar"/></svg>
+
+            <a href="https://github.com/MinhazFuad" target="_blank" rel="noopener noreferrer" class="footer-glass-pill footer-pill-primary magnetic-btn group">
+              <svg class="h-5 w-5 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform" aria-hidden="true"><use href="#icon-github"/></svg>
+              <span>GitHub</span>
             </a>
-            <a class="contact-social inline-flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-950/20 bg-neutral-950/10 text-neutral-950 transition hover:bg-neutral-950/20" href="mailto:fuad000219@gmail.com" aria-label="Send an email">
-              <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-mail"/></svg>
+          </div>
+
+          <!-- Secondary Navigation Pills -->
+          <div class="footer-secondary-row">
+            <a href="#about" class="footer-glass-pill footer-pill-secondary magnetic-btn">
+              About
+            </a>
+            <a href="#projects" class="footer-glass-pill footer-pill-secondary magnetic-btn">
+              Projects
+            </a>
+            <a href="#publications" class="footer-glass-pill footer-pill-secondary magnetic-btn">
+              Publications
+            </a>
+            <a href="#experience" class="footer-glass-pill footer-pill-secondary magnetic-btn">
+              Experience
+            </a>
+            <a href="#skills" class="footer-glass-pill footer-pill-secondary magnetic-btn">
+              Skills
+            </a>
+            <a href="https://www.linkedin.com/in/aaminhaz/" target="_blank" rel="noopener noreferrer" class="footer-glass-pill footer-pill-secondary magnetic-btn">
+              LinkedIn
+            </a>
+            <a href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="footer-glass-pill footer-pill-secondary magnetic-btn">
+              Scholar
             </a>
           </div>
         </div>
       </div>
-    </section>
 
-  </main>
+      <!-- 3. Bottom Bar / Credits -->
+      <div class="footer-bottom-bar">
+        <!-- Copyright -->
+        <div class="footer-bottom-copy">
+          © <span id="year">2026</span> Md Abdul Ahad Minhaz. All rights reserved.
+        </div>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer border-t border-neutral-200/70 py-8 dark:border-white/10">
-    <div class="shell flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-      <p class="text-sm text-neutral-500 dark:text-neutral-400">© <span id="year">2026</span> Md Abdul Ahad Minhaz. Built with HTML, Tailwind CSS, and vanilla JS.</p>
-      <a href="#top" class="inline-flex min-h-11 items-center gap-2 self-start rounded-lg px-2 text-sm font-semibold text-neutral-600 transition hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white sm:self-auto">
-        Back to top
-        <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-arrow-up"/></svg>
-      </a>
-    </div>
-  </footer>
+        <!-- "Crafted with Love" Badge -->
+        <div class="footer-glass-pill footer-badge-pill">
+          <span>Crafted with</span>
+          <span class="animate-footer-heartbeat footer-heart" aria-label="love">❤</span>
+          <span>by</span>
+          <span class="font-display font-bold text-neutral-900 dark:text-white" style="text-transform: none;">Minhaz</span>
+        </div>
+
+        <!-- Back to Top Button -->
+        <button type="button" id="footer-back-to-top" class="footer-glass-pill footer-back-top-btn magnetic-btn group" aria-label="Back to top">
+          <svg class="h-5 w-5 transform group-hover:-translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+          </svg>
+        </button>
+      </div>
+    </footer>
+  </div>
 
   <div id="toast" class="toast rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-900 shadow-xl dark:border-white/10 dark:bg-neutral-900 dark:text-white" role="status" aria-live="polite">
     <span class="inline-flex items-center gap-2">
