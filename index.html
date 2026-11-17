@@ -58,7 +58,7 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=1.1.2">
 </head>
 <body class="font-sans text-neutral-700 antialiased dark:text-neutral-300">
 
@@ -259,108 +259,128 @@
 
   <main id="main">
     <!-- ===== HERO ===== -->
-    <section id="top" class="hero-new relative isolate min-h-[100svh] overflow-hidden flex flex-col justify-end">
+    <section id="top" class="hero-new relative isolate min-h-[100svh] flex flex-col justify-center">
       <!-- Hardware/GPU accelerated WebGL2 Interactive DotGrid -->
       <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
 
       <!-- Ambient glow lights behind grid -->
       <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
         <div class="absolute -right-20 top-20 h-80 w-80 rounded-full bg-orange-500/15 blur-3xl animate-glow-pulse dark:bg-orange-500/20"></div>
-        <div class="absolute right-20 top-20 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl animate-drift dark:bg-orange-500/15"></div>
+        <div class="absolute right-10 bottom-24 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl animate-drift dark:bg-orange-500/15"></div>
+        <div class="absolute -left-20 bottom-16 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl animate-drift dark:bg-orange-500/15"></div>
       </div>
 
-      <!-- Floating Tech Labels (Top-Right on Desktop) -->
-      <div class="hero-floating-container" aria-hidden="true">
-        <div class="hero-tag-pill tag-pos-1" style="--float-dur: 6.8s; --float-delay: 0s;">
-          <span class="tag-dot"></span>
-          <span>NLP &amp; LLMs</span>
-        </div>
-        <div class="hero-tag-pill tag-pos-2" style="--float-dur: 8.4s; --float-delay: -1.8s;">
-          <span class="tag-dot"></span>
-          <span>Computer Vision</span>
-        </div>
-        <div class="hero-tag-pill tag-pos-3" style="--float-dur: 7.2s; --float-delay: -3.2s;">
-          <span class="tag-dot"></span>
-          <span>Multimodal AI</span>
-        </div>
-        <div class="hero-tag-pill tag-pos-4" style="--float-dur: 9.1s; --float-delay: -2.1s;">
-          <span class="tag-dot"></span>
-          <span>YOLOv11 &amp; v8</span>
-        </div>
-        <div class="hero-tag-pill tag-pos-5" style="--float-dur: 7.9s; --float-delay: -4.3s;">
-          <span class="tag-dot"></span>
-          <span>PyTorch</span>
-        </div>
-        <div class="hero-tag-pill tag-pos-6" style="--float-dur: 8.7s; --float-delay: -0.9s;">
-          <span class="tag-dot"></span>
-          <span>Next.js &amp; Supabase</span>
-        </div>
-        <div class="hero-tag-pill tag-pos-7" style="--float-dur: 7.5s; --float-delay: -2.6s;">
-          <span class="tag-dot"></span>
-          <span>Robotics &amp; ROS</span>
-        </div>
-      </div>
-
-      <!-- Hero Content (Anchored to Bottom-Left) -->
+      <!-- Hero Content (2-Column Balanced Grid) -->
       <div class="shell hero-content w-full relative z-10 min-w-0">
-        <div class="hero-text-block max-w-2xl">
-          <div class="flex flex-wrap items-center gap-2" data-reveal>
-            <span class="inline-flex items-center gap-1.5 rounded-full border border-neutral-200/80 bg-white/70 px-3 py-1.5 font-mono text-xs font-medium text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-neutral-300">
-              <svg class="h-3.5 w-3.5 text-orange-700 dark:text-orange-300" aria-hidden="true"><use href="#icon-map-pin"/></svg>
-              Dhaka, Bangladesh
-            </span>
-            <span class="inline-flex items-center gap-1.5 rounded-full border border-orange-500/20 bg-orange-500/10 px-3 py-1.5 font-mono text-xs font-medium text-orange-700 dark:border-orange-400/20 dark:bg-orange-400/10 dark:text-orange-200">
-              <svg class="h-3.5 w-3.5" aria-hidden="true"><use href="#icon-sparkles"/></svg>
-              AI research · shipped products
-            </span>
+        <div class="hero-grid">
+          
+          <!-- Left Column: Bio & CTAs -->
+          <div class="hero-text-block">
+            <div class="flex flex-wrap items-center gap-2" data-reveal>
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-neutral-200/80 bg-white/70 px-3 py-1.5 font-mono text-xs font-medium text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-neutral-300">
+                <svg class="h-3.5 w-3.5 text-orange-700 dark:text-orange-300" aria-hidden="true"><use href="#icon-map-pin"/></svg>
+                Dhaka, Bangladesh
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-orange-500/20 bg-orange-500/10 px-3 py-1.5 font-mono text-xs font-medium text-orange-700 dark:border-orange-400/20 dark:bg-orange-400/10 dark:text-orange-200">
+                <svg class="h-3.5 w-3.5" aria-hidden="true"><use href="#icon-sparkles"/></svg>
+                AI research · shipped products
+              </span>
+            </div>
+
+            <div class="hero-name-wrap mt-4 sm:mt-5">
+              <h1 class="hero-name font-display font-semibold text-neutral-950 dark:text-white" data-reveal style="--reveal-delay: 70ms">
+                Md Abdul Ahad <span class="text-orange-600 dark:text-orange-400">Minhaz</span>
+              </h1>
+            </div>
+
+            <p class="hero-title mt-3 sm:mt-4 font-medium text-neutral-700 dark:text-neutral-200" data-reveal style="--reveal-delay: 120ms"><span class="block sm:inline">CSE Graduate @ UIU</span><span class="hidden text-orange-500 dark:text-orange-400/70 sm:inline" aria-hidden="true"> | </span><span class="block sm:inline">NLP, LLM, Multimodal AI Researcher</span><span class="hidden text-orange-500 dark:text-orange-400/70 sm:inline" aria-hidden="true"> | </span><span class="block sm:inline">Full-Stack Web</span></p>
+
+            <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap" data-reveal style="--reveal-delay: 180ms">
+              <a href="#projects" class="btn btn-primary w-full sm:w-auto">
+                View projects
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+              </a>
+              <a href="assets/Minhaz_CV.pdf" download class="btn btn-secondary w-full sm:w-auto">
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-download"/></svg>
+                Download CV
+              </a>
+              <a href="#contact" class="btn btn-ghost w-full sm:w-auto">
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-mail"/></svg>
+                Contact
+              </a>
+            </div>
+
+            <div class="mt-6 flex items-center gap-1.5" data-reveal style="--reveal-delay: 230ms">
+              <a class="hero-social-icon" href="https://github.com/MinhazFuad" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)">
+                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-github"/></svg>
+              </a>
+              <a class="hero-social-icon" href="https://www.linkedin.com/in/aaminhaz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)">
+                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+              </a>
+              <a class="hero-social-icon" href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile (opens in a new tab)">
+                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-scholar"/></svg>
+              </a>
+              <a class="hero-social-icon" href="mailto:fuad000219@gmail.com" aria-label="Send an email">
+                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-mail"/></svg>
+              </a>
+            </div>
           </div>
 
-          <div class="hero-name-wrap mt-5">
-            <h1 class="hero-name font-display font-semibold text-neutral-950 dark:text-white" data-reveal style="--reveal-delay: 70ms">
-              Md Abdul Ahad <span class="text-orange-600 dark:text-orange-400">Minhaz</span>
-            </h1>
+          <!-- Right Column: Aesthetic Framed Portrait (Neatly sitting on the right) -->
+          <div class="hero-media-wrap" data-reveal style="--reveal-delay: 150ms">
+            <div class="hero-portrait-wrapper">
+              <!-- Ambient radial glow behind frame -->
+              <div class="hero-portrait-glow" aria-hidden="true"></div>
+
+              <!-- Floating tech tags around frame -->
+              <div class="hero-portrait-tag tag-portrait-1" style="--float-dur: 7.2s; --float-delay: 0s;" aria-hidden="true">
+                <span class="tag-dot"></span>
+                <span>NLP &amp; LLMs</span>
+              </div>
+              <div class="hero-portrait-tag tag-portrait-2" style="--float-dur: 8.5s; --float-delay: -2s;" aria-hidden="true">
+                <span class="tag-dot"></span>
+                <span>Computer Vision</span>
+              </div>
+              <div class="hero-portrait-tag tag-portrait-3" style="--float-dur: 7.8s; --float-delay: -3.5s;" aria-hidden="true">
+                <span class="tag-dot"></span>
+                <span>Multimodal AI</span>
+              </div>
+
+              <!-- Aesthetic Frame Card -->
+              <div class="hero-portrait-frame">
+                <!-- Tech precision corner markers -->
+                <span class="frame-corner frame-tl" aria-hidden="true"></span>
+                <span class="frame-corner frame-tr" aria-hidden="true"></span>
+                <span class="frame-corner frame-bl" aria-hidden="true"></span>
+                <span class="frame-corner frame-br" aria-hidden="true"></span>
+
+                <!-- Inner Image Box -->
+                <div class="hero-portrait-box">
+                  <img src="assets/minhaz.jpeg" alt="Md Abdul Ahad Minhaz" class="hero-portrait-img" loading="eager" fetchpriority="high">
+
+                  <!-- Subtle gradient vignette overlay at base -->
+                  <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-neutral-950/85 via-neutral-950/30 to-transparent" aria-hidden="true"></div>
+
+                  <!-- Glass status badge at bottom of portrait -->
+                  <div class="hero-portrait-badge">
+                    <span class="flex items-center gap-2 text-neutral-200">
+                      <span class="relative flex h-2 w-2">
+                        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+                      </span>
+                      <span class="font-mono text-[11px] sm:text-xs text-neutral-200">AI Researcher &amp; Eng</span>
+                    </span>
+                    <span class="font-mono text-[11px] font-semibold text-orange-400">UIU</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <p class="hero-title mt-4 font-medium text-neutral-700 dark:text-neutral-200" data-reveal style="--reveal-delay: 120ms"><span class="block sm:inline">CSE Graduate @ UIU</span><span class="hidden text-orange-500 dark:text-orange-400/70 sm:inline" aria-hidden="true"> | </span><span class="block sm:inline">NLP, LLM, Multimodal AI Researcher</span><span class="hidden text-orange-500 dark:text-orange-400/70 sm:inline" aria-hidden="true"> | </span><span class="block sm:inline">Full-Stack Web</span></p>
-
-          <p class="mt-4 max-w-xl text-base leading-7 text-neutral-600 dark:text-neutral-400 sm:text-lg" data-reveal style="--reveal-delay: 170ms">
-            I build AI systems that see, reason, and ship — from computer-vision research to production web platforms.
-          </p>
-
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap" data-reveal style="--reveal-delay: 220ms">
-            <a href="#projects" class="btn btn-primary w-full sm:w-auto">
-              View projects
-              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
-            </a>
-            <a href="assets/Minhaz_CV.pdf" download class="btn btn-secondary w-full sm:w-auto">
-              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-download"/></svg>
-              Download CV
-            </a>
-            <a href="#contact" class="btn btn-ghost w-full sm:w-auto">
-              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-mail"/></svg>
-              Contact
-            </a>
-          </div>
-
-          <div class="mt-8 flex items-center gap-2" data-reveal style="--reveal-delay: 270ms">
-            <span class="mr-1 hidden font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400 sm:inline">Find me</span>
-            <a class="social-link" href="https://github.com/MinhazFuad" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)">
-              <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-github"/></svg>
-            </a>
-            <a class="social-link" href="https://www.linkedin.com/in/aaminhaz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)">
-              <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-linkedin"/></svg>
-            </a>
-            <a class="social-link" href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile (opens in a new tab)">
-              <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-scholar"/></svg>
-            </a>
-            <a class="social-link" href="mailto:fuad000219@gmail.com" aria-label="Send an email">
-              <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-mail"/></svg>
-            </a>
-          </div>
         </div>
       </div>
 
-      <a href="#about" class="absolute bottom-6 right-8 z-10 hidden sm:flex min-h-11 items-center gap-2 rounded-full border border-neutral-200/80 bg-white/70 px-4 py-2 font-mono text-xs font-medium text-neutral-500 backdrop-blur transition hover:text-neutral-900 dark:border-white/10 dark:bg-white/5 dark:text-neutral-400 dark:hover:text-white" aria-label="Scroll to about section">
+      <a href="#about" class="hero-scroll-btn absolute bottom-4 left-1/2 -translate-x-1/2 z-10 hidden xl:inline-flex min-h-11 items-center gap-2 rounded-full border border-neutral-200/80 bg-white/70 px-4 py-2 font-mono text-xs font-medium text-neutral-500 backdrop-blur transition hover:text-neutral-900 dark:border-white/10 dark:bg-white/5 dark:text-neutral-400 dark:hover:text-white" aria-label="Scroll to about section">
         Scroll
         <svg class="h-3.5 w-3.5 animate-float-slow" aria-hidden="true"><use href="#icon-arrow-down"/></svg>
       </a>
@@ -395,7 +415,10 @@
           <div data-reveal>
             <p class="eyebrow">About</p>
             <h2 class="section-title mt-3">Research depth, product speed.</h2>
-            <p class="section-lead">
+            <p class="section-lead font-medium text-neutral-900 dark:text-neutral-100">
+              I build AI systems that see, reason, and ship — from computer-vision research to production web platforms.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-7 text-neutral-600 dark:text-neutral-400">
               I am a Computer Science and Engineering graduate from United International University, majoring in Data Science. My work sits at the intersection of NLP, LLM, and multimodal AI research and full-stack web engineering.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-7 text-neutral-600 dark:text-neutral-400">
@@ -1075,6 +1098,6 @@
     </span>
   </div>
 
-  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/main.js?v=1.1.2"></script>
 </body>
 </html>
