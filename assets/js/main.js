@@ -910,8 +910,6 @@ void main() {
     var marqueeTrack = document.querySelector('[data-scroll-marquee]');
     var marqueeBand = document.querySelector('[data-scroll-marquee-band]');
     var marqueeGroup = marqueeTrack ? marqueeTrack.querySelector('.marquee-group') : null;
-    var pubSection = document.getElementById('publications');
-    var pubLine = document.querySelector('.pub-timeline-line');
     var footerCurtain = document.getElementById('contact') || document.getElementById('footer-curtain');
     var footerGiantText = document.getElementById('footer-giant-text');
     var footerHeading = document.getElementById('footer-heading');
@@ -944,13 +942,6 @@ void main() {
         var progress = (viewportHeight - bandRect.top) / (viewportHeight + bandRect.height);
         progress = Math.max(0, Math.min(1, progress));
         marqueeTrack.style.transform = 'translate3d(' + (-marqueeWidth * progress).toFixed(2) + 'px, 0, 0)';
-      }
-
-      if (pubSection && pubLine) {
-        var pRect = pubSection.getBoundingClientRect();
-        var pProgress = (viewportHeight - pRect.top) / (viewportHeight + pRect.height * 0.7);
-        pProgress = Math.max(0, Math.min(1, pProgress));
-        pubLine.style.transform = 'scaleX(' + pProgress.toFixed(3) + ')';
       }
 
       if (footerCurtain && footerGiantText) {
@@ -1047,6 +1038,220 @@ void main() {
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     update();
+  }
+
+  function initPubScrollShowcase() {
+    var section = document.getElementById('publications');
+    if (!section) return;
+
+    var stage = section.querySelector('.pub-sticky-stage');
+    var viewport = section.querySelector('.pub-track-viewport');
+    var track = section.querySelector('.pub-track');
+    var slides = Array.prototype.slice.call(section.querySelectorAll('.pub-slide-item'));
+    var progressBar = section.querySelector('.pub-progress-bar');
+    var counterVal = section.querySelector('.pub-counter-curr');
+    var milestoneBtns = Array.prototype.slice.call(section.querySelectorAll('.pub-milestone-btn'));
+    var prevBtn = section.querySelector('.pub-prev-btn');
+    var nextBtn = section.querySelector('.pub-next-btn');
+
+    if (!slides.length || !track || !viewport) return;
+
+    var isDesktop = window.innerWidth >= 1024;
+    var currentIndex = 0;
+    var ticking = false;
+
+    function getNavOffset() {
+      var header = document.querySelector('.site-header');
+      return header ? header.offsetHeight : 72;
+    }
+
+    function setActiveMilestone(index) {
+      if (index === currentIndex && slides[index].classList.contains('is-focal')) return;
+      currentIndex = index;
+
+      slides.forEach(function (slide, i) {
+        if (i === index) {
+          slide.classList.add('is-focal');
+        } else {
+          slide.classList.remove('is-focal');
+        }
+      });
+
+      if (counterVal) {
+        counterVal.textContent = ('0' + (index + 1)).slice(-2);
+      }
+
+      milestoneBtns.forEach(function (btn, i) {
+        var active = i === index;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+    }
+
+    function updateDesktop() {
+      if (reduceMotion.matches || !isDesktop) return;
+
+      var navOffset = getNavOffset();
+      var rect = section.getBoundingClientRect();
+      var stageH = stage ? stage.offsetHeight : window.innerHeight;
+      var totalScroll = section.offsetHeight - stageH;
+
+      if (totalScroll <= 0) {
+        ticking = false;
+        return;
+      }
+
+      // Calculate progress through pinned section
+      var scrollDist = -rect.top;
+      var progress = scrollDist / totalScroll;
+      progress = Math.max(0, Math.min(1, progress));
+
+      // Calculate max track travel
+      var maxTranslate = track.scrollWidth - viewport.clientWidth;
+      if (maxTranslate > 0) {
+        var translateX = progress * maxTranslate;
+        track.style.transform = 'translate3d(' + (-translateX).toFixed(2) + 'px, 0, 0)';
+      } else {
+        track.style.transform = 'translate3d(0, 0, 0)';
+      }
+
+      // Update progress bar
+      if (progressBar) {
+        var barScale = Math.max(0.04, progress);
+        progressBar.style.transform = 'scaleX(' + barScale.toFixed(3) + ')';
+      }
+
+      // Determine focal slide (closest to center of viewport)
+      var vRect = viewport.getBoundingClientRect();
+      var focalCenter = vRect.left + vRect.width / 2;
+      var closestIndex = 0;
+      var minDistance = Infinity;
+
+      slides.forEach(function (slide, idx) {
+        var sRect = slide.getBoundingClientRect();
+        var sCenter = sRect.left + sRect.width / 2;
+        var dist = Math.abs(sCenter - focalCenter);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closestIndex = idx;
+        }
+      });
+
+      setActiveMilestone(closestIndex);
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(updateDesktop);
+    }
+
+    function scrollToSlide(targetIndex) {
+      targetIndex = Math.max(0, Math.min(slides.length - 1, targetIndex));
+
+      if (isDesktop && !reduceMotion.matches) {
+        var stageH = stage ? stage.offsetHeight : window.innerHeight;
+        var totalScroll = section.offsetHeight - stageH;
+        var maxTranslate = track.scrollWidth - viewport.clientWidth;
+
+        if (totalScroll > 0 && maxTranslate > 0) {
+          var targetSlide = slides[targetIndex];
+          var slideCenter = targetSlide.offsetLeft + targetSlide.offsetWidth / 2;
+          var desiredTranslate = slideCenter - viewport.clientWidth / 2;
+          desiredTranslate = Math.max(0, Math.min(maxTranslate, desiredTranslate));
+
+          var targetProgress = desiredTranslate / maxTranslate;
+          var sectionTop = window.pageYOffset + section.getBoundingClientRect().top;
+          var targetScrollY = sectionTop + targetProgress * totalScroll;
+
+          window.scrollTo({
+            top: targetScrollY,
+            behavior: 'smooth'
+          });
+        }
+      } else {
+        var slide = slides[targetIndex];
+        if (slide && viewport) {
+          var leftPos = slide.offsetLeft - (viewport.clientWidth - slide.offsetWidth) / 2;
+          viewport.scrollTo({
+            left: Math.max(0, leftPos),
+            behavior: 'smooth'
+          });
+        }
+      }
+      setActiveMilestone(targetIndex);
+    }
+
+    milestoneBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var idx = parseInt(btn.getAttribute('data-milestone'), 10) || 0;
+        scrollToSlide(idx);
+      });
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        scrollToSlide(currentIndex - 1);
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        scrollToSlide(currentIndex + 1);
+      });
+    }
+
+    function onMobileViewportScroll() {
+      if (isDesktop) return;
+      var vRect = viewport.getBoundingClientRect();
+      var focalCenter = vRect.left + vRect.width / 2;
+      var closestIndex = 0;
+      var minDistance = Infinity;
+
+      slides.forEach(function (slide, idx) {
+        var sRect = slide.getBoundingClientRect();
+        var sCenter = sRect.left + sRect.width / 2;
+        var dist = Math.abs(sCenter - focalCenter);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closestIndex = idx;
+        }
+      });
+
+      var maxScroll = viewport.scrollWidth - viewport.clientWidth;
+      if (maxScroll > 0 && progressBar) {
+        var p = viewport.scrollLeft / maxScroll;
+        progressBar.style.transform = 'scaleX(' + Math.max(0.05, p).toFixed(3) + ')';
+      }
+
+      setActiveMilestone(closestIndex);
+    }
+
+    viewport.addEventListener('scroll', onMobileViewportScroll, { passive: true });
+
+    function onResize() {
+      var prevMode = isDesktop;
+      isDesktop = window.innerWidth >= 1024;
+
+      if (!isDesktop) {
+        track.style.transform = '';
+      }
+
+      if (isDesktop !== prevMode) {
+        scrollToSlide(currentIndex);
+      } else if (isDesktop) {
+        updateDesktop();
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+
+    if (isDesktop && !reduceMotion.matches) {
+      updateDesktop();
+    } else {
+      setActiveMilestone(0);
+    }
   }
 
   function initChipWave() {
@@ -1269,6 +1474,7 @@ void main() {
   try { initScrollReveal(); } catch (e) { console.error('Scroll reveal error:', e); }
   try { initScrollEffects(); } catch (e) { console.error('Scroll effects error:', e); }
   try { initProjectStack(); } catch (e) { console.error('Project stack error:', e); }
+  try { initPubScrollShowcase(); } catch (e) { console.error('Pub showcase error:', e); }
   try { initHeroDotGrid(); } catch (e) { console.error('Hero DotGrid error:', e); }
   try { initChipWave(); } catch (e) { console.error('Chip wave error:', e); }
   try { initCountUp(); } catch (e) { console.error('Count up error:', e); }

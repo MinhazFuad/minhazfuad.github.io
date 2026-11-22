@@ -33,7 +33,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
   <script>
     (function () {
@@ -58,7 +58,7 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=1.1.2">
+  <link rel="stylesheet" href="assets/css/styles.css?v=1.2.5">
 </head>
 <body class="font-sans text-neutral-700 antialiased dark:text-neutral-300">
 
@@ -85,6 +85,9 @@
     <symbol id="icon-download" viewBox="0 0 24 24">
       <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
       <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m7 10 5 5 5-5M12 15V3"/>
+    </symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7"/>
     </symbol>
     <symbol id="icon-arrow-right" viewBox="0 0 24 24">
       <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
@@ -184,11 +187,21 @@
   <!-- ===== HEADER / NAV ===== -->
   <header class="site-header sticky top-0 z-50 border-b border-neutral-200/70 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-neutral-950/75">
     <div class="shell flex h-16 items-center justify-between gap-3">
-      <a href="#top" class="group inline-flex min-h-11 items-center gap-3 rounded-xl pr-2" aria-label="Md Abdul Ahad Minhaz — home">
-        <span class="grid h-9 w-9 place-items-center rounded-xl bg-orange-500 font-display text-sm font-bold text-neutral-950 shadow-lg shadow-orange-500/25">MA</span>
-        <span class="hidden font-display text-sm font-semibold tracking-tight text-neutral-900 dark:text-white sm:inline">Md Abdul Ahad Minhaz</span>
-        <span class="font-display text-sm font-semibold tracking-tight text-neutral-900 dark:text-white sm:hidden">Minhaz</span>
-      </a>
+      <!-- Social links at top-left of navbar -->
+      <div class="nav-socials" aria-label="Social profiles">
+        <a class="nav-social-link" href="https://github.com/MinhazFuad" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)">
+          <svg class="h-4.5 w-4.5" aria-hidden="true"><use href="#icon-github"/></svg>
+        </a>
+        <a class="nav-social-link" href="https://www.linkedin.com/in/aaminhaz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)">
+          <svg class="h-4.5 w-4.5" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+        </a>
+        <a class="nav-social-link" href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile (opens in a new tab)">
+          <svg class="h-4.5 w-4.5" aria-hidden="true"><use href="#icon-scholar"/></svg>
+        </a>
+        <a class="nav-social-link" href="mailto:fuad000219@gmail.com" aria-label="Send an email">
+          <svg class="h-4.5 w-4.5" aria-hidden="true"><use href="#icon-mail"/></svg>
+        </a>
+      </div>
 
       <nav class="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
         <a class="nav-link" href="#about" data-nav-link>About</a>
@@ -199,10 +212,27 @@
         <a class="nav-link" href="#contact" data-nav-link>Contact</a>
       </nav>
 
-      <div class="flex items-center gap-1.5">
-        <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch to light theme">
-          <svg class="theme-icon theme-icon-sun h-5 w-5" aria-hidden="true"><use href="#icon-sun"/></svg>
-          <svg class="theme-icon theme-icon-moon hidden h-5 w-5" aria-hidden="true"><use href="#icon-moon"/></svg>
+      <div class="flex items-center gap-2">
+        <button type="button" id="theme-toggle" class="theme-toggle-btn" role="switch" aria-checked="true" aria-label="Switch to light theme">
+          <span class="theme-slider-track">
+            <!-- Background Icons embedded in track -->
+            <span class="theme-track-icon theme-track-sun" aria-hidden="true">
+              <svg><use href="#icon-sun"/></svg>
+            </span>
+            <span class="theme-track-icon theme-track-moon" aria-hidden="true">
+              <svg><use href="#icon-moon"/></svg>
+            </span>
+
+            <!-- Sliding Thumb -->
+            <span class="theme-slider-thumb">
+              <span class="theme-thumb-icon theme-thumb-sun" aria-hidden="true">
+                <svg><use href="#icon-sun"/></svg>
+              </span>
+              <span class="theme-thumb-icon theme-thumb-moon" aria-hidden="true">
+                <svg><use href="#icon-moon"/></svg>
+              </span>
+            </span>
+          </span>
         </button>
         <button type="button" id="menu-toggle" class="icon-btn lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
           <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-menu"/></svg>
@@ -263,11 +293,11 @@
       <!-- Hardware/GPU accelerated WebGL2 Interactive DotGrid -->
       <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
 
-      <!-- Ambient glow lights behind grid -->
+      <!-- Ambient glow lights behind grid (refined & hardware accelerated) -->
       <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-        <div class="absolute -right-20 top-20 h-80 w-80 rounded-full bg-orange-500/15 blur-3xl animate-glow-pulse dark:bg-orange-500/20"></div>
-        <div class="absolute right-10 bottom-24 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl animate-drift dark:bg-orange-500/15"></div>
-        <div class="absolute -left-20 bottom-16 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl animate-drift dark:bg-orange-500/15"></div>
+        <div class="hero-ambient-orb hero-ambient-orb-1 absolute -right-20 top-20 h-80 w-80 rounded-full blur-3xl animate-glow-pulse"></div>
+        <div class="hero-ambient-orb hero-ambient-orb-2 absolute right-10 bottom-24 h-72 w-72 rounded-full blur-3xl animate-drift"></div>
+        <div class="hero-ambient-orb hero-ambient-orb-3 absolute -left-20 bottom-16 h-72 w-72 rounded-full blur-3xl animate-drift"></div>
       </div>
 
       <!-- Hero Content (2-Column Balanced Grid) -->
@@ -281,10 +311,6 @@
                 <svg class="h-3.5 w-3.5 text-orange-700 dark:text-orange-300" aria-hidden="true"><use href="#icon-map-pin"/></svg>
                 Dhaka, Bangladesh
               </span>
-              <span class="inline-flex items-center gap-1.5 rounded-full border border-orange-500/20 bg-orange-500/10 px-3 py-1.5 font-mono text-xs font-medium text-orange-700 dark:border-orange-400/20 dark:bg-orange-400/10 dark:text-orange-200">
-                <svg class="h-3.5 w-3.5" aria-hidden="true"><use href="#icon-sparkles"/></svg>
-                AI research · shipped products
-              </span>
             </div>
 
             <div class="hero-name-wrap mt-4 sm:mt-5">
@@ -295,7 +321,7 @@
 
             <p class="hero-title mt-3 sm:mt-4 font-medium text-neutral-700 dark:text-neutral-200" data-reveal style="--reveal-delay: 120ms"><span class="block sm:inline">CSE Graduate @ UIU</span><span class="hidden text-orange-500 dark:text-orange-400/70 sm:inline" aria-hidden="true"> | </span><span class="block sm:inline">NLP, LLM, Multimodal AI Researcher</span><span class="hidden text-orange-500 dark:text-orange-400/70 sm:inline" aria-hidden="true"> | </span><span class="block sm:inline">Full-Stack Web</span></p>
 
-            <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap" data-reveal style="--reveal-delay: 180ms">
+            <div class="hero-actions flex flex-col gap-3 sm:flex-row sm:flex-wrap" data-reveal style="--reveal-delay: 180ms">
               <a href="#projects" class="btn btn-primary w-full sm:w-auto">
                 View projects
                 <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
@@ -309,69 +335,28 @@
                 Contact
               </a>
             </div>
-
-            <div class="mt-6 flex items-center gap-1.5" data-reveal style="--reveal-delay: 230ms">
-              <a class="hero-social-icon" href="https://github.com/MinhazFuad" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)">
-                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-github"/></svg>
-              </a>
-              <a class="hero-social-icon" href="https://www.linkedin.com/in/aaminhaz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)">
-                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-linkedin"/></svg>
-              </a>
-              <a class="hero-social-icon" href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile (opens in a new tab)">
-                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-scholar"/></svg>
-              </a>
-              <a class="hero-social-icon" href="mailto:fuad000219@gmail.com" aria-label="Send an email">
-                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-mail"/></svg>
-              </a>
-            </div>
           </div>
 
-          <!-- Right Column: Aesthetic Framed Portrait (Neatly sitting on the right) -->
+          <!-- Right Column: Aesthetic Framed Portrait (Clean & Unobstructed) -->
           <div class="hero-media-wrap" data-reveal style="--reveal-delay: 150ms">
             <div class="hero-portrait-wrapper">
-              <!-- Ambient radial glow behind frame -->
+              <!-- Ambient radial glow behind portrait -->
               <div class="hero-portrait-glow" aria-hidden="true"></div>
 
-              <!-- Floating tech tags around frame -->
-              <div class="hero-portrait-tag tag-portrait-1" style="--float-dur: 7.2s; --float-delay: 0s;" aria-hidden="true">
-                <span class="tag-dot"></span>
-                <span>NLP &amp; LLMs</span>
-              </div>
-              <div class="hero-portrait-tag tag-portrait-2" style="--float-dur: 8.5s; --float-delay: -2s;" aria-hidden="true">
-                <span class="tag-dot"></span>
-                <span>Computer Vision</span>
-              </div>
-              <div class="hero-portrait-tag tag-portrait-3" style="--float-dur: 7.8s; --float-delay: -3.5s;" aria-hidden="true">
-                <span class="tag-dot"></span>
-                <span>Multimodal AI</span>
-              </div>
+              <!-- Tech precision corner markers framing the portrait cleanly -->
+              <span class="frame-corner frame-tl" aria-hidden="true"></span>
+              <span class="frame-corner frame-tr" aria-hidden="true"></span>
+              <span class="frame-corner frame-bl" aria-hidden="true"></span>
+              <span class="frame-corner frame-br" aria-hidden="true"></span>
 
-              <!-- Aesthetic Frame Card -->
-              <div class="hero-portrait-frame">
-                <!-- Tech precision corner markers -->
-                <span class="frame-corner frame-tl" aria-hidden="true"></span>
-                <span class="frame-corner frame-tr" aria-hidden="true"></span>
-                <span class="frame-corner frame-bl" aria-hidden="true"></span>
-                <span class="frame-corner frame-br" aria-hidden="true"></span>
-
-                <!-- Inner Image Box -->
-                <div class="hero-portrait-box">
-                  <img src="assets/minhaz.jpeg" alt="Md Abdul Ahad Minhaz" class="hero-portrait-img" loading="eager" fetchpriority="high">
-
-                  <!-- Subtle gradient vignette overlay at base -->
-                  <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-neutral-950/85 via-neutral-950/30 to-transparent" aria-hidden="true"></div>
-
-                  <!-- Glass status badge at bottom of portrait -->
-                  <div class="hero-portrait-badge">
-                    <span class="flex items-center gap-2 text-neutral-200">
-                      <span class="relative flex h-2 w-2">
-                        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
-                      </span>
-                      <span class="font-mono text-[11px] sm:text-xs text-neutral-200">AI Researcher &amp; Eng</span>
-                    </span>
-                    <span class="font-mono text-[11px] font-semibold text-orange-400">UIU</span>
-                  </div>
+              <!-- Portrait Box -->
+              <div class="hero-portrait-box">
+                <img src="assets/minhaz.jpeg" alt="Md Abdul Ahad Minhaz" class="hero-portrait-img" loading="eager" fetchpriority="high">
+                
+                <!-- Top Badge: 2026 - United International University -->
+                <div class="hero-portrait-top-tag">
+                  <span class="tag-dot"></span>
+                  <span>2026 - United International University</span>
                 </div>
               </div>
             </div>
@@ -411,52 +396,159 @@
     <!-- ===== ABOUT ===== -->
     <section id="about" class="section scroll-mt-24">
       <div class="shell">
-        <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <div data-reveal>
-            <p class="eyebrow">About</p>
-            <h2 class="section-title mt-3">Research depth, product speed.</h2>
-            <p class="section-lead font-medium text-neutral-900 dark:text-neutral-100">
-              I build AI systems that see, reason, and ship — from computer-vision research to production web platforms.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-7 text-neutral-600 dark:text-neutral-400">
-              I am a Computer Science and Engineering graduate from United International University, majoring in Data Science. My work sits at the intersection of NLP, LLM, and multimodal AI research and full-stack web engineering.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-7 text-neutral-600 dark:text-neutral-400">
-              I co-author research on efficient LLM inference, waste-vision datasets, and lightweight detection — and I build the products around that research, from a computer-vision annotation platform to a learn-to-earn marketplace. I care about work that moves from an idea to something people can actually use.
-            </p>
+        <!-- Section Header -->
+        <div data-reveal>
+          <p class="eyebrow">About</p>
+          <h2 class="section-title mt-3">Research depth, product speed.</h2>
+          <p class="section-lead">
+            I build AI systems that see, reason, and ship — from computer-vision research to production web platforms.
+          </p>
+        </div>
+
+        <!-- Bento Grid: Main Narrative Card + Credentials Stack -->
+        <div class="about-bento-grid mt-8 sm:mt-10" data-reveal style="--reveal-delay: 80ms">
+          <!-- Left: Narrative & Background Card -->
+          <div class="card about-bio-card p-6 sm:p-8">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="flex h-2 w-2 rounded-full bg-orange-500"></span>
+                <p class="font-mono text-xs font-semibold uppercase tracking-wider text-orange-600 dark:text-orange-400">Background &amp; Philosophy</p>
+              </div>
+              <p class="mt-4 text-base leading-relaxed text-neutral-800 dark:text-neutral-200">
+                I am a Computer Science and Engineering graduate from <strong class="font-semibold text-neutral-950 dark:text-white">United International University</strong>, majoring in <strong class="font-semibold text-neutral-950 dark:text-white">Data Science</strong>. My work sits at the intersection of NLP, LLM, and multimodal AI research and full-stack web engineering.
+              </p>
+              <p class="mt-4 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+                I co-author research on efficient LLM inference, waste-vision datasets, and lightweight detection — and I build the products around that research, from a computer-vision annotation platform to a learn-to-earn marketplace. I care about work that moves from an idea to something people can actually use.
+              </p>
+            </div>
+
+            <!-- Meta Attributes Strip -->
+            <div class="mt-6 flex flex-wrap items-center gap-3 border-t border-neutral-200/70 pt-5 dark:border-white/10">
+              <div class="inline-flex items-center gap-1.5 font-mono text-xs text-neutral-600 dark:text-neutral-400">
+                <svg class="h-4 w-4 text-orange-500" aria-hidden="true"><use href="#icon-map-pin"/></svg>
+                <span>Dhaka, Bangladesh</span>
+              </div>
+              <span class="text-neutral-300 dark:text-neutral-700">•</span>
+              <div class="inline-flex items-center gap-1.5 font-mono text-xs text-neutral-600 dark:text-neutral-400">
+                <svg class="h-4 w-4 text-orange-500" aria-hidden="true"><use href="#icon-graduation"/></svg>
+                <span>UIU Class of 2026</span>
+              </div>
+              <span class="text-neutral-300 dark:text-neutral-700">•</span>
+              <div class="inline-flex items-center gap-1.5 font-mono text-xs text-neutral-600 dark:text-neutral-400">
+                <span class="relative flex h-2 w-2">
+                  <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                </span>
+                <span>Open to Research &amp; Eng</span>
+              </div>
+            </div>
           </div>
 
-          <div class="space-y-5">
-            <div class="grid grid-cols-1 gap-3 sm:grid-cols-3" data-reveal style="--reveal-delay: 80ms">
-              <div class="card p-4">
-                <p class="stat-number"><span data-count="4">4</span></p>
-                <p class="mt-1 text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Publications</p>
-              </div>
-              <div class="card p-4">
-                <p class="stat-number"><span data-count="4">4</span></p>
-                <p class="mt-1 text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Shipped projects</p>
-              </div>
-              <div class="card p-4">
-                <p class="stat-number flex items-center gap-2 text-2xl sm:text-3xl">
-                  <svg class="h-6 w-6 text-orange-500" aria-hidden="true"><use href="#icon-trophy"/></svg>
-                  Champion
+          <!-- Right: Side Stack (Education + Hult Prize Champion) -->
+          <div class="about-side-stack">
+            <!-- Education Card -->
+            <div class="card about-info-card p-5 sm:p-6" data-reveal style="--reveal-delay: 140ms">
+              <div>
+                <div class="flex items-start justify-between gap-3">
+                  <div class="flex items-center gap-3">
+                    <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
+                      <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-graduation"/></svg>
+                    </span>
+                    <div>
+                      <p class="font-mono text-xs font-semibold uppercase tracking-wider text-orange-600 dark:text-orange-400">Education</p>
+                      <h3 class="text-base font-semibold text-neutral-900 dark:text-white sm:text-lg">B.Sc. in Computer Science &amp; Engineering</h3>
+                    </div>
+                  </div>
+                  <span class="rounded-full bg-neutral-100 px-2.5 py-0.5 font-mono text-[11px] text-neutral-600 dark:bg-white/10 dark:text-neutral-300">2022 – 2026</span>
+                </div>
+                <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
+                  Major in <strong class="font-medium text-neutral-800 dark:text-neutral-200">Data Science</strong> · United International University
                 </p>
-                <p class="mt-1 text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Hult Prize 2026 · On-Campus</p>
+                <p class="mt-1 font-mono text-xs text-neutral-500 dark:text-neutral-400">Dhaka, Bangladesh</p>
+              </div>
+              <div class="mt-4 flex flex-wrap gap-1.5 border-t border-neutral-200/60 pt-3 dark:border-white/5">
+                <span class="chip text-[11px] px-2 py-0.5">Data Science</span>
+                <span class="chip text-[11px] px-2 py-0.5">NLP &amp; LLMs</span>
+                <span class="chip text-[11px] px-2 py-0.5">Machine Learning</span>
+                <span class="chip text-[11px] px-2 py-0.5">Computer Vision</span>
               </div>
             </div>
 
-            <div class="card p-5 sm:p-6" data-reveal style="--reveal-delay: 140ms">
-              <div class="flex items-start gap-4">
-                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
-                  <svg class="h-6 w-6" aria-hidden="true"><use href="#icon-graduation"/></svg>
-                </span>
-                <div class="min-w-0">
-                  <p class="font-mono text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Education</p>
-                  <h3 class="mt-1 text-lg font-semibold text-neutral-900 dark:text-white">B.Sc. in Computer Science &amp; Engineering</h3>
-                  <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">Major: Data Science · United International University</p>
-                  <p class="mt-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">2022 – 2026 · Dhaka, Bangladesh</p>
+            <!-- Featured Distinction: Hult Prize Champion Card -->
+            <div class="card about-info-card p-5 sm:p-6" data-reveal style="--reveal-delay: 180ms">
+              <div>
+                <div class="flex items-start justify-between gap-3">
+                  <div class="flex items-center gap-3">
+                    <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
+                      <svg class="h-5 w-5 text-orange-500" aria-hidden="true"><use href="#icon-trophy"/></svg>
+                    </span>
+                    <div>
+                      <p class="font-mono text-xs font-semibold uppercase tracking-wider text-orange-600 dark:text-orange-400">Featured Distinction</p>
+                      <h3 class="text-base font-semibold text-neutral-900 dark:text-white sm:text-lg">Hult Prize 2026 On-Campus Champion</h3>
+                    </div>
+                  </div>
+                  <span class="rounded-full border border-orange-500/30 bg-orange-500/10 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">Champion</span>
                 </div>
+                <p class="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                  Led social-entrepreneurship team to 1st place on-campus; advanced to represent UIU at the National level.
+                </p>
               </div>
+              <div class="mt-4 flex flex-wrap items-center gap-1.5 border-t border-neutral-200/60 pt-3 dark:border-white/5">
+                <span class="chip text-[11px] px-2 py-0.5">1st Place</span>
+                <span class="chip text-[11px] px-2 py-0.5">Team Lead</span>
+                <span class="chip text-[11px] px-2 py-0.5">Social Entrepreneurship</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Core Focus Pillars (See, Reason, Ship) -->
+        <div class="about-pillars-grid" data-reveal style="--reveal-delay: 220ms">
+          <!-- Pillar 1: See (Computer Vision) -->
+          <div class="card about-pillar-card p-5">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs font-bold text-orange-600 dark:text-orange-400">01 / SEE</span>
+                <span class="grid h-8 w-8 place-items-center rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400">
+                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-layers"/></svg>
+                </span>
+              </div>
+              <h4 class="mt-3 text-sm font-semibold text-neutral-900 dark:text-white">Computer Vision &amp; Robotics</h4>
+              <p class="mt-1.5 text-xs leading-5 text-neutral-600 dark:text-neutral-400">
+                Real-time YOLOv11 detectors, reasoning-chain dataset frameworks (WADE), and autonomous sorting robots (EcoRover).
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Reason (NLP & LLMs) -->
+          <div class="card about-pillar-card p-5">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs font-bold text-orange-600 dark:text-orange-400">02 / REASON</span>
+                <span class="grid h-8 w-8 place-items-center rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400">
+                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-sparkles"/></svg>
+                </span>
+              </div>
+              <h4 class="mt-3 text-sm font-semibold text-neutral-900 dark:text-white">NLP &amp; LLM Systems</h4>
+              <p class="mt-1.5 text-xs leading-5 text-neutral-600 dark:text-neutral-400">
+                Prompt-level energy decomposition in inference (GreenSwap), Few-Shot CoT, and localized model engineering (Gemma).
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Ship (Production Web Platforms) -->
+          <div class="card about-pillar-card p-5">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs font-bold text-orange-600 dark:text-orange-400">03 / SHIP</span>
+                <span class="grid h-8 w-8 place-items-center rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400">
+                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-code"/></svg>
+                </span>
+              </div>
+              <h4 class="mt-3 text-sm font-semibold text-neutral-900 dark:text-white">Full-Stack Production</h4>
+              <p class="mt-1.5 text-xs leading-5 text-neutral-600 dark:text-neutral-400">
+                Next.js platforms with zero-latency queue caching, PostgreSQL/Supabase data layers, and clean developer workflows (AnyTate).
+              </p>
             </div>
           </div>
         </div>
@@ -682,97 +774,239 @@
       </div>
     </section>
     <!-- ===== PUBLICATIONS ===== -->
-    <section id="publications" class="section scroll-mt-24">
-      <div class="shell">
-        <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between" data-reveal>
-          <div>
-            <p class="eyebrow">Research</p>
-            <h2 class="section-title mt-3">Publications</h2>
-            <p class="section-lead">Work spanning efficient LLM inference, waste-vision datasets, and lightweight detection.</p>
+    <section id="publications" class="pub-showcase-section scroll-mt-24">
+      <div class="pub-sticky-stage">
+        <div class="shell pub-stage-shell">
+          <!-- Header Row -->
+          <div class="pub-header-row" data-reveal>
+            <div>
+              <p class="eyebrow">Research</p>
+              <h2 class="section-title mt-2">Publications</h2>
+              <p class="section-lead max-w-2xl">Work spanning efficient LLM inference, waste-vision datasets, and lightweight detection.</p>
+            </div>
+            <div class="pub-header-actions">
+              <div class="pub-counter-badge" aria-label="Current publication slide">
+                <span class="pub-counter-curr font-mono text-orange-600 dark:text-orange-400 font-bold">01</span>
+                <span class="text-neutral-400 dark:text-neutral-500">/</span>
+                <span class="pub-counter-total font-mono text-neutral-400 dark:text-neutral-500">04</span>
+              </div>
+              <a href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-secondary pub-scholar-btn">
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-scholar"/></svg>
+                <span>Google Scholar</span>
+                <svg class="h-3.5 w-3.5" aria-hidden="true"><use href="#icon-external"/></svg>
+              </a>
+            </div>
           </div>
-          <a href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-secondary w-full sm:w-auto">
-            <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-scholar"/></svg>
-            View all on Google Scholar
-            <svg class="h-3.5 w-3.5" aria-hidden="true"><use href="#icon-external"/></svg>
-          </a>
-        </div>
 
-        <!-- Scroll-driven horizontal progress line -->
-        <div class="pub-timeline-wrap" aria-hidden="true">
-          <div class="pub-timeline-line"></div>
-        </div>
+          <!-- Horizontal Cards Viewport -->
+          <div class="pub-track-viewport" tabindex="0" aria-label="Publications carousel">
+            <div class="pub-track">
 
-        <div class="mt-6 space-y-4" data-cascade>
+              <!-- Slide 01: GreenSwap -->
+              <div class="pub-slide-item is-focal" data-pub-index="0">
+                <article class="pub-slide-card">
+                  <div class="pub-card-glow" aria-hidden="true"></div>
+                  <div class="flex items-center justify-between gap-3">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <span class="font-mono text-xs font-semibold text-orange-600 dark:text-orange-400">[C1]</span>
+                      <span class="status-badge border-orange-500/30 bg-orange-500/10 text-orange-700 dark:text-orange-300">Conference</span>
+                      <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">EMNLP 2026 (Main Conference)</span>
+                    </div>
+                    <span class="pub-card-num" aria-hidden="true">01</span>
+                  </div>
 
-          <!-- Publication: GreenSwap -->
-          <article class="pub-card" data-pub-reveal data-reveal>
-            <div class="flex flex-wrap items-center gap-2">
-              <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">[C1]</span>
-              <span class="status-badge border-orange-500/30 bg-orange-500/10 text-orange-700 dark:text-orange-300">Conference</span>
-              <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">EMNLP 2026 (Main Conference)</span>
-            </div>
-            <h3 class="mt-3 text-lg font-semibold leading-snug text-neutral-900 dark:text-white sm:text-xl">GreenSwap: Verb Choice or Output Length? A Controlled Decomposition of Prompt-Level Energy Savings in LLM Inference</h3>
-            <p class="mt-2 break-words font-mono text-xs leading-6 text-neutral-500 dark:text-neutral-400">A. Farabi, I. Khandaker, <strong class="font-semibold text-orange-700 dark:text-orange-300">M.A.A. Minhaz</strong>, Z.Z. Meem, I.K. Shanto, S. Mahmud.</p>
-          </article>
+                  <h3 class="pub-card-title mt-4 text-xl font-bold leading-snug text-neutral-900 dark:text-white sm:text-2xl">
+                    GreenSwap: Verb Choice or Output Length? A Controlled Decomposition of Prompt-Level Energy Savings in LLM Inference
+                  </h3>
 
-          <!-- Publication: WADE -->
-          <article class="pub-card" data-pub-reveal data-reveal style="--reveal-delay: 60ms">
-            <div class="flex flex-wrap items-center gap-2">
-              <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">[U1]</span>
-              <span class="status-badge border-orange-500/30 bg-orange-500/10 text-orange-700 dark:text-orange-300">Under Review</span>
-              <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">Engineering Applications of Artificial Intelligence (EAAI) · 2026</span>
-            </div>
-            <h3 class="mt-3 text-lg font-semibold leading-snug text-neutral-900 dark:text-white sm:text-xl">WADE: A Waste Annotation Reasoning-Chain Dataset and Distillation Framework for Low-Resource Vision-Language Models</h3>
-            <p class="mt-2 break-words font-mono text-xs leading-6 text-neutral-500 dark:text-neutral-400">A. Farabi, I. Khandaker, <strong class="font-semibold text-orange-700 dark:text-orange-300">M.A.A. Minhaz</strong>, I.K. Shanto, Z.Z. Meem, S. Mahmud.</p>
-          </article>
+                  <p class="pub-card-authors mt-3 break-words font-mono text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+                    A. Farabi, I. Khandaker, <strong class="font-semibold text-orange-700 dark:text-orange-300">M.A.A. Minhaz</strong>, Z.Z. Meem, I.K. Shanto, S. Mahmud.
+                  </p>
 
-          <!-- Publication: EcoDetect -->
-          <article class="pub-card" data-pub-reveal data-reveal style="--reveal-delay: 120ms">
-            <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">[C2]</span>
-                <span class="status-badge border-orange-500/30 bg-orange-500/10 text-orange-700 dark:text-orange-300">Conference</span>
-                <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">ICCIT 2025</span>
+                  <div class="pub-card-divider" aria-hidden="true"></div>
+
+                  <div class="pub-card-footer">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <span class="chip">Green AI</span>
+                      <span class="chip">LLM Energy</span>
+                      <span class="chip">Prompt Engineering</span>
+                    </div>
+                    <a href="https://scholar.google.com/citations?user=5dM3OOEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="pub-link-btn" aria-label="View GreenSwap citation on Google Scholar">
+                      <span>Google Scholar</span>
+                      <svg class="h-3.5 w-3.5" aria-hidden="true"><use href="#icon-external"/></svg>
+                    </a>
+                  </div>
+                </article>
               </div>
-              <div class="flex flex-wrap gap-1">
-                <a href="https://ieeexplore.ieee.org/abstract/document/11491266" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="EcoDetect paper on IEEE Xplore (opens in a new tab)">
-                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-file-text"/></svg>
-                </a>
-                <a href="https://github.com/TheAhsanFarabi/EcoDetect" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="EcoDetect code on GitHub (opens in a new tab)">
-                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-code"/></svg>
-                </a>
-                <a href="https://www.kaggle.com/datasets/ahsan71/ecodetect-recyclable-waste-detection-dataset" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="EcoDetect dataset on Kaggle (opens in a new tab)">
-                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-database"/></svg>
-                </a>
-                <a href="https://www.youtube.com/watch?v=hPAnPDIOQHE" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="EcoDetect presentation video (opens in a new tab)">
-                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-play"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3 class="mt-3 text-lg font-semibold leading-snug text-neutral-900 dark:text-white sm:text-xl">EcoDetect: Lightweight Real-Time Recyclable Waste Detection Using YOLOv11n Trained on LLM-Guided Synthetic Data</h3>
-            <p class="mt-2 break-words font-mono text-xs leading-6 text-neutral-500 dark:text-neutral-400">A. Farabi, <strong class="font-semibold text-orange-700 dark:text-orange-300">M.A.A. Minhaz</strong>, I. Khandaker, I.K. Shanto, M.T. Raihan.</p>
-          </article>
 
-          <!-- Publication: InsideOut -->
-          <article class="pub-card" data-pub-reveal data-reveal style="--reveal-delay: 180ms">
-            <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">[P1]</span>
-                <span class="status-badge border-orange-500/30 bg-orange-500/10 text-orange-700 dark:text-orange-300">Preprint</span>
-                <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">arXiv:2510.03066</span>
+              <!-- Slide 02: WADE -->
+              <div class="pub-slide-item" data-pub-index="1">
+                <article class="pub-slide-card">
+                  <div class="pub-card-glow" aria-hidden="true"></div>
+                  <div class="flex items-center justify-between gap-3">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <span class="font-mono text-xs font-semibold text-orange-600 dark:text-orange-400">[U1]</span>
+                      <span class="status-badge border-orange-500/30 bg-orange-500/10 text-orange-700 dark:text-orange-300">Under Review</span>
+                      <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">EAAI · 2026</span>
+                    </div>
+                    <span class="pub-card-num" aria-hidden="true">02</span>
+                  </div>
+
+                  <h3 class="pub-card-title mt-4 text-xl font-bold leading-snug text-neutral-900 dark:text-white sm:text-2xl">
+                    WADE: A Waste Annotation Reasoning-Chain Dataset and Distillation Framework for Low-Resource Vision-Language Models
+                  </h3>
+
+                  <p class="pub-card-authors mt-3 break-words font-mono text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+                    A. Farabi, I. Khandaker, <strong class="font-semibold text-orange-700 dark:text-orange-300">M.A.A. Minhaz</strong>, I.K. Shanto, Z.Z. Meem, S. Mahmud.
+                  </p>
+
+                  <div class="pub-card-divider" aria-hidden="true"></div>
+
+                  <div class="pub-card-footer">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <span class="chip">Vision-Language</span>
+                      <span class="chip">Distillation</span>
+                      <span class="chip">Reasoning Chains</span>
+                    </div>
+                    <span class="pub-status-note font-mono text-xs text-neutral-400 dark:text-neutral-500">Under Journal Review</span>
+                  </div>
+                </article>
               </div>
-              <div class="flex flex-wrap gap-1">
-                <a href="https://arxiv.org/abs/2510.03066" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="InsideOut paper on arXiv (opens in a new tab)">
-                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-file-text"/></svg>
-                </a>
-                <a href="https://github.com/TheAhsanFarabi/InsideOut" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="InsideOut code on GitHub (opens in a new tab)">
-                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-code"/></svg>
-                </a>
+
+              <!-- Slide 03: EcoDetect -->
+              <div class="pub-slide-item" data-pub-index="2">
+                <article class="pub-slide-card">
+                  <div class="pub-card-glow" aria-hidden="true"></div>
+                  <div class="flex items-center justify-between gap-3">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <span class="font-mono text-xs font-semibold text-orange-600 dark:text-orange-400">[C2]</span>
+                      <span class="status-badge border-orange-500/30 bg-orange-500/10 text-orange-700 dark:text-orange-300">Conference</span>
+                      <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">ICCIT 2025</span>
+                    </div>
+                    <span class="pub-card-num" aria-hidden="true">03</span>
+                  </div>
+
+                  <h3 class="pub-card-title mt-4 text-xl font-bold leading-snug text-neutral-900 dark:text-white sm:text-2xl">
+                    EcoDetect: Lightweight Real-Time Recyclable Waste Detection Using YOLOv11n Trained on LLM-Guided Synthetic Data
+                  </h3>
+
+                  <p class="pub-card-authors mt-3 break-words font-mono text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+                    A. Farabi, <strong class="font-semibold text-orange-700 dark:text-orange-300">M.A.A. Minhaz</strong>, I. Khandaker, I.K. Shanto, M.T. Raihan.
+                  </p>
+
+                  <div class="pub-card-divider" aria-hidden="true"></div>
+
+                  <div class="pub-card-footer">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <span class="chip">YOLOv11</span>
+                      <span class="chip">Synthetic Data</span>
+                      <span class="chip">Edge Detection</span>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-1.5">
+                      <a href="https://ieeexplore.ieee.org/abstract/document/11491266" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="EcoDetect paper on IEEE Xplore (opens in a new tab)" title="IEEE Xplore Paper">
+                        <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-file-text"/></svg>
+                      </a>
+                      <a href="https://github.com/TheAhsanFarabi/EcoDetect" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="EcoDetect code on GitHub (opens in a new tab)" title="GitHub Code">
+                        <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-code"/></svg>
+                      </a>
+                      <a href="https://www.kaggle.com/datasets/ahsan71/ecodetect-recyclable-waste-detection-dataset" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="EcoDetect dataset on Kaggle (opens in a new tab)" title="Kaggle Dataset">
+                        <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-database"/></svg>
+                      </a>
+                      <a href="https://www.youtube.com/watch?v=hPAnPDIOQHE" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="EcoDetect presentation video (opens in a new tab)" title="Presentation Video">
+                        <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-play"/></svg>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Slide 04: InsideOut -->
+              <div class="pub-slide-item" data-pub-index="3">
+                <article class="pub-slide-card">
+                  <div class="pub-card-glow" aria-hidden="true"></div>
+                  <div class="flex items-center justify-between gap-3">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <span class="font-mono text-xs font-semibold text-orange-600 dark:text-orange-400">[P1]</span>
+                      <span class="status-badge border-orange-500/30 bg-orange-500/10 text-orange-700 dark:text-orange-300">Preprint</span>
+                      <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">arXiv:2510.03066</span>
+                    </div>
+                    <span class="pub-card-num" aria-hidden="true">04</span>
+                  </div>
+
+                  <h3 class="pub-card-title mt-4 text-xl font-bold leading-snug text-neutral-900 dark:text-white sm:text-2xl">
+                    InsideOut: An EfficientNetV2-S Based Deep Learning Framework for Robust Multi-Class Facial Emotion Recognition
+                  </h3>
+
+                  <p class="pub-card-authors mt-3 break-words font-mono text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+                    A. Farabi, I. Khandaker, I.K. Shanto, <strong class="font-semibold text-orange-700 dark:text-orange-300">M.A.A. Minhaz</strong>, T. Zaman.
+                  </p>
+
+                  <div class="pub-card-divider" aria-hidden="true"></div>
+
+                  <div class="pub-card-footer">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <span class="chip">EfficientNetV2</span>
+                      <span class="chip">Facial Emotion</span>
+                      <span class="chip">Vision</span>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-1.5">
+                      <a href="https://arxiv.org/abs/2510.03066" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="InsideOut paper on arXiv (opens in a new tab)" title="arXiv Paper">
+                        <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-file-text"/></svg>
+                      </a>
+                      <a href="https://github.com/TheAhsanFarabi/InsideOut" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="InsideOut code on GitHub (opens in a new tab)" title="GitHub Code">
+                        <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-code"/></svg>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Bottom Control Bar (Timeline Progress & Milestones & Step Buttons) -->
+          <div class="pub-controls-wrap">
+            <!-- Progress Line Rail -->
+            <div class="pub-progress-rail" aria-hidden="true">
+              <div class="pub-progress-bar"></div>
+            </div>
+
+            <!-- Interactive Milestone Pills & Arrows -->
+            <div class="pub-nav-row">
+              <div class="pub-milestones" role="tablist" aria-label="Publications timeline navigation">
+                <button type="button" class="pub-milestone-btn is-active" data-milestone="0" role="tab" aria-selected="true">
+                  <span class="pub-milestone-dot"></span>
+                  <span class="pub-milestone-tag">[C1]</span>
+                  <span class="pub-milestone-label">GreenSwap · EMNLP '26</span>
+                </button>
+                <button type="button" class="pub-milestone-btn" data-milestone="1" role="tab" aria-selected="false">
+                  <span class="pub-milestone-dot"></span>
+                  <span class="pub-milestone-tag">[U1]</span>
+                  <span class="pub-milestone-label">WADE · EAAI '26</span>
+                </button>
+                <button type="button" class="pub-milestone-btn" data-milestone="2" role="tab" aria-selected="false">
+                  <span class="pub-milestone-dot"></span>
+                  <span class="pub-milestone-tag">[C2]</span>
+                  <span class="pub-milestone-label">EcoDetect · ICCIT '25</span>
+                </button>
+                <button type="button" class="pub-milestone-btn" data-milestone="3" role="tab" aria-selected="false">
+                  <span class="pub-milestone-dot"></span>
+                  <span class="pub-milestone-tag">[P1]</span>
+                  <span class="pub-milestone-label">InsideOut · arXiv '25</span>
+                </button>
+              </div>
+
+              <!-- Prev / Next Step Buttons -->
+              <div class="pub-step-btns">
+                <button type="button" class="pub-arrow-btn pub-prev-btn" aria-label="Previous publication" title="Previous paper">
+                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-arrow-left"/></svg>
+                </button>
+                <button type="button" class="pub-arrow-btn pub-next-btn" aria-label="Next publication" title="Next paper">
+                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+                </button>
               </div>
             </div>
-            <h3 class="mt-3 text-lg font-semibold leading-snug text-neutral-900 dark:text-white sm:text-xl">InsideOut: An EfficientNetV2-S Based Deep Learning Framework for Robust Multi-Class Facial Emotion Recognition</h3>
-            <p class="mt-2 break-words font-mono text-xs leading-6 text-neutral-500 dark:text-neutral-400">A. Farabi, I. Khandaker, I.K. Shanto, <strong class="font-semibold text-orange-700 dark:text-orange-300">M.A.A. Minhaz</strong>, T. Zaman.</p>
-          </article>
+          </div>
 
         </div>
       </div>
@@ -1098,6 +1332,6 @@
     </span>
   </div>
 
-  <script defer src="assets/js/main.js?v=1.1.2"></script>
+  <script defer src="assets/js/main.js?v=1.2.5"></script>
 </body>
 </html>
