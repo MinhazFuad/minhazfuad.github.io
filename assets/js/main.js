@@ -1254,6 +1254,139 @@ void main() {
     }
   }
 
+  function initSkillsConveyor() {
+    var section = document.getElementById('skills');
+    if (!section) return;
+
+    var streamView = document.getElementById('skills-stream-view');
+    var matrixView = document.getElementById('skills-matrix-view');
+    var viewBtns = Array.prototype.slice.call(section.querySelectorAll('.skills-view-btn'));
+    var filterPills = Array.prototype.slice.call(section.querySelectorAll('.skills-filter-pill'));
+    var tiles = Array.prototype.slice.call(section.querySelectorAll('.skill-tile'));
+    var matrixCards = Array.prototype.slice.call(section.querySelectorAll('.skills-matrix-card'));
+    var lanes = Array.prototype.slice.call(section.querySelectorAll('.skills-stream-lane'));
+
+    var ticking = false;
+    var activeView = 'stream';
+    var activeFilter = 'all';
+
+    // View switcher (Stream vs Matrix)
+    viewBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var view = btn.getAttribute('data-skills-view');
+        if (view === activeView) return;
+        activeView = view;
+
+        viewBtns.forEach(function (b) {
+          var active = b === btn;
+          b.classList.toggle('is-active', active);
+        });
+
+        if (view === 'stream') {
+          if (streamView) streamView.classList.remove('hidden');
+          if (matrixView) matrixView.classList.add('hidden');
+          updateScrollMotion();
+        } else {
+          if (streamView) streamView.classList.add('hidden');
+          if (matrixView) matrixView.classList.remove('hidden');
+        }
+      });
+    });
+
+    // Domain Filter
+    function applyFilter(category) {
+      activeFilter = category;
+      filterPills.forEach(function (p) {
+        var active = p.getAttribute('data-filter') === category;
+        p.classList.toggle('is-active', active);
+        p.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+
+      // Update stream tiles
+      tiles.forEach(function (tile) {
+        var cat = tile.getAttribute('data-category');
+        if (category === 'all') {
+          tile.classList.remove('is-dimmed');
+          tile.classList.remove('is-match');
+        } else if (cat === category) {
+          tile.classList.remove('is-dimmed');
+          tile.classList.add('is-match');
+        } else {
+          tile.classList.add('is-dimmed');
+          tile.classList.remove('is-match');
+        }
+      });
+
+      // Update matrix cards
+      matrixCards.forEach(function (card) {
+        var cat = card.getAttribute('data-matrix-category');
+        if (category === 'all') {
+          card.classList.remove('is-dimmed');
+          card.classList.remove('is-match');
+        } else if (cat === category) {
+          card.classList.remove('is-dimmed');
+          card.classList.add('is-match');
+        } else {
+          card.classList.add('is-dimmed');
+          card.classList.remove('is-match');
+        }
+      });
+    }
+
+    filterPills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        var cat = pill.getAttribute('data-filter') || 'all';
+        applyFilter(cat);
+      });
+    });
+
+    // Scroll motion for stream tracks
+    function updateScrollMotion() {
+      if (reduceMotion.matches || activeView !== 'stream' || !streamView) return;
+
+      var rect = section.getBoundingClientRect();
+      var viewportHeight = window.innerHeight;
+
+      // Only calculate if section is in or near viewport
+      if (rect.bottom < -150 || rect.top > viewportHeight + 150) {
+        ticking = false;
+        return;
+      }
+
+      var progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+      progress = Math.max(0, Math.min(1, progress));
+      var delta = (progress - 0.5) * 2; // -1 to +1
+
+      lanes.forEach(function (lane) {
+        var track = lane.querySelector('.skills-stream-track');
+        if (!track) return;
+        var dir = lane.getAttribute('data-direction') || 'right';
+        var laneNum = parseInt(lane.getAttribute('data-scroll-stream'), 10) || 1;
+
+        var factor = dir === 'right' ? 1 : -1;
+        var maxDistance = laneNum === 2 ? 150 : 120;
+        var translateX = delta * maxDistance * factor;
+        var tiltX = -delta * 4.5 * (laneNum === 2 ? -0.7 : 1);
+
+        track.style.transform = 'translate3d(' + translateX.toFixed(1) + 'px, 0, 0) rotateX(' + tiltX.toFixed(2) + 'deg)';
+      });
+
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(updateScrollMotion);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    // Initial position
+    updateScrollMotion();
+  }
+
   function initChipWave() {
     if (reduceMotion.matches) {
       document.querySelectorAll('[data-chip]').forEach(function (c) {
@@ -1475,6 +1608,7 @@ void main() {
   try { initScrollEffects(); } catch (e) { console.error('Scroll effects error:', e); }
   try { initProjectStack(); } catch (e) { console.error('Project stack error:', e); }
   try { initPubScrollShowcase(); } catch (e) { console.error('Pub showcase error:', e); }
+  try { initSkillsConveyor(); } catch (e) { console.error('Skills conveyor error:', e); }
   try { initHeroDotGrid(); } catch (e) { console.error('Hero DotGrid error:', e); }
   try { initChipWave(); } catch (e) { console.error('Chip wave error:', e); }
   try { initCountUp(); } catch (e) { console.error('Count up error:', e); }

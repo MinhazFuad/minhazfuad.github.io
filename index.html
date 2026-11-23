@@ -28,8 +28,8 @@
   <meta name="twitter:image" content="https://minhazfuad.github.io/assets/img/og-image.png">
 
   <meta name="theme-color" id="theme-color" content="#050505">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" href="assets/img/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=2">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +58,7 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=1.2.5">
+  <link rel="stylesheet" href="assets/css/styles.css?v=1.2.8">
 </head>
 <body class="font-sans text-neutral-700 antialiased dark:text-neutral-300">
 
@@ -449,17 +449,17 @@
             <!-- Education Card -->
             <div class="card about-info-card p-5 sm:p-6" data-reveal style="--reveal-delay: 140ms">
               <div>
-                <div class="flex items-start justify-between gap-3">
-                  <div class="flex items-center gap-3">
-                    <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
+                <div class="flex items-start justify-between gap-2.5">
+                  <div class="flex items-center gap-2.5 min-w-0 flex-1">
+                    <span class="grid h-10 w-10 sm:h-11 sm:w-11 shrink-0 place-items-center rounded-2xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
                       <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-graduation"/></svg>
                     </span>
-                    <div>
+                    <div class="min-w-0">
                       <p class="font-mono text-xs font-semibold uppercase tracking-wider text-orange-600 dark:text-orange-400">Education</p>
                       <h3 class="text-base font-semibold text-neutral-900 dark:text-white sm:text-lg">B.Sc. in Computer Science &amp; Engineering</h3>
                     </div>
                   </div>
-                  <span class="rounded-full bg-neutral-100 px-2.5 py-0.5 font-mono text-[11px] text-neutral-600 dark:bg-white/10 dark:text-neutral-300">2022 – 2026</span>
+                  <span class="shrink-0 whitespace-nowrap rounded-full bg-neutral-100 px-2 py-0.5 font-mono text-[10px] text-neutral-600 dark:bg-white/10 dark:text-neutral-300">2022 – 2026</span>
                 </div>
                 <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
                   Major in <strong class="font-medium text-neutral-800 dark:text-neutral-200">Data Science</strong> · United International University
@@ -575,19 +575,13 @@
           <div class="project-stack-item" style="--stack-index: 0">
             <div class="project-stack-card">
               <article class="card project-card group flex h-full flex-col overflow-hidden md:flex-row">
-                <div class="cover-art relative h-28 overflow-hidden md:h-auto md:w-[42%] md:shrink-0">
-                  <!-- TODO: Replace this generated cover with a screenshot: <img src="assets/img/projects/anytate.jpg" width="1200" height="675" loading="lazy" alt="AnyTate annotation dashboard" class="h-full w-full object-cover"> -->
-                  <div class="absolute inset-0 z-10 flex items-start justify-between p-4 sm:p-5">
-                    <span class="rounded-full border border-white/25 bg-white/15 px-3 py-1 font-mono text-[0.65rem] font-semibold uppercase tracking-wider text-white backdrop-blur">Flagship</span>
-                    <span class="rounded-full border border-white/25 bg-neutral-950/25 px-3 py-1 font-mono text-[0.65rem] font-medium text-white backdrop-blur">2026</span>
+                <div class="cover-art cover-art-has-img relative h-52 sm:h-64 overflow-hidden md:h-auto md:w-[42%] md:shrink-0">
+                  <img src="assets/anytate.png" width="1200" height="675" loading="lazy" alt="AnyTate annotation dashboard platform screenshot" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/30 pointer-events-none" aria-hidden="true"></div>
+                  <div class="absolute inset-0 z-10 flex items-start justify-between p-4 sm:p-5 pointer-events-none">
+                    <span class="rounded-full border border-white/25 bg-black/40 px-3 py-1 font-mono text-[0.65rem] font-semibold uppercase tracking-wider text-white backdrop-blur">Flagship</span>
+                    <span class="rounded-full border border-white/25 bg-black/40 px-3 py-1 font-mono text-[0.65rem] font-medium text-white backdrop-blur">2026</span>
                   </div>
-                  <div class="absolute inset-0 z-10 grid place-items-center">
-                    <span class="grid h-20 w-20 place-items-center rounded-3xl border border-white/25 bg-white/15 text-white shadow-xl backdrop-blur">
-                      <svg class="h-10 w-10" aria-hidden="true"><use href="#icon-layers"/></svg>
-                    </span>
-                  </div>
-                  <div class="absolute -bottom-10 -right-8 h-40 w-40 rounded-full border border-white/20" aria-hidden="true"></div>
-                  <div class="absolute -bottom-16 -right-14 h-56 w-56 rounded-full border border-white/10" aria-hidden="true"></div>
                 </div>
                 <div class="flex flex-1 flex-col p-4 sm:p-5 md:p-6">
                   <div class="min-w-0">
@@ -624,21 +618,16 @@
           <div class="project-stack-item" style="--stack-index: 1">
             <div class="project-stack-card">
               <article class="card project-card group flex h-full flex-col overflow-hidden md:flex-row">
-                <div class="cover-art relative h-28 overflow-hidden md:h-auto md:w-[42%] md:shrink-0">
-                  <!-- TODO: Replace this generated cover with a screenshot: <img src="assets/img/projects/taskvault.jpg" width="1200" height="675" loading="lazy" alt="TaskVault learn-to-earn platform" class="h-full w-full object-cover"> -->
-                  <div class="absolute inset-0 z-10 flex items-start justify-between p-4 sm:p-5">
-                    <span class="rounded-full border border-white/25 bg-neutral-950/25 px-3 py-1 font-mono text-[0.65rem] font-medium text-white backdrop-blur">2026</span>
-                    <span class="grid h-9 w-9 place-items-center rounded-full border border-white/25 bg-white/15 text-white backdrop-blur" title="Video available">
-                      <svg class="h-4 w-4 translate-x-px" aria-hidden="true"><use href="#icon-play"/></svg>
+                <div class="cover-art cover-art-has-img relative h-52 sm:h-64 overflow-hidden md:h-auto md:w-[42%] md:shrink-0">
+                  <img src="assets/taskvault.png" width="1200" height="675" loading="lazy" alt="TaskVault learn-to-earn platform screenshot" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/30 pointer-events-none" aria-hidden="true"></div>
+                  <div class="absolute inset-0 z-10 flex items-start justify-between p-4 sm:p-5 pointer-events-none">
+                    <span class="rounded-full border border-white/25 bg-black/40 px-3 py-1 font-mono text-[0.65rem] font-medium text-white backdrop-blur">2026</span>
+                    <span class="grid h-8 w-8 place-items-center rounded-full border border-white/25 bg-black/40 text-white backdrop-blur" title="Video available">
+                      <svg class="h-3.5 w-3.5 translate-x-px" aria-hidden="true"><use href="#icon-play"/></svg>
                       <span class="sr-only">Video available</span>
                     </span>
                   </div>
-                  <div class="absolute inset-0 z-10 grid place-items-center">
-                    <span class="grid h-20 w-20 place-items-center rounded-3xl border border-white/25 bg-white/15 text-white shadow-xl backdrop-blur">
-                      <svg class="h-10 w-10" aria-hidden="true"><use href="#icon-briefcase"/></svg>
-                    </span>
-                  </div>
-                  <div class="absolute -bottom-10 -right-8 h-40 w-40 rounded-full border border-white/20" aria-hidden="true"></div>
                 </div>
                 <div class="flex flex-1 flex-col p-4 sm:p-5 md:p-6">
                   <h3 class="text-xl font-semibold tracking-tight text-neutral-900 dark:text-white">TaskVault</h3>
@@ -1012,75 +1001,607 @@
       </div>
     </section>
     <!-- ===== SKILLS ===== -->
-    <section id="skills" class="section scroll-mt-24 border-y border-neutral-200/60 bg-white/40 dark:border-white/5 dark:bg-neutral-950/30">
+    <section id="skills" class="skills-showcase-section scroll-mt-24 border-y border-neutral-200/60 bg-neutral-50/50 dark:border-white/5 dark:bg-neutral-950/30">
       <div class="shell">
-        <div data-reveal>
-          <p class="eyebrow">Toolkit</p>
-          <h2 class="section-title mt-3">Skills</h2>
-          <p class="section-lead">The strongest tools across research, product engineering, and hardware.</p>
+        <!-- Section Header with View Switcher & Domain Filter -->
+        <div class="skills-header-wrap" data-reveal>
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="eyebrow">Toolkit &amp; Capabilities</p>
+              <h2 class="section-title mt-2">Skills &amp; Architecture</h2>
+              <p class="section-lead max-w-2xl">Core research tools, production engineering frameworks, and hardware used across my publications and shipped products.</p>
+            </div>
+
+            <!-- View Switcher Toggle -->
+            <div class="skills-view-switch-wrap">
+              <button type="button" class="skills-view-btn is-active" data-skills-view="stream" aria-label="Switch to kinetic stream view">
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-layers"/></svg>
+                <span>Kinetic Stream</span>
+              </button>
+              <button type="button" class="skills-view-btn" data-skills-view="matrix" aria-label="Switch to category matrix view">
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-sparkles"/></svg>
+                <span>Category Grid</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Domain Filter Pills -->
+          <div class="skills-filter-bar mt-6 flex flex-wrap items-center gap-2" role="tablist" aria-label="Filter skills by domain">
+            <button type="button" class="skills-filter-pill is-active" data-filter="all" role="tab" aria-selected="true">
+              <span class="skills-filter-dot"></span>
+              <span>All Toolkit</span>
+              <span class="skills-filter-count">19</span>
+            </button>
+            <button type="button" class="skills-filter-pill" data-filter="aiml" role="tab" aria-selected="false">
+              <span class="skills-filter-dot"></span>
+              <span>AI &amp; Vision</span>
+              <span class="skills-filter-count">5</span>
+            </button>
+            <button type="button" class="skills-filter-pill" data-filter="languages" role="tab" aria-selected="false">
+              <span class="skills-filter-dot"></span>
+              <span>Languages</span>
+              <span class="skills-filter-count">5</span>
+            </button>
+            <button type="button" class="skills-filter-pill" data-filter="webdata" role="tab" aria-selected="false">
+              <span class="skills-filter-dot"></span>
+              <span>Full-Stack &amp; Data</span>
+              <span class="skills-filter-count">5</span>
+            </button>
+            <button type="button" class="skills-filter-pill" data-filter="hardware" role="tab" aria-selected="false">
+              <span class="skills-filter-dot"></span>
+              <span>Edge AI &amp; Tools</span>
+              <span class="skills-filter-count">4</span>
+            </button>
+          </div>
         </div>
 
-        <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4" data-cascade>
-          <div class="card p-5" data-chip-group data-reveal>
-            <div class="flex items-center gap-3">
-              <span class="grid h-10 w-10 place-items-center rounded-xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
-                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-code"/></svg>
-              </span>
-              <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">Languages</h3>
-            </div>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="chip" data-chip>Python</span>
-              <span class="chip" data-chip>C/C++</span>
-              <span class="chip" data-chip>Java</span>
-              <span class="chip" data-chip>JavaScript</span>
-              <span class="chip" data-chip>SQL</span>
+        <!-- VIEW 1: KINETIC STREAM STAGE (Opposing Scroll-Driven Conveyors) -->
+        <div id="skills-stream-view" class="skills-stream-stage mt-8" data-reveal>
+          <!-- Row 1: AI & Machine Learning (Glides Right on scroll) -->
+          <div class="skills-stream-lane" data-scroll-stream="1" data-direction="right">
+            <div class="skills-stream-track">
+              <!-- Item: PyTorch -->
+              <div class="skill-tile" data-category="aiml">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-cpu"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Research</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">PyTorch</h4>
+                  <p class="skill-tile-desc">Deep Learning &amp; Distillation</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Used in GreenSwap &amp; WADE</span>
+                </div>
+              </div>
+
+              <!-- Item: YOLO -->
+              <div class="skill-tile" data-category="aiml">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-sparkles"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Vision</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">YOLOv8 / v11</h4>
+                  <p class="skill-tile-desc">Real-Time Object Detection</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Used in EcoDetect (ICCIT '25)</span>
+                </div>
+              </div>
+
+              <!-- Item: Python -->
+              <div class="skill-tile" data-category="languages">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-code"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Primary</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">Python</h4>
+                  <p class="skill-tile-desc">ML Pipelines &amp; Algorithmic Logic</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Core research language</span>
+                </div>
+              </div>
+
+              <!-- Item: OpenCV -->
+              <div class="skill-tile" data-category="aiml">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-layers"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Vision</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">OpenCV</h4>
+                  <p class="skill-tile-desc">Image Preprocessing &amp; Feature Extr.</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Vision synthesis &amp; datasets</span>
+                </div>
+              </div>
+
+              <!-- Item: Next.js -->
+              <div class="skill-tile" data-category="webdata">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-layers"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Full-Stack</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">Next.js</h4>
+                  <p class="skill-tile-desc">App Router, SSR &amp; API Routes</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Used in AnyTate &amp; TaskVault</span>
+                </div>
+              </div>
+
+              <!-- Item: Scikit-learn -->
+              <div class="skill-tile" data-category="aiml">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-database"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Classical ML</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">Scikit-learn</h4>
+                  <p class="skill-tile-desc">Statistical Models &amp; Evaluation</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Tabular &amp; metric baselines</span>
+                </div>
+              </div>
+
+              <!-- Item: Raspberry Pi -->
+              <div class="skill-tile" data-category="hardware">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-cpu"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Hardware</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">Raspberry Pi</h4>
+                  <p class="skill-tile-desc">Edge Compute &amp; Sensor Nodes</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Edge AI inference platforms</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="card p-5" data-chip-group data-reveal style="--reveal-delay: 60ms">
-            <div class="flex items-center gap-3">
-              <span class="grid h-10 w-10 place-items-center rounded-xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
-                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-cpu"/></svg>
-              </span>
-              <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">AI &amp; ML</h3>
-            </div>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="chip" data-chip>PyTorch</span>
-              <span class="chip" data-chip>OpenCV</span>
-              <span class="chip" data-chip>Scikit-learn</span>
-              <span class="chip" data-chip>NumPy &amp; Pandas</span>
-              <span class="chip" data-chip>YOLO</span>
+          <!-- Row 2: Full-Stack, Languages & Systems (Glides Left on scroll) -->
+          <div class="skills-stream-lane mt-4" data-scroll-stream="2" data-direction="left">
+            <div class="skills-stream-track">
+              <!-- Item: Tailwind CSS -->
+              <div class="skill-tile" data-category="webdata">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-sparkles"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Frontend</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">Tailwind CSS</h4>
+                  <p class="skill-tile-desc">Design Systems &amp; Responsive UI</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Fluid UI component architecture</span>
+                </div>
+              </div>
+
+              <!-- Item: C / C++ -->
+              <div class="skill-tile" data-category="languages">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-code"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Systems</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">C / C++</h4>
+                  <p class="skill-tile-desc">Low-Level Algorithms &amp; Compute</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Performance-critical logic</span>
+                </div>
+              </div>
+
+              <!-- Item: Supabase -->
+              <div class="skill-tile" data-category="webdata">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-database"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Backend</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">Supabase</h4>
+                  <p class="skill-tile-desc">Auth, Storage &amp; Edge Functions</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Used in AnyTate annotation queue</span>
+                </div>
+              </div>
+
+              <!-- Item: NumPy & Pandas -->
+              <div class="skill-tile" data-category="aiml">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-database"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Data</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">NumPy &amp; Pandas</h4>
+                  <p class="skill-tile-desc">Vectorized Matrix Operations</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Dataset curation &amp; analysis</span>
+                </div>
+              </div>
+
+              <!-- Item: ESP32 -->
+              <div class="skill-tile" data-category="hardware">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-cpu"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Robotics</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">ESP32</h4>
+                  <p class="skill-tile-desc">WiFi/BLE Microcontroller Nodes</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Used in EcoRover autonomous robot</span>
+                </div>
+              </div>
+
+              <!-- Item: PostgreSQL / MySQL -->
+              <div class="skill-tile" data-category="webdata">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-database"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Database</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">PostgreSQL / MySQL</h4>
+                  <p class="skill-tile-desc">Relational Schemas &amp; Indexing</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">ACID-compliant relational storage</span>
+                </div>
+              </div>
+
+              <!-- Item: JavaScript -->
+              <div class="skill-tile" data-category="languages">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-code"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Web</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">JavaScript / TS</h4>
+                  <p class="skill-tile-desc">Interactive Frontend &amp; Async I/O</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Full-stack web application logic</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="card p-5" data-chip-group data-reveal style="--reveal-delay: 120ms">
-            <div class="flex items-center gap-3">
-              <span class="grid h-10 w-10 place-items-center rounded-xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
-                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-database"/></svg>
-              </span>
-              <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">Web &amp; Data</h3>
-            </div>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="chip" data-chip>Next.js</span>
-              <span class="chip" data-chip>Tailwind CSS</span>
-              <span class="chip" data-chip>Supabase</span>
-              <span class="chip" data-chip>PostgreSQL / MySQL</span>
-              <span class="chip" data-chip>Prisma</span>
+          <!-- Row 3: Foundations, Storage & Hardware (Glides Right on scroll) -->
+          <div class="skills-stream-lane mt-4" data-scroll-stream="3" data-direction="right">
+            <div class="skills-stream-track">
+              <!-- Item: Prisma -->
+              <div class="skill-tile" data-category="webdata">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-database"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">ORM</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">Prisma ORM</h4>
+                  <p class="skill-tile-desc">Type-Safe Client &amp; DB Migrations</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Automated relational pipelines</span>
+                </div>
+              </div>
+
+              <!-- Item: Java -->
+              <div class="skill-tile" data-category="languages">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-code"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">OOP</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">Java</h4>
+                  <p class="skill-tile-desc">Object-Oriented Architecture</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">UIU CSE Project Show award winner</span>
+                </div>
+              </div>
+
+              <!-- Item: Arduino -->
+              <div class="skill-tile" data-category="hardware">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-cpu"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Embedded</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">Arduino</h4>
+                  <p class="skill-tile-desc">Motor Drivers &amp; Sensor Telemetry</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Hardware prototyping &amp; actuation</span>
+                </div>
+              </div>
+
+              <!-- Item: SQL -->
+              <div class="skill-tile" data-category="languages">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-database"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">Queries</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">SQL</h4>
+                  <p class="skill-tile-desc">Complex Joins &amp; View Optimization</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Data analytics &amp; aggregation</span>
+                </div>
+              </div>
+
+              <!-- Item: Git & GitHub -->
+              <div class="skill-tile" data-category="hardware">
+                <div class="skill-tile-header">
+                  <div class="skill-tile-icon-box">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-github"/></svg>
+                  </div>
+                  <span class="skill-tile-badge">DevOps</span>
+                </div>
+                <div class="skill-tile-body">
+                  <h4 class="skill-tile-name">Git &amp; GitHub</h4>
+                  <p class="skill-tile-desc">Branching, CI/CD &amp; Open Source</p>
+                </div>
+                <div class="skill-tile-footer">
+                  <span class="skill-tile-usage">Collaborative research &amp; code releases</span>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="card p-5" data-chip-group data-reveal style="--reveal-delay: 180ms">
-            <div class="flex items-center gap-3">
-              <span class="grid h-10 w-10 place-items-center rounded-xl bg-orange-500/10 text-orange-700 dark:bg-orange-400/10 dark:text-orange-300">
-                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-cpu"/></svg>
-              </span>
-              <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">Hardware &amp; Tools</h3>
+        <!-- VIEW 2: CATEGORY MATRIX GRID (Structured Bento Grid) -->
+        <div id="skills-matrix-view" class="skills-matrix-stage mt-8 hidden" data-reveal>
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+            <!-- Domain Card 1: AI & Vision -->
+            <div class="skills-matrix-card" data-matrix-category="aiml">
+              <div class="skills-matrix-header">
+                <div class="flex items-center gap-3">
+                  <span class="skills-matrix-icon-badge">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-cpu"/></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-base font-bold text-neutral-900 dark:text-white">AI, Vision &amp; Deep Learning</h3>
+                    <p class="font-mono text-xs text-orange-600 dark:text-orange-400">Research &amp; Model Optimization</p>
+                  </div>
+                </div>
+                <span class="skills-matrix-count-tag font-mono text-xs">5 Tools</span>
+              </div>
+              <div class="mt-4 space-y-3">
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">PyTorch</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Research · Core</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Deep Learning &amp; Distillation · GreenSwap &amp; WADE (EMNLP/EAAI)</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">YOLO (v8 / v11)</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Edge Vision</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Real-time object detection on custom waste datasets · EcoDetect (ICCIT '25)</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">OpenCV</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Vision Pipelines</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Image processing, synthetic augmentation, and bounding box pipelines</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">Scikit-learn</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Classical ML</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Baseline modeling, clustering, dimensional reduction, and validation metrics</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">NumPy &amp; Pandas</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Numerical Data</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">High-performance matrix transforms and tabular dataset curation</p>
+                </div>
+              </div>
             </div>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="chip" data-chip>Raspberry Pi</span>
-              <span class="chip" data-chip>ESP32</span>
-              <span class="chip" data-chip>Arduino</span>
-              <span class="chip" data-chip>Git &amp; GitHub</span>
+
+            <!-- Domain Card 2: Languages -->
+            <div class="skills-matrix-card" data-matrix-category="languages">
+              <div class="skills-matrix-header">
+                <div class="flex items-center gap-3">
+                  <span class="skills-matrix-icon-badge">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-code"/></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-base font-bold text-neutral-900 dark:text-white">Languages &amp; Core Systems</h3>
+                    <p class="font-mono text-xs text-orange-600 dark:text-orange-400">Foundational Engineering</p>
+                  </div>
+                </div>
+                <span class="skills-matrix-count-tag font-mono text-xs">5 Languages</span>
+              </div>
+              <div class="mt-4 space-y-3">
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">Python</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Primary · ML/AI</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Primary language for ML research pipelines, data modeling, and scripting</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">C / C++</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Low-Level Systems</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Data structures, memory optimization, and algorithmic problem solving</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">Java</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">OOP Architecture</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Object-oriented software systems · UIU CSE Project Show Award</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">JavaScript / TypeScript</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Modern Web</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Frontend interactivity, Node runtimes, and asynchronous application logic</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">SQL</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Database Queries</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Relational database design, query optimization, joins, and aggregations</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Domain Card 3: Web & Data Systems -->
+            <div class="skills-matrix-card" data-matrix-category="webdata">
+              <div class="skills-matrix-header">
+                <div class="flex items-center gap-3">
+                  <span class="skills-matrix-icon-badge">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-database"/></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-base font-bold text-neutral-900 dark:text-white">Full-Stack &amp; Data Systems</h3>
+                    <p class="font-mono text-xs text-orange-600 dark:text-orange-400">Production Web Platforms</p>
+                  </div>
+                </div>
+                <span class="skills-matrix-count-tag font-mono text-xs">5 Frameworks</span>
+              </div>
+              <div class="mt-4 space-y-3">
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">Next.js</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">App Router · SSR</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">High-performance production platforms · AnyTate &amp; TaskVault</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">Tailwind CSS</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Design Systems</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Accessible, custom dark-mode design systems and responsive token layouts</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">Supabase</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">BaaS · Real-Time</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Row-level security, real-time subscriptions, and object storage</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">PostgreSQL / MySQL</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Relational DB</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Scalable transactional database modeling and index optimization</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">Prisma ORM</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Type-Safe DB</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Schema modeling, zero-error migrations, and type-safe query generation</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Domain Card 4: Edge AI & Hardware -->
+            <div class="skills-matrix-card" data-matrix-category="hardware">
+              <div class="skills-matrix-header">
+                <div class="flex items-center gap-3">
+                  <span class="skills-matrix-icon-badge">
+                    <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-cpu"/></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-base font-bold text-neutral-900 dark:text-white">Edge AI, Robotics &amp; Tools</h3>
+                    <p class="font-mono text-xs text-orange-600 dark:text-orange-400">Hardware &amp; Infrastructure</p>
+                  </div>
+                </div>
+                <span class="skills-matrix-count-tag font-mono text-xs">4 Tools</span>
+              </div>
+              <div class="mt-4 space-y-3">
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">Raspberry Pi</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Edge SBC</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Embedded Linux compute, camera modules, and local inference nodes</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">ESP32</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">IoT Microcontroller</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">WiFi telemetry, sensor interfacing · EcoRover Autonomous Waste Sorter</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">Arduino</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">Robotics Control</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">PWM motor control, ultrasonic sensors, and embedded actuation loops</p>
+                </div>
+                <div class="skills-matrix-item">
+                  <div class="flex items-center justify-between">
+                    <span class="font-semibold text-neutral-900 dark:text-white text-sm">Git &amp; GitHub</span>
+                    <span class="font-mono text-xs text-orange-600 dark:text-orange-400">DevOps &amp; CI/CD</span>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Branch workflows, open-source repositories, and automated deployments</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1332,6 +1853,6 @@
     </span>
   </div>
 
-  <script defer src="assets/js/main.js?v=1.2.5"></script>
+  <script defer src="assets/js/main.js?v=1.2.8"></script>
 </body>
 </html>
