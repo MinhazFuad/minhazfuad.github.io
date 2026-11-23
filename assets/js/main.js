@@ -1262,11 +1262,9 @@ void main() {
     var matrixView = document.getElementById('skills-matrix-view');
     var viewBtns = Array.prototype.slice.call(section.querySelectorAll('.skills-view-btn'));
     var filterPills = Array.prototype.slice.call(section.querySelectorAll('.skills-filter-pill'));
-    var tiles = Array.prototype.slice.call(section.querySelectorAll('.skill-tile'));
     var matrixCards = Array.prototype.slice.call(section.querySelectorAll('.skills-matrix-card'));
     var lanes = Array.prototype.slice.call(section.querySelectorAll('.skills-stream-lane'));
 
-    var ticking = false;
     var activeView = 'stream';
     var activeFilter = 'all';
 
@@ -1285,10 +1283,11 @@ void main() {
         if (view === 'stream') {
           if (streamView) streamView.classList.remove('hidden');
           if (matrixView) matrixView.classList.add('hidden');
-          updateScrollMotion();
+          startStream();
         } else {
           if (streamView) streamView.classList.add('hidden');
           if (matrixView) matrixView.classList.remove('hidden');
+          stopStream();
         }
       });
     });
@@ -1302,8 +1301,9 @@ void main() {
         p.setAttribute('aria-selected', active ? 'true' : 'false');
       });
 
-      // Update stream tiles
-      tiles.forEach(function (tile) {
+      // Update stream tiles (both originals and cloned stream tiles)
+      var allTiles = section.querySelectorAll('.skill-tile');
+      allTiles.forEach(function (tile) {
         var cat = tile.getAttribute('data-category');
         if (category === 'all') {
           tile.classList.remove('is-dimmed');
@@ -1340,36 +1340,385 @@ void main() {
       });
     });
 
-    // Scroll motion for stream tracks
-    function updateScrollMotion() {
-      if (reduceMotion.matches || activeView !== 'stream' || !streamView) return;
+    // If user prefers reduced motion, keep static layout & accessible overflow
+    if (reduceMotion.matches) {
+      return;
+    }
 
+    // ── Continuous Kinetic Stream Engine ────────────────────────
+    var lanesData = [];
+    var speeds = [-38, 32, -35]; // px per second: Lane 1 left, Lane 2 right, Lane 3 left
+
+    lanes.forEach(function (lane, idx) {
+      var track = lane.querySelector('.skills-stream-track');
+      if (!track) return;
+
+      var dirAttr = lane.getAttribute('data-direction') || (idx % 2 === 0 ? 'left' : 'right');
+      var baseSpeed = speeds[idx] !== undefined ? speeds[idx] : (dirAttr === 'right' ? 32 : -36);
+      if (dirAttr === 'right' && baseSpeed < 0) baseSpeed = -baseSpeed;
+      if (dirAttr === 'left' && baseSpeed > 0) baseSpeed = -baseSpeed;
+
+      var originalTiles = Array.prototype.slice.call(track.children);
+      var numOriginal = originalTiles.length;
+      if (numOriginal === 0) return;
+
+      // Duplicate tiles to form seamless repeating buffer (at least 3-4 sets)
+      var setsNeeded = numOriginal <= 5 ? 4 : 3;
+      for (var s = 1; s < setsNeeded; s++) {
+        originalTiles.forEach(function (tile) {
+          var clone = tile.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          track.appendChild(clone);
+        });
+      }
+
+      // Initial measurement of loop distance
+      var allChildren = Array.prototype.slice.call(track.children);
+      var firstOriginal = allChildren[0];
+      var firstClone = allChildren[numOriginal];
+      var loopWidth = 1960; // fallback
+      if (firstOriginal && firstClone) {
+        loopWidth = firstClone.offsetLeft - firstOriginal.offsetLeft;
+      }
+      if (!loopWidth || loopWidth <= 0) {
+        loopWidth = numOriginal * 280;
+      }
+
+      var laneObj = {
+        lane: lane,
+        track: track,
+        direction: dirAttr,
+        cruiseSpeed: baseSpeed,
+        currentSpeed: baseSpeed,
+        momentum: 0,
+        x: dirAttr === 'right' ? -loopWidth : 0,
+        loopWidth: loopWidth,
+        isHovered: false,
+        firstOriginal: firstOriginal,
+        firstClone: firstClone
+      };
+
+      // Hover to ease/pause lane
+      lane.addEventListener('mouseenter', function () {
+        laneObj.isHovered = true;
+      });
+      lane.addEventListener('mouseleave', function () {
+        laneObj.isHovered = false;
+      });
+
+      lanesData.push(laneObj);
+    });
+
+    if (lanesData.length === 0) return;
+
+    // Recalculate loop distances on window resize
+    function measureDimensions() {
+      lanesData.forEach(function (item) {
+        if (item.firstOriginal && item.firstClone) {
+          var lw = item.firstClone.offsetLeft - item.firstOriginal.offsetLeft;
+          if (lw > 0) item.loopWidth = lw;
+        }
+      });
+    }
+    window.addEventListener('resize', measureDimensions);
+
+    // Dynamic scroll boost when page is scrolled
+    var lastScrollY = window.pageYOffset;
+    var lastScrollTime = performance.now();
+    var scrollBoost = 0;
+
+    function onPageScroll() {
+      var now = performance.now();
+      var dt = Math.max(1, now - lastScrollTime);
+      var currentY = window.pageYOffset;
+      var dy = currentY - lastScrollY;
+      lastScrollY = currentY;
+      lastScrollTime = now;
+
+      var impulse = (dy / dt) * 10;
+      scrollBoost = Math.max(-140, Math.min(140, scrollBoost + impulse));
+    }
+    window.addEventListener('scroll', onPageScroll, { passive: true });
+
+    // Pointer Drag & Touch Scrubbing
+    var isDragging = false;
+    var hasDragged = false;
+    var dragStartX = 0;
+    var dragStartY = 0;
+    var dragLastX = 0;
+    var dragLastTime = 0;
+    var dragVelocity = 0;
+    var activeDragLane = null;
+
+    function getLaneFromEvent(e) {
+      var target = e.target;
+      while (target && target !== streamView) {
+        for (var i = 0; i < lanesData.length; i++) {
+          if (lanesData[i].lane === target) return lanesData[i];
+        }
+        target = target.parentElement;
+      }
+      return null;
+    }
+
+    streamView.addEventListener('pointerdown', function (e) {
+      if (activeView !== 'stream') return;
+      var targetLane = getLaneFromEvent(e);
+      if (!targetLane) return;
+
+      isDragging = true;
+      hasDragged = false;
+      dragStartX = e.clientX;
+      dragStartY = e.clientY;
+      dragLastX = e.clientX;
+      dragLastTime = performance.now();
+      dragVelocity = 0;
+      activeDragLane = targetLane;
+      activeDragLane.momentum = 0;
+    });
+
+    window.addEventListener('pointermove', function (e) {
+      if (!isDragging || !activeDragLane) return;
+
+      var dxTotal = Math.abs(e.clientX - dragStartX);
+      var dyTotal = Math.abs(e.clientY - dragStartY);
+
+      // If user is scrolling page vertically on touch, release horizontal drag
+      if (!hasDragged && dyTotal > dxTotal && dyTotal > 8) {
+        isDragging = false;
+        activeDragLane = null;
+        return;
+      }
+
+      if (dxTotal > 5) {
+        hasDragged = true;
+      }
+
+      var now = performance.now();
+      var dtMove = Math.max(1, now - dragLastTime);
+      var dx = e.clientX - dragLastX;
+
+      dragVelocity = (dx / dtMove) * 1000;
+      activeDragLane.x += dx;
+
+      while (activeDragLane.x <= -activeDragLane.loopWidth) {
+        activeDragLane.x += activeDragLane.loopWidth;
+      }
+      while (activeDragLane.x > 0) {
+        activeDragLane.x -= activeDragLane.loopWidth;
+      }
+
+      activeDragLane.track.style.transform = 'translate3d(' + activeDragLane.x.toFixed(2) + 'px, 0, 0)';
+      dragLastX = e.clientX;
+      dragLastTime = now;
+    });
+
+    function endDrag() {
+      if (!isDragging) return;
+      isDragging = false;
+      if (activeDragLane) {
+        if (hasDragged) {
+          activeDragLane.momentum = Math.max(-1000, Math.min(1000, dragVelocity * 0.65));
+        }
+        activeDragLane = null;
+      }
+      if (hasDragged) {
+        var preventClick = function (ev) {
+          ev.stopPropagation();
+          ev.preventDefault();
+          window.removeEventListener('click', preventClick, true);
+        };
+        window.addEventListener('click', preventClick, true);
+        setTimeout(function () {
+          window.removeEventListener('click', preventClick, true);
+        }, 150);
+      }
+    }
+
+    window.addEventListener('pointerup', endDrag);
+    window.addEventListener('pointercancel', endDrag);
+
+    // Animation Loop
+    var rafId = null;
+    var lastFrameTime = performance.now();
+    var isSectionVisible = true;
+
+    function stepStream(now) {
+      var dt = Math.min((now - lastFrameTime) / 1000, 0.1);
+      lastFrameTime = now;
+
+      // Decay scroll boost
+      if (Math.abs(scrollBoost) > 0.5) {
+        scrollBoost *= 0.90;
+      } else {
+        scrollBoost = 0;
+      }
+
+      lanesData.forEach(function (item) {
+        // Momentum decay after drag
+        if (Math.abs(item.momentum) > 1) {
+          item.x += item.momentum * dt;
+          item.momentum *= 0.92;
+        } else {
+          item.momentum = 0;
+        }
+
+        // Target cruising speed
+        var targetSpeed = (item.isHovered || (isDragging && activeDragLane === item)) ? 0 : item.cruiseSpeed;
+        item.currentSpeed += (targetSpeed - item.currentSpeed) * Math.min(1, dt * 6);
+
+        // Advance position with cruising speed + directional scroll boost
+        var boost = item.direction === 'right' ? Math.abs(scrollBoost) * 0.35 : -Math.abs(scrollBoost) * 0.35;
+        item.x += (item.currentSpeed + boost) * dt;
+
+        // Mathematical seamless wrapping
+        while (item.x <= -item.loopWidth) {
+          item.x += item.loopWidth;
+        }
+        while (item.x > 0) {
+          item.x -= item.loopWidth;
+        }
+
+        item.track.style.transform = 'translate3d(' + item.x.toFixed(2) + 'px, 0, 0)';
+      });
+
+      if (isSectionVisible && activeView === 'stream') {
+        rafId = window.requestAnimationFrame(stepStream);
+      } else {
+        rafId = null;
+      }
+    }
+
+    function startStream() {
+      if (rafId) return;
+      if (!isSectionVisible || activeView !== 'stream' || reduceMotion.matches) return;
+      lastFrameTime = performance.now();
+      rafId = window.requestAnimationFrame(stepStream);
+    }
+
+    function stopStream() {
+      if (rafId) {
+        window.cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    }
+
+    // IntersectionObserver to sleep when out of viewport
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          isSectionVisible = entry.isIntersecting;
+          if (isSectionVisible) {
+            measureDimensions();
+            startStream();
+          } else {
+            stopStream();
+          }
+        });
+      }, { rootMargin: '150px 0px' });
+      observer.observe(section);
+    } else {
+      startStream();
+    }
+
+    // Pause on tab switch
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        stopStream();
+      } else if (isSectionVisible && activeView === 'stream') {
+        startStream();
+      }
+    });
+
+    // Initial measurements and start
+    setTimeout(measureDimensions, 100);
+    startStream();
+  }
+
+  function initAchievementsVault() {
+    var section = document.getElementById('achievements');
+    if (!section) return;
+
+    var bentoGrid = section.querySelector('.achieve-bento-grid');
+    var cards = Array.prototype.slice.call(section.querySelectorAll('.achieve-bento-card'));
+    var tabBtns = Array.prototype.slice.call(section.querySelectorAll('.achieve-tab-btn'));
+    if (!bentoGrid || !cards.length) return;
+
+    var activeFilter = 'all';
+
+    // 1. Tab Filter
+    function applyFilter(cat) {
+      activeFilter = cat;
+      tabBtns.forEach(function (btn) {
+        var active = btn.getAttribute('data-achieve-tab') === cat;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+
+      cards.forEach(function (card) {
+        var cardCat = card.getAttribute('data-category');
+        var isMatch = cat === 'all' || cardCat === cat;
+        card.classList.toggle('is-dimmed', !isMatch);
+        card.classList.toggle('is-match', isMatch && cat !== 'all');
+      });
+    }
+
+    tabBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var cat = btn.getAttribute('data-achieve-tab') || 'all';
+        applyFilter(cat);
+      });
+    });
+
+    // 2. Interactive 3D Cursor Tilt & Specular Sheen
+    cards.forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        if (reduceMotion.matches) return;
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', x.toFixed(1) + 'px');
+        card.style.setProperty('--mouse-y', y.toFixed(1) + 'px');
+
+        // Subtle 3D tilt calculation (-4 to +4 deg)
+        var centerX = rect.width / 2;
+        var centerY = rect.height / 2;
+        var tiltX = ((y - centerY) / centerY) * -4;
+        var tiltY = ((x - centerX) / centerX) * 4;
+
+        card.style.transform = 'perspective(800px) rotateX(' + tiltX.toFixed(2) + 'deg) rotateY(' + tiltY.toFixed(2) + 'deg) translateZ(8px)';
+      });
+
+      card.addEventListener('mouseleave', function () {
+        card.style.transform = '';
+      });
+    });
+
+    if (reduceMotion.matches) return;
+
+    // 3. Scroll-Driven 3D Perspective Convergence
+    var ticking = false;
+
+    function updateScroll3D() {
       var rect = section.getBoundingClientRect();
-      var viewportHeight = window.innerHeight;
+      var vh = window.innerHeight;
 
-      // Only calculate if section is in or near viewport
-      if (rect.bottom < -150 || rect.top > viewportHeight + 150) {
+      // Check if section is near viewport
+      if (rect.bottom < -100 || rect.top > vh + 100) {
         ticking = false;
         return;
       }
 
-      var progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+      // Progress: 0 when top enters bottom of screen, 1 when section is centered
+      var progress = (vh - rect.top) / (vh * 0.85);
       progress = Math.max(0, Math.min(1, progress));
-      var delta = (progress - 0.5) * 2; // -1 to +1
 
-      lanes.forEach(function (lane) {
-        var track = lane.querySelector('.skills-stream-track');
-        if (!track) return;
-        var dir = lane.getAttribute('data-direction') || 'right';
-        var laneNum = parseInt(lane.getAttribute('data-scroll-stream'), 10) || 1;
+      // 3D Pitch angle: starts at 12deg tilted back, smoothly flattens to 0deg
+      var pitch = (1 - progress) * 12;
+      var translateY = (1 - progress) * 35;
+      var scale = 0.94 + (progress * 0.06);
 
-        var factor = dir === 'right' ? 1 : -1;
-        var maxDistance = laneNum === 2 ? 150 : 120;
-        var translateX = delta * maxDistance * factor;
-        var tiltX = -delta * 4.5 * (laneNum === 2 ? -0.7 : 1);
-
-        track.style.transform = 'translate3d(' + translateX.toFixed(1) + 'px, 0, 0) rotateX(' + tiltX.toFixed(2) + 'deg)';
-      });
+      bentoGrid.style.transform = 'rotateX(' + pitch.toFixed(2) + 'deg) translateY(' + translateY.toFixed(1) + 'px) scale(' + scale.toFixed(3) + ')';
 
       ticking = false;
     }
@@ -1377,14 +1726,13 @@ void main() {
     function onScroll() {
       if (ticking) return;
       ticking = true;
-      window.requestAnimationFrame(updateScrollMotion);
+      window.requestAnimationFrame(updateScroll3D);
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
 
-    // Initial position
-    updateScrollMotion();
+    updateScroll3D();
   }
 
   function initChipWave() {
@@ -1609,6 +1957,7 @@ void main() {
   try { initProjectStack(); } catch (e) { console.error('Project stack error:', e); }
   try { initPubScrollShowcase(); } catch (e) { console.error('Pub showcase error:', e); }
   try { initSkillsConveyor(); } catch (e) { console.error('Skills conveyor error:', e); }
+  try { initAchievementsVault(); } catch (e) { console.error('Achievements vault error:', e); }
   try { initHeroDotGrid(); } catch (e) { console.error('Hero DotGrid error:', e); }
   try { initChipWave(); } catch (e) { console.error('Chip wave error:', e); }
   try { initCountUp(); } catch (e) { console.error('Count up error:', e); }

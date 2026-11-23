@@ -1814,6 +1814,9 @@ html.theme-transitioning .pub-arrow-btn {
   margin-right: calc(-50vw + 50%);
   padding: 1.25rem 0;
   cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
   mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.3) 3%, black 10%, black 90%, rgba(0, 0, 0, 0.3) 97%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.3) 3%, black 10%, black 90%, rgba(0, 0, 0, 0.3) 97%, transparent 100%);
 }
@@ -1868,11 +1871,12 @@ html.theme-transitioning .pub-arrow-btn {
 }
 
 .skills-stream-lane {
+  position: relative;
   width: 100%;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding: 0.25rem 1rem;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .skills-stream-lane::-webkit-scrollbar {
@@ -1885,7 +1889,7 @@ html.theme-transitioning .pub-arrow-btn {
   width: max-content;
   will-change: transform;
   transform-style: preserve-3d;
-  transition: transform 0.08s linear;
+  transition: none;
 }
 
 /* Individual Skill Tile */
@@ -2152,6 +2156,11 @@ html.theme-transitioning .skills-view-btn {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  .skills-stream-lane {
+    overflow-x: auto !important;
+    user-select: auto !important;
+    -webkit-user-select: auto !important;
+  }
   .skills-stream-track {
     transform: none !important;
     transition: none !important;
@@ -2174,6 +2183,259 @@ html.theme-transitioning .skills-view-btn {
 [data-chip].is-chip-visible {
   opacity: 1;
   transform: scale(1) translateY(0);
+}
+
+/* ── ACHIEVEMENTS: MINIMALIST 3D BENTO VAULT ──────────────── */
+.achieve-vault-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Category Filter Tabs */
+.achieve-tabs-wrap {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem;
+  border-radius: 9999px;
+  background: rgba(243, 244, 246, 0.85);
+  border: 1px solid rgba(229, 231, 235, 0.85);
+  gap: 0.25rem;
+}
+
+:is(.dark) .achieve-tabs-wrap {
+  background: rgba(23, 23, 23, 0.75);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.achieve-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #737373;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+:is(.dark) .achieve-tab-btn {
+  color: #a3a3a3;
+}
+
+.achieve-tab-btn:hover {
+  color: #171717;
+}
+
+:is(.dark) .achieve-tab-btn:hover {
+  color: #f5f5f5;
+}
+
+.achieve-tab-btn.is-active {
+  background: #ffffff;
+  color: #ea580c;
+  font-weight: 600;
+  border-color: rgba(249, 115, 22, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+:is(.dark) .achieve-tab-btn.is-active {
+  background: rgba(38, 38, 38, 0.95);
+  color: #fb923c;
+  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.achieve-tab-count {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.68rem;
+  opacity: 0.75;
+}
+
+/* 3D Bento Grid Stage */
+.achieve-bento-stage {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.achieve-bento-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.12s linear;
+}
+
+@media (min-width: 640px) {
+  .achieve-bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .achieve-bento-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Individual Bento Tile */
+.achieve-bento-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(229, 231, 235, 0.85);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              opacity 0.25s ease,
+              filter 0.25s ease;
+}
+
+:is(.dark) .achieve-bento-card {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(20, 20, 20, 0.75);
+  box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.35);
+}
+
+/* Cursor-Tracking Radial Sheen */
+.achieve-bento-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(249, 115, 22, 0.09), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.achieve-bento-card:hover::before {
+  opacity: 1;
+}
+
+/* Hover elevation */
+.achieve-bento-card:hover {
+  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: 0 12px 30px -8px rgba(249, 115, 22, 0.16);
+  z-index: 5;
+}
+
+:is(.dark) .achieve-bento-card:hover {
+  border-color: rgba(251, 146, 60, 0.45);
+  box-shadow: 0 14px 34px -8px rgba(249, 115, 22, 0.25);
+}
+
+/* Hero Feature Tile (Spans 2 cols) */
+.achieve-bento-hero {
+  border-color: rgba(249, 115, 22, 0.3);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 247, 237, 0.35) 60%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+@media (min-width: 640px) {
+  .achieve-bento-hero {
+    grid-column: span 2 / span 2;
+  }
+}
+
+:is(.dark) .achieve-bento-hero {
+  border-color: rgba(249, 115, 22, 0.35);
+  background: linear-gradient(135deg, rgba(28, 20, 16, 0.85) 0%, rgba(20, 20, 20, 0.8) 50%, rgba(28, 18, 14, 0.75) 100%);
+}
+
+/* Dual Podium Honor Tile (Spans 2 cols on lg) */
+@media (min-width: 1024px) {
+  .achieve-bento-dual {
+    grid-column: span 2 / span 2;
+  }
+}
+
+/* Dimmed State when filtered out */
+.achieve-bento-card.is-dimmed {
+  opacity: 0.15;
+  filter: grayscale(80%);
+  transform: scale(0.97) !important;
+  pointer-events: none;
+}
+
+.achieve-bento-card.is-match {
+  opacity: 1;
+  border-color: rgba(249, 115, 22, 0.5);
+  box-shadow: 0 8px 24px -4px rgba(249, 115, 22, 0.2);
+}
+
+:is(.dark) .achieve-bento-card.is-match {
+  border-color: rgba(251, 146, 60, 0.55);
+  box-shadow: 0 10px 28px -4px rgba(249, 115, 22, 0.3);
+}
+
+/* Sleek Verification Pill Button */
+.achieve-link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #c2410c;
+  background: rgba(249, 115, 22, 0.08);
+  border: 1px solid rgba(249, 115, 22, 0.22);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+:is(.dark) .achieve-link-chip {
+  color: #fdba74;
+  background: rgba(249, 115, 22, 0.14);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.achieve-link-chip:hover {
+  background: rgba(249, 115, 22, 0.18);
+  border-color: rgba(249, 115, 22, 0.5);
+  transform: translateY(-1px);
+  color: #9a3412;
+}
+
+:is(.dark) .achieve-link-chip:hover {
+  background: rgba(249, 115, 22, 0.24);
+  border-color: rgba(251, 146, 60, 0.6);
+  color: #ffedd5;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .achieve-bento-grid {
+    transform: none !important;
+  }
+  .achieve-bento-card {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+html.theme-transitioning .achieve-bento-card,
+html.theme-transitioning .achieve-tab-btn,
+html.theme-transitioning .achieve-link-chip {
+  transition: background-color .35s cubic-bezier(.16,1,.3,1),
+              border-color .35s cubic-bezier(.16,1,.3,1),
+              box-shadow .35s cubic-bezier(.16,1,.3,1)!important;
 }
 
 
